@@ -1,0 +1,71 @@
+@extends('admin.layouts.master')
+@section('title','Create Success Story')
+@section('content')
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="p-3">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                            <span class="badge badge-danger">{{ $error }}</span>
+                            @endforeach
+                        </div>
+                        @endif
+                        <form action="{{route('admin.success-story.store')}}" method="post" enctype="multipart/form-data" class="">
+                            @csrf
+                            <div class="form-row">
+                                <div class="col-md-6 form-group mb-1">
+                                    <label class="mb-0">Bride Name </label>   
+                                    <input type="text" name="bride_name" class="form-control-sm w-100 border">
+                                </div>
+                                <div class="col-md-6 form-group mb-1">
+                                    <label class="mb-0">Groom Name </label>   
+                                    <input type="text" name="groom_name" class="form-control-sm w-100 border">
+                                </div>
+                                <div class="col-md-6 form-group mb-1">
+                                    <label class="mb-0">Location Name </label>   
+                                    <input type="text" name="location" class="form-control-sm w-100 border">
+                                </div>
+                                <div class="col-md-6 form-group mb-1">
+                                    <label class="mb-0">Date Of Marrige </label>   
+                                    <input type="text" name="marriage_date" class="form-control-sm w-100 border">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12 form-group mb-1">
+                                            <label class="mb-0">Comment </label>   
+                                            <textarea name="comment" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6 form-group mb-1">
+                                            <label class="mb-0">Image </label>   
+                                            <input type="file" name="image" class="form-control-sm w-100 border">
+                                        </div>
+                                        <div class="form-group mb-1 col-md-6">
+                                            <label class="mb-0">Show Frontend</label>
+                                            <select id="gender" name="status" class="form-control-sm w-100" >
+                                                <option value="1">Yes</option>
+                                                <option value="0">No</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-12 d-flex justify-content-end">
+                                            <button type="submit" name="upload" value="upload" id="upload" class="btn btn-primary mt-1"><i class="fa fa-fw fa-upload"></i> Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                    
+                        </div> 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+@endsection
