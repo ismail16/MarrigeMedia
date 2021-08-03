@@ -26,9 +26,9 @@
 											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
 										@else
 											@if($user->gender == 'Female')
-											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="">
+											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="img-fluid image-size">
 											@else
-											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="">
+											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="img-fluid image-size">
 											@endif
 										@endif
 									</div>

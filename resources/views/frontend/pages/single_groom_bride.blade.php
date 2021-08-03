@@ -46,15 +46,14 @@
 								@else
 									<form action="{{ route('member.image_access_request') }}" method="post">
 		                            	@csrf
-		                        		<input type="hidden" name="request_from_id" value="{{ $user->id }}">
+		                        		<input type="hidden" name="image_request_from_id" value="{{ Auth::user()->id }}">
+		                        		<input type="hidden" name="image_request_to_id" value="{{ $user->id }}">
 		                        		<button class="btn btn-sm btn-primary cursor-pointer border-0">Request for see picture</button>
 		                            </form>
 								@endif
                             @else
                                 <a href="#" class="text-primary cursor-pointer">Request for see picture</a>
                             @endif
-
-							
 						</div>
 					</div>                              
 				</div> 

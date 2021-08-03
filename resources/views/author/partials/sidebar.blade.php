@@ -4,10 +4,36 @@
   </div>
   <div class="card-body p-1 bg-body-green">
         <a href="{{ route('member.sent-message.index') }}" class="nav-link form-label {{Request::is('member/sent-message*') ? 'bg-white border':''}}">
-        <p><i class="nav-icon fas fa-paper-plane"></i> Sent Message</p>
+            <p><i class="nav-icon fas fa-paper-plane"></i> 
+                Sent Message 
+                <span class="badge border">
+                    {{ \App\Models\PrivateMessages::where('from_id', Auth::user()->id)->count() }}
+                </span>
+            </p>
         </a>
         <a href="{{ route('member.receive-message.index') }}" class="nav-link form-label {{Request::is('member/receive-message*') ? 'bg-white border':''}}">
-            <p><i class="nav-icon far fa-comments"></i> Receive Message</p>
+            <p><i class="nav-icon far fa-comments"></i> 
+                Receive Message
+                <span class="badge border">
+                    {{ \App\Models\PrivateMessages::where('to_id', Auth::user()->id)->count() }}
+                </span>
+            </p>
+        </a>
+        <a href="{{ route('member.image-access.index') }}" class="nav-link form-label {{Request::is('member/image-access*') ? 'bg-white border':''}}">
+            <p><i class="nav-icon fas fa-images"></i> 
+                Image Request
+                <span class="badge border">
+                    0
+                </span>
+            </p>
+        </a>
+        <a href="{{ route('member.receive-message.index') }}" class="nav-link form-label {{Request::is('member/receive-message*') ? 'bg-white border':''}}">
+            <p><i class="nav-icon fa fa-ring"></i> 
+                Received Proposal
+                <span class="badge border">
+                    0
+                </span>
+            </p>
         </a>
   </div>
 </div>

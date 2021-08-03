@@ -48,5 +48,9 @@ Route::group(['as' => 'member.', 'prefix' => 'member', 'namespace' => 'Author', 
     Route::resource('peyment', 'PaymentController');
 
     Route::post('image-access-request', 'ImageAccessController@imageAccessRequest')->name('image_access_request');
+
+    Route::post('image-access-approved', 'ImageAccessController@imageAccessApproved')->name('image_access_approved');
+
+    Route::resource('image-access', 'ImageAccessController');
     
 });

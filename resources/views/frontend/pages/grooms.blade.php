@@ -17,7 +17,15 @@
 				<div class="col-md-4 border">
 					<div class="row">
 						<div class="col-md-5 pr-0">
-							<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
+							@if($user->user_images->first()['status'] == 1)
+								<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
+							@else
+								@if($user->gender == 'Female')
+								<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="img-fluid image-size">
+								@else
+								<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="img-fluid image-size">
+								@endif
+							@endif
 						</div>
 						<div class="col-md-7 pl-2">
 							<div class="border-bottom">
