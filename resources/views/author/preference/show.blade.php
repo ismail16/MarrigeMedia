@@ -301,7 +301,12 @@
                         </div>
                     </div>
                 </div>
-                
+            </div>
+            @else
+            <div class="col-md-9 d-flex justify-content-center d-flex align-items-center">
+               <a class="btn btn-lg mt-2 btn-primary" href="{{route('member.preference.create')}}">
+                    <i class="nav-icon fas fa-plus"></i> Set Preference
+                </a>
             </div>
             @endif
 
