@@ -47,10 +47,14 @@ Route::group(['as' => 'member.', 'prefix' => 'member', 'namespace' => 'Author', 
     Route::resource('receive-message', 'RecieveMessageController');
     Route::resource('peyment', 'PaymentController');
 
-    Route::post('image-access-request', 'ImageAccessController@imageAccessRequest')->name('image_access_request');
-
-    Route::post('image-access-approved', 'ImageAccessController@imageAccessApproved')->name('image_access_approved');
-
     Route::resource('image-access', 'ImageAccessController');
+    Route::resource('image-request-receive', 'ImageReqReceiveController');
+
+    Route::resource('sent-proposal', 'SentProposalController');
+    Route::resource('receive-proposal', 'ReceiveProposalController');
+
+
+    // Route::post('image-access-approved', 'ImageAccessController@imageAccessApproved')->name('image_access_approved');
+    // Route::post('image-access-declined', 'ImageAccessController@imageAccessDeclined')->name('image_access_declined');
     
 });

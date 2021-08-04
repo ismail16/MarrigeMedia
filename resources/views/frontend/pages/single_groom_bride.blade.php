@@ -40,14 +40,14 @@
 							</div>
 						</div>
 						<div class="card-footer text-center">
-							@if($user->user_images->first())                                    
+							@if($user->user_images->first() && Auth::check())                                    
                                 @if($user->user_images->first()->status == 1)
 									<a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
 								@else
-									<form action="{{ route('member.image_access_request') }}" method="post">
+									<form action="{{ route('member.image-access.store') }}" method="post">
 		                            	@csrf
-		                        		<input type="hidden" name="image_request_from_id" value="{{ Auth::user()->id }}">
-		                        		<input type="hidden" name="image_request_to_id" value="{{ $user->id }}">
+		                        		<input type="hidden" name="img_req_from_user" value="{{ Auth::user()->id }}">
+		                        		<input type="hidden" name="img_req_to_user" value="{{ $user->id }}">
 		                        		<button class="btn btn-sm btn-primary cursor-pointer border-0">Request for see picture</button>
 		                            </form>
 								@endif
@@ -175,11 +175,16 @@
 								<a class="btn btn-sm btn-success text-white" href="{{ route('login') }}">
 									<i class="icon-mail"></i>Send Message
 								</a> -->
-								
-								<!-- <a class="btn btn-sm btn-primary text-danger">
-									<i class="icon-thumbs-up-1"></i>I am Interestd
-								</a>
-								<a class="btn btn-sm btn-primary text-danger" >
+
+								@if(Auth::check())
+								<form action="{{ route('member.sent-proposal.store') }}" method="post" style="display:inline;">
+	                            	@csrf
+	                        		<input type="hidden" name="sent_proposal_user" value="{{ Auth::user()->id }}">
+	                        		<input type="hidden" name="receive_proposal_user" value="{{ $user->id }}">
+	                        		<button class="btn btn-sm btn-primary cursor-pointer border-0">Sent Proposal</button>
+	                            </form>
+	                            @endif
+								<!-- <a class="btn btn-sm btn-primary text-danger" >
 									<i class="icon-star"></i>Add to Favorite
 								</a> -->
 							</div>

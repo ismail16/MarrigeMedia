@@ -3,7 +3,7 @@
       <h4>Quick Access</h4>
   </div>
   <div class="card-body p-1 bg-body-green">
-        <a href="{{ route('member.sent-message.index') }}" class="nav-link form-label {{Request::is('member/sent-message*') ? 'bg-white border':''}}">
+        <a href="{{ route('member.sent-message.index') }}" class="nav-link pb-1 form-label {{Request::is('member/sent-message*') ? 'bg-white border':''}}">
             <p><i class="nav-icon fas fa-paper-plane"></i> 
                 Sent Message 
                 <span class="badge border">
@@ -11,7 +11,7 @@
                 </span>
             </p>
         </a>
-        <a href="{{ route('member.receive-message.index') }}" class="nav-link form-label {{Request::is('member/receive-message*') ? 'bg-white border':''}}">
+        <a href="{{ route('member.receive-message.index') }}" class="nav-link pt-1 form-label {{Request::is('member/receive-message*') ? 'bg-white border':''}}">
             <p><i class="nav-icon far fa-comments"></i> 
                 Receive Message
                 <span class="badge border">
@@ -19,19 +19,37 @@
                 </span>
             </p>
         </a>
-        <a href="{{ route('member.image-access.index') }}" class="nav-link form-label {{Request::is('member/image-access*') ? 'bg-white border':''}}">
+        <hr class="m-0 p-0">
+        <a href="{{ route('member.image-access.index') }}" class="nav-link pb-1 form-label {{Request::is('member/image-access*') ? 'bg-white border':''}}">
             <p><i class="nav-icon fas fa-images"></i> 
-                Image Request
+                Sent Image Request
                 <span class="badge border">
-                    0
+                    {{ \App\Models\ImageAccess::where('img_req_from_user', Auth::user()->id)->count() }}
                 </span>
             </p>
         </a>
-        <a href="{{ route('member.receive-message.index') }}" class="nav-link form-label {{Request::is('member/receive-message*') ? 'bg-white border':''}}">
+        <a href="{{ route('member.image-request-receive.index') }}" class="nav-link pt-1 form-label {{Request::is('member/image-request-receive*') ? 'bg-white border':''}}">
+            <p><i class="nav-icon fas fa-images"></i> 
+                Received Image Request
+                <span class="badge border">
+                    {{ \App\Models\ImageAccess::where('img_req_to_user', Auth::user()->id)->count() }}
+                </span>
+            </p>
+        </a>
+        <hr class="m-0 p-0">
+        <a href="{{ route('member.sent-proposal.index') }}" class="nav-link pb-1 form-label {{Request::is('member/sent-proposal*') ? 'bg-white border':''}}">
+            <p><i class="nav-icon fa fa-ring"></i> 
+                Sent Proposal
+                <span class="badge border">
+                    {{ \App\Models\Proposal::where('sent_proposal_user', Auth::user()->id)->count() }}
+                </span>
+            </p>
+        </a>
+        <a href="{{ route('member.receive-proposal.index') }}" class="nav-link pt-1 form-label {{Request::is('member/receive-proposal*') ? 'bg-white border':''}}">
             <p><i class="nav-icon fa fa-ring"></i> 
                 Received Proposal
                 <span class="badge border">
-                    0
+                   {{ \App\Models\Proposal::where('receive_proposal_user', Auth::user()->id)->count() }}
                 </span>
             </p>
         </a>

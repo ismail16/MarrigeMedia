@@ -1,5 +1,5 @@
 @extends('author.layouts.master')
-@section('title','Image request')
+@section('title','Sent Image request')
 
 @push('css')
     <link rel="stylesheet" href="{{asset('backend_assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
@@ -34,16 +34,17 @@
                                             <th class="form-label">S.N</th>
                                             <th class="form-label">Name</th>
                                             <th class="form-label">Image</th>
+                                            <th class="form-label">Date</th>
                                             <th class="form-label">Status</th>
                                             <th class="form-label">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
-                                        @foreach($image_access as $image_acces)
+                                        @foreach($image_access_reqs as $image_access_req)
                                             <?php 
-                                            $req_users = \App\user::where('id', $image_acces->user_id_req_from)->first();
-                                            // $req_user_image = App\Models\UserProfileImage::where('id', $user_image_acces)->first();
+                                            $req_users = \App\user::where('id', $image_access_req->img_req_from_user)->first();
+                                            $req_user_image = App\Models\UserProfileImage::where('id', $req_users->id)->first();
                                             ?>
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
@@ -52,19 +53,44 @@
                                                         {{ $req_users->first_name}} {{ $req_users->last_name}}
                                                     </a>
                                                 </td>
+
                                                 <td>
-                                                    ddd
+                                                    @if($req_user_image)
+                                                        <img src="{{ asset('images/user_profile_image/'. $req_user_image->image) }}" height="65" width="100">
+                                                    @else
+                                                        @if($req_users->gender == 'Female')
+                                                            <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" height="65" width="100">
+                                                        @else
+                                                            <img src="{{ asset('images/icons/flaticon/businessman.png') }}" height="65" width="100">
+                                                        @endif
+                                                    @endif
                                                 </td>
                                                 <td>
+                                                    {{ $req_users->created_at->format('d-m-y  H:i A') }}
+                                                </td>
+                                                <td>
+                                                    @if($image_access_req->approved == 0)
                                                     <span class="btn btn-xs btn-warning">
                                                          <i class="fa fa-spinner"></i>
                                                         pending
                                                     </span>
+                                                    @else
+                                                    <span class="btn btn-xs btn-success">
+                                                     <i class="fa fa-check-circle"></i>
+                                                        Approved
+                                                    </span>
+                                                    @endif
                                                 </td>
                                                 <td>
-                                                    ssss
+                                                    <form action="{{ route('member.image-access.destroy',$image_access_req->id ) }}" method="post"
+                                                          style="display: inline;"
+                                                          onsubmit="return confirm('Are you Sure? Want to delete')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
-       
                                             </tr>
                                         @endforeach
                                     </tbody>

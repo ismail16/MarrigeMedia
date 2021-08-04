@@ -9,14 +9,15 @@ use App\Models\ImageAccess;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 
-class ImageAccessController extends Controller
+class ImageReqReceiveController extends Controller
 {
-
     public function index()
     {
         $user = Auth::user();
-        $image_access_reqs = ImageAccess::where('img_req_from_user', Auth::user()->id)->get();
-        return view('author.image_access.sent_image_request', compact('image_access_reqs'));
+        $receive_image_requests = ImageAccess::where('img_req_to_user', Auth::user()->id)->get();
+
+        // return $receive_image_requests;
+        return view('author.image_access.receive_image_request', compact('receive_image_requests'));
     }
 
     public function create()
