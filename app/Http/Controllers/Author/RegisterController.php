@@ -82,6 +82,7 @@ class RegisterController extends Controller
         $saveuser = User::create([
             'u_id'  => $last_id,
             'role_id'  => 2,
+            'package_price_id'  => 1,
             'first_name'  => $request->first_name,
             'last_name'  => $request->last_name,
             'mobile'  => $request->mobile,
