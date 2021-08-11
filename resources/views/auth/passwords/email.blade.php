@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','Home Page')
+@section('title','Request for Reset Password')
 
 @section('content')
 <section class="hero-wrap" style="background-image: url('https://www.taslimamarriagemedia.com/img/taslima-marriage-media-banner.jpg');">
@@ -8,7 +8,7 @@
             <div class="col-md-6 ftco-animate m-3 bg-dark p-3">
 
 
-                <h2 class="text-center text-white border-bottom">Reset Password</h2>
+                <h2 class="text-center text-white border-bottom">Request for Reset Password</h2>
 
                 <div class=" p-2">
                     <div class="">

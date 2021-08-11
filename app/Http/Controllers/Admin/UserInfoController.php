@@ -36,7 +36,7 @@ class UserInfoController extends Controller
             $UserProfileImages = UserProfileImage::where('user_id', $id)->get();
             return view('admin.user_info.show', compact('user', 'PersonalInfo', 'UserProfileImages'));
         }else{
-            return view('admin.user_info.inactive_show', compact('user', 'PersonalInfo', 'UserProfileImages'));
+            return view('admin.user_info.inactive_show', compact('user'));
         }
     }
 
@@ -57,7 +57,7 @@ class UserInfoController extends Controller
 
         $PersonalInfo = PersonalInfo::where('user_id', $id)->first();
         if ($request->user_status) {
-            $PersonalInfo->status = $request->PersonalInfo_status;
+            // $PersonalInfo->status = $request->PersonalInfo_status;
             $user->activation = 1;
         }else{
             $PersonalInfo->status = 0;

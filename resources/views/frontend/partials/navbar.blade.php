@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar"  style="background: #e1f6ce !important;">
 		<div class="container">
 			<a class="navbar-brand" href="/">
-				<img class="img-responsive" src="{{ asset('images/logo.png') }}" alt="Taslima Marriage Media" style="width: 115px;border-radius: 4px;margin-top: -12px;">
+				<img class="img-responsive" src="{{ asset('images/logo.png') }}" alt="Marriage Gate" style="width: 115px;border-radius: 4px;margin-top: -12px;">
 			</a>
 			<button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu form-label font-weight-bold"></span> 

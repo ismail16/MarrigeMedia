@@ -251,7 +251,7 @@
                             <div class="float-right">
                                 <div class="form-check mt-2 mb-2">
                                     <label class="form-check-label form-label">
-                                        <input type="checkbox" name="agreement" class="form-check-input">
+                                        <input type="checkbox" name="agreement" value="1" class="form-check-input">
                                         I agree to the
                                         <a target="_blank" href="{{ route('terms_conditions') }}">terms and conditions</a>
                                     </label>
