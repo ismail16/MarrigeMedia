@@ -590,8 +590,9 @@
                                         </div>
                                         <div class="timeline-panel bg-body-green border-0">
                                             <div class="timeline-heading">
-                                                <h4 class="timeline-title">Basic preference</h4>
+                                                <h4 class="timeline-title">Preferences</h4>
                                             </div>
+                                            @if($preference)
                                             <div class="timeline-body">
                                                 <div class="row bg-off-pink">
                                                 	<div class="col-sm-12">
@@ -829,8 +830,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
+                                            @else
+                                            	<div class="row">
+                                            		<div class="col-md-12">
+                                            			<h5>Preferences not set Yet!!</h5>
+                                            		</div>
+                                            	</div>
+                                            @endif
                                         </div>
                                     </li>
                                 </ul>
