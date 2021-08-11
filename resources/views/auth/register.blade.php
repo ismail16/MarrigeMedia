@@ -32,7 +32,7 @@
                         </div>
                         <div class="col-md-4 form-group mb-1">
                             <label class="mb-0 form-label">mobile</label>
-                            <input type="text" name="mobile" class="form-control-sm w-100" placeholder="Mobile">
+                            <input type="number" name="mobile" class="form-control-sm w-100" placeholder="Mobile">
                         </div>
 
                         <div class="form-group mb-1 col-md-4">

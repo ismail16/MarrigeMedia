@@ -176,9 +176,36 @@
 
                     <h5 class="border-bottom font-italic font-weight-bold">Images</h5>
                     <div class="row">
-                        
                     </div>
 
+                    <h5 class="border-bottom font-italic font-weight-bold">Images</h5>
+                    <div class="row">
+                    </div>
+
+                    <h5 class="border-bottom font-italic font-weight-bold">Education and Profession</h5>
+                    <div class="row">
+                    </div>
+
+                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Address</h5>
+                    <div class="row">
+                    </div>
+
+                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Family Information</h5>
+                    <div class="row">
+                    </div>
+
+
+                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Physical Information</h5>
+                    <div class="row">
+                    </div>
+
+                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Others</h5>
+                    <div class="row">
+                    </div>
+
+                    <h5 class="border-bottom font-italic font-weight-bold pt-2">language</h5>
+                    <div class="row">
+                    </div>
 
 
 
