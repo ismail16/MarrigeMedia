@@ -28,6 +28,7 @@
             <div class="col-md-12">
                 <div class="card mt-2 mb-2 bg-light-green">
                     <div class="card-body">
+                        <div class="table-responsive">
                         <a href="{{ route('member.images.create') }}" class="float-right btn btn-sm btn-primary"> <i
                             class="fa fa-plus"></i> Add New</a>
                         <table id="example1" class="table table-bordered table-striped bg-light">
@@ -68,8 +69,9 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                            </tfoot>
+                            </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

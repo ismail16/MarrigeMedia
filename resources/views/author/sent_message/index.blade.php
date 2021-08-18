@@ -28,6 +28,7 @@
                     <div class="col-md-12">
                         <div class="card mt-2 mb-2 bg-light-green">
                             <div class="card-body">
+                                <div class="table-responsive">
                                 <table id="example1" class="table table-bordered table-striped bg-light">
                                     <thead>
                                         <tr>
@@ -83,6 +84,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
