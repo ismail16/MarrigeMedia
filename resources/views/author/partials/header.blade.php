@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend_assets/css/sidebar_style.css') }}">
     <link href="{{ asset('frontend_assets/fontawesome/css/all.css') }}" rel="stylesheet">
     <!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->

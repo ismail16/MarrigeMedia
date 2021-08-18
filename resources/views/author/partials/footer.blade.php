@@ -107,6 +107,7 @@
 	<script src="{{ asset('frontend_assets/js/google-map.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('frontend_assets/js/main.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('frontend_assets/js/customs.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('frontend_assets/js/sidebar_main.js') }}" type="text/javascript"></script>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13" type="text/javascript"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
