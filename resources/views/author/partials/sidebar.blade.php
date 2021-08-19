@@ -107,7 +107,7 @@
 </div> -->
 
 
-<aside class="sidebar">
+<aside class="sidebar d-lg-none">
     <div class="toggle">
         <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
             <span></span>
