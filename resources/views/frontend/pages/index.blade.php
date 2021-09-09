@@ -225,7 +225,7 @@
 			<!-- <div class="col-md-3 ftco-animate">
 				<div class="card p-2">
 					<div class="text-center">
-						<h1>Standard</h1>
+						<h4 class="h1">Standard</h4>
 						<h2 class="text-success">BDT 449</h2>
 						<p class="p-0 m-0">Enjoy All The Features</p>
 						<ul class="features">
@@ -245,7 +245,7 @@
 			<div class="col-md-3 ftco-animate">
 				<div class="card p-2">
 					<div class="text-center">
-						<h1>Classic</h1>
+						<h4 class="h1">Classic</h4>
 						<h2 class="text-success">BDT 449</h2>
 						<p class="p-0 m-0">Enjoy All The Features</p>
 						<ul class="features">
@@ -265,7 +265,7 @@
 			<div class="col-md-3 ftco-animate">
 				<div class="card p-2">
 					<div class="text-center">
-						<h1>Premium</h1>
+						<h4 class="h1">Premium</h4>
 						<h2 class="text-success">BDT 449</h2>
 						<p class="p-0 m-0">Enjoy All The Features</p>
 						<ul class="features">
