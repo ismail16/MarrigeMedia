@@ -187,7 +187,7 @@
 			<div class="col-md-3 ftco-animate">
 				<div class="card p-2">
 					<div class="text-center">
-						<h1>{{ $package_price->title }}</h1>
+						<h4 class="h1">{{ $package_price->title }}</h4>
 						<h2 class="form-label">BDT {{ $package_price->price }}</h2>
 						<p class="p-0 m-0 text-dark">Enjoy All The Features</p>
 						<ul class="features">
