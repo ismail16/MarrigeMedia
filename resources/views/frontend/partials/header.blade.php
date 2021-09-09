@@ -5,6 +5,8 @@
 <head>
 	<meta name="robots" content="noindex" />
 	<title>@yield('title')</title>
+	<meta name="keywords" content="Marriage Media in Bangladesh, Matrimony Website In Bangladesh, Islamic Marriage Media In Bangladesh, Divorcee Matrimony In Bangladesh, Bangladesh Matrimony for Hindu, Bengali matrimony site" />
+    <meta name="description" content="Marriage Gate is Best Marriage Media in Bangladesh. 100% Secure and Trusted Matrimony sites in Bangladesh. Bangladeshi Most Preferred and Trusted Service for Finding a Life-Partner." />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="{{ asset('images/icon.png') }}">
@@ -21,31 +23,11 @@
 	<link rel="stylesheet" href="{{ asset('frontend_assets/css/flaticon.css') }}">
 	<link rel="stylesheet" href="{{ asset('frontend_assets/css/icomoon.css') }}">
 	<link rel="stylesheet" href="{{ asset('frontend_assets/css/bootstrap.css') }}">
-	<link href="{{ asset('frontend_assets/fontawesome/css/all.css') }}" rel="stylesheet">
-	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="{{ asset('frontend_assets/fontawesome/css/all.css') }}">
 	<link rel="stylesheet" href="{{ asset('frontend_assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('frontend_assets/css/customs.css') }}">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 	<link href="{{ asset('backend_assets/timeline.css') }}" rel="stylesheet" type="text/css" >
-	<style type="text/css">
-		span {
-		    color: #040404;
-		}
-		.image-size{
-			max-height: 150px !important;
-		}
-		.bg-light-green{
-            background-color: #f5ffd7e0;;
-        }
-        .bg-body-green{
-                background-color: #91d2ab3b;
-        }
-        .form-label{
-            color: #cf51a4 !important;
-        }
-	</style>
-
 	@stack('css')
-
 </head>
 <body>

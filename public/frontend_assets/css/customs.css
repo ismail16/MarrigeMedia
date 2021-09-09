@@ -1,0 +1,15 @@
+span {
+    color: #040404;
+}
+.image-size{
+	max-height: 150px !important;
+}
+.bg-light-green{
+    background-color: #f5ffd7e0;;
+}
+.bg-body-green{
+        background-color: #91d2ab3b;
+}
+.form-label{
+    color: #cf51a4 !important;
+}

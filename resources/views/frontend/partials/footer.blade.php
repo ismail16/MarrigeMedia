@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-md-12 mb-md-5 ftco-animate">
 					<div class="ftco-footer-widget">
-						<h1 class="logo">Marriage Gate</h1>
+						<h5 class="h1">Marriage Gate</h5>
 						<p class="text-justify form-label">
 							marriagegate.com, Matchmaking Service, was founded with a simple objective - to help people find happiness. marriagegate.com is a social networking site specialising in matchmaking and not just a matrimonial service. As a leader in what is sometimes known as the matrimony category. marriagegate.com has always differentiated itself from other matrimonials through its innovation-led approach. By redefining the way Bangladeshi brides and grooms meet for marriage, marriagegate.com has created a world-renowned brand that has changed the way of finding a life partner. <a href="{{ route('about_us') }}" class="text-light">Learn more<span class="ico_arrow"></span></a>
 						</p>
@@ -42,18 +42,12 @@
 					<ul class="footer_link">
 						<li><a href="{{ route('terms_conditions') }}" class="form-label">Terms of Use</a></li>
 						<li><a href="{{ route('privacy_policy') }}" class="form-label">Privacy Policy</a></li>
-						<!-- <li><a href="" class="form-label" rel="nofollow" target="_blank">Be Safe Online</a></li> -->
-						<!-- <li><a href="" class="form-label" rel="nofollow" target="_blank">Report Misuse</a></li> -->
-					
 					</ul>
 				</div>
 
 				<div class="col-sm-3">
 					<h3>More</h3>
 					<ul class="footer_link">
-						<!-- <li><a href="" target="_blank" class="form-label">VIP marriagegate</a></li> -->
-						<!-- <li><a href="" target="_blank" class="form-label">Select marriagegate</a></li> -->
-						<!-- <li><a href="" target="_blank" class="form-label">marriagegate Centres</a></li> -->
 						<li><a href="" class="form-label">Success Stories</a></li>
 					</ul>
 

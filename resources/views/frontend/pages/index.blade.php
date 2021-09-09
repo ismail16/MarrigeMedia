@@ -1,6 +1,6 @@
 
 @extends('frontend.layouts.master')
-@section('title','MarriageGate | Home')
+@section('title','Marriage Gate | Home')
 @section('content')
 @include('frontend.pages.search_bar')
 
@@ -11,7 +11,8 @@
 			<div class="container">
 				<div class="row justify-content-center pt-3 pb-3">
 					<div class="col-md-7 heading-section ftco-animate text-center">
-						<h3 class="mb-1">Latest Groom Profile</h3>
+						<h1 class="h3 mb-0 form-label">Marriage Gate</h1>
+						<h3 class="h4">Latest Groom Profile</h3>
 					</div>
 				</div>
 				<div class="row ftco-animate">
@@ -23,12 +24,12 @@
 								<div class="row">
 									<div class="col-md-5 pr-0 ">
 										@if($user->user_images->first()['status'] == 1)
-											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
+											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
 										@else
 											@if($user->gender == 'Female')
-											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="img-fluid image-size">
+											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid image-size">
 											@else
-											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="img-fluid image-size">
+											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid image-size">
 											@endif
 										@endif
 									</div>
@@ -68,6 +69,7 @@
 			<div class="container mb-2">
 				<div class="row justify-content-center pt-3 pb-3 ">
 					<div class="col-md-7 heading-section ftco-animate text-center">
+						<h2 class="h3 mb-0 form-label">Marriage Gate</h2>
 						<h3 class="mb-1">Latest Bride Profile</h3>
 					</div>
 				</div>
@@ -80,12 +82,12 @@
 									<div class="row">
 										<div class="col-md-5 pr-0">
 											@if($user->user_images->first()['status'] == 1)
-												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
+												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid image-size">
 											@else
 												@if($user->gender == 'Female')
-												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}">
+												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image">
 												@else
-												<img src="{{ asset('images/icons/flaticon/businessman.png') }}">
+												<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image">
 												@endif
 											@endif
 										</div>
@@ -175,6 +177,7 @@
 	<div class="container">
 		<div class="row justify-content-center mb-5 pb-3">
 			<div class="col-md-7 heading-section ftco-animate text-center">
+				<h3 class="h3 mb-0 form-label">Marriage Gate</h3>
 				<h2 class="mb-1">Price List </h2>
 				<h3 class="subheading form-label">Choose the Best Package from the List Below</h3>
 			</div>
@@ -329,6 +332,7 @@
 	<div class="container">
 		<div class="row justify-content-center mb-5 pb-3">
 			<div class="col-md-7 heading-section ftco-animate text-center">
+				<h4 class="h3 mb-0 form-label">Marriage Gate</h4>
 				<h2 class="mb-1">Success Story</h2>
 				<h3 class="subheading form-label">See the latest Success Story</h3>
 			</div>
