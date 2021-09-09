@@ -6,7 +6,7 @@
 	<meta name="robots" content="noindex" />
 	<title>@yield('title')</title>
 	<meta name="keywords" content="Marriage Media in Bangladesh, Matrimony Website In Bangladesh, Islamic Marriage Media In Bangladesh, Divorcee Matrimony In Bangladesh, Bangladesh Matrimony for Hindu, Bengali matrimony site" />
-    <meta name="description" content="Marriage Gate is Best Marriage Media in Bangladesh. 100% Secure and Trusted Matrimony sites in Bangladesh. Bangladeshi Most Preferred and Trusted Service for Finding a Life-Partner." />
+    <meta name="description" content="Marriage Gate is Best Marriage Media in Bangladesh. 100% Secure and Trusted Matrimony sites in Bangladesh. Trusted Service for Finding a Life-Partner." />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="{{ asset('images/icon.png') }}">

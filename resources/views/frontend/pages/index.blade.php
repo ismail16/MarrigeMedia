@@ -1,6 +1,6 @@
 
 @extends('frontend.layouts.master')
-@section('title','Marriage Gate | Home')
+@section('title','Marriage Gate | Best Marriage Media in Bangladesh')
 @section('content')
 @include('frontend.pages.search_bar')
 
