@@ -11,7 +11,7 @@
 			<div class="container">
 				<div class="row justify-content-center pt-3 pb-3">
 					<div class="col-md-7 heading-section ftco-animate text-center">
-						<h1 class="h3 mb-0 form-label">Marriage Gate</h1>
+						<h1 class="h3 mb-0 form-label">Marriage Gate</h1> 
 						<h3 class="h4">Latest Groom Profile</h3>
 					</div>
 				</div>
