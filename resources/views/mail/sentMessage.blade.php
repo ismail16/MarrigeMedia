@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Marriage Gate</title>
+  <title>Recieved Message</title>
   <style type="text/css">
     body {
       margin: 0; padding: 0; min-width: 100%!important;
@@ -76,6 +76,7 @@
           <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td class="h2" style="padding: 5px 0 0 0; color: #cf51a4; text-align: center;">
+                <!-- <span style="font-size:18px; border-bottom: 1px solid #f6f8f1;">Recieved Message</span> <br> -->
                Marriage Gate
               </td>
             </tr>
@@ -89,10 +90,12 @@
               <td class="bodycopy">
                 <h4>Dear {{$user->first_name}},</h4>
                 
-                <a href="{{route('authormailverificationdone', [$user->verifyToken, $user->id])}}" class="button" target="_blank">Verify Email Address</a> <br> <br>
+                <span>
 
-                If you’re having trouble clicking the "Verify Email Address" button, copy and paste the URL belowinto your web browser: <a href="{{route('authormailverificationdone', [$user->verifyToken, $user->id])}}" style="font-family: Avenir, Helvetica, sans-serif; box-sizing: border-box; color: #3869D4;">{{route('authormailverificationdone', [$user->verifyToken, $user->id])}}
-                </a>
+
+                </span>
+
+                        
 
                 <h4 style="margin-bottom: 5px;">Thank you, <br>
                   Marriage Gate

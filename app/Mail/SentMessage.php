@@ -7,16 +7,19 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class VerificationMail extends Mailable {
+class SentMessage extends Mailable {
   use Queueable, SerializesModels;
 
   public $user;
+  public $msg;
 
-  public function __construct(User $user) {
+  public function __construct($user, $msg) {
     $this->user = $user;
+    $this->msg = $msg;
   }
 
   public function build() {
-    return $this->subject('Verify Mail')->view('mail.sendvlink')->with('user', $this->user);
+
+    return $this->subject('Recieved Message')->view('mail.sentMessage', compact('user','mgs'));
   }
 }

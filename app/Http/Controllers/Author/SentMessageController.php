@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Author;
 
+use App\Mail\SentMessage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -33,6 +35,7 @@ class SentMessageController extends Controller
         ]);
 
         $user = Auth::user();
+        $sent_to_user = User::find($request->to_id);
         $PrivateMessages = new PrivateMessages;
 
         $PrivateMessages->from_id = $user->id;
@@ -41,8 +44,18 @@ class SentMessageController extends Controller
         $PrivateMessages->message = $request->message;
         $PrivateMessages->status = 0;
 
-        $PrivateMessages->save();
-         return redirect()->route('single_groom_bride', $request->to_id)->with('message','Sent Your Message Successfully.');
+
+        try {
+            $PrivateMessages->save();
+
+            $msg = PrivateMessages::find($PrivateMessages->id);
+
+            Mail::to($sent_to_user->email)->queue(new SentMessage($user, $msg));
+            
+            return redirect()->route('single_groom_bride', $request->to_id)->with('message','Sent Your Message Successfully.');
+        } catch (Exception $e) {
+            
+        }
     }
 
 
