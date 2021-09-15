@@ -68,6 +68,8 @@ class RecieveMessageController extends Controller
 
     public function destroy($id)
     {
-        //
+        $receive_message =  PrivateMessages::find($id);
+        $receive_message->delete();
+        return back()->with('message','Deleted Message Successfully.');
     }
 }

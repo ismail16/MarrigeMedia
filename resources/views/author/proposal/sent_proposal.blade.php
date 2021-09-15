@@ -57,7 +57,7 @@
 
                                                 <td>
                                                     @if($proposal_to_user_image)
-                                                        <img src="{{ asset('images/user_profile_image/'. $req_user_image->image) }}" height="65" width="100">
+                                                        <img src="{{ asset('images/user_profile_image/'. $proposal_to_user_image->image) }}" height="65" width="100">
                                                     @else
                                                         @if($sent_proposal_user->gender == 'Female')
                                                             <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" height="65" width="100">

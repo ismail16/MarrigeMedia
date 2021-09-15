@@ -78,6 +78,8 @@ class SentMessageController extends Controller
 
     public function destroy($id)
     {
-        //
+        $sent_message =  PrivateMessages::find($id);
+        $sent_message->delete();
+        return back()->with('message','Deleted Message Successfully.');
     }
 }
