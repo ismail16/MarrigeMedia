@@ -67,7 +67,7 @@
       background-color: #65844af2;
       text-decoration: none;
       padding: 5px;
-      color: #fff;
+      color: #fff !important;
       border-radius: 4px;
       border: 1px solid #6d8a53;
       text-align: center;
