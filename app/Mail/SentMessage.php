@@ -20,6 +20,6 @@ class SentMessage extends Mailable {
 
   public function build() {
 
-    return $this->subject('Recieved Message')->view('mail.sentMessage', compact('user','mgs'));
+    return $this->subject('Recieved Message')->view('mail.sentMessage')->with('user', $this->user)->with('msg', $this->msg);
   }
 }
