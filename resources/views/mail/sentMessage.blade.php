@@ -63,68 +63,90 @@
       .col425 {width: 425px!important;}
       .col380 {width: 380px!important;}
     }*/
+    .btn-success{
+      background-color: #65844af2;
+      text-decoration: none;
+      padding: 5px;
+      color: #fff;
+      border-radius: 4px;
+      border: 1px solid #6d8a53;
+      text-align: center;
+      font-size: 14px;
+    }
   </style>
 </head>
 
-<body yahoo bgcolor="#f6f8f1">
-<table width="100%" bgcolor="#f6f8f1" border="0" cellpadding="0" cellspacing="0">
-<tr>
-  <td>  
-    <table bgcolor="#ffffff" class="content" align="center" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td bgcolor="#e1f6ce" class="header">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td class="h2" style="padding: 5px 0 0 0; color: #cf51a4; text-align: center;">
-                <!-- <span style="font-size:18px; border-bottom: 1px solid #f6f8f1;">Recieved Message</span> <br> -->
-               Marriage Gate
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td class="innerpadding borderbottom">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td class="bodycopy">
-                <h4>Dear {{$user->first_name}},</h4>
-                
-                <span>
+<body>
+  <table bgcolor="#ffffff" class="content" align="center" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td bgcolor="#e1f6ce" class="header">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="h2" style="padding:0px; color: #cf51a4; text-align: center;">
+             Marriage Gate
+            </td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <span style="padding: 5px; background-color: white; color: #cf51a4; font-weight: bold;">
+                Recieved Message
+              </span>
+            </td>
+            <td style="text-align: right;">
+             <span style="padding: 5px; background-color: white; color: #cf51a4; font-weight: bold;">
+               {{ date('d-M-Y', strtotime($msg->created_at)) }}
+             </span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
 
+    <tr>
+      <td class="innerpadding borderbottom">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          
+          <tr>
+            <td class="bodycopy">
+              <h4 style="margin:0px;">
+                You Have a message from an User, 
+                <a href="{{ route('single_groom_bride',$user->id) }}" class="btn-success">See User Profile</a>
+              </h4>
+              
+              <h4 style="margin-bottom:0px;">Subject</h4>
+              <span>{{ $msg->subject}}</span>
 
-                </span>
+              <h4 style="margin-bottom:0px;">Message</h4>
+              <span>{{ $msg->message }}</span>
 
-                        
+              <h4 style="margin-bottom: 5px;">Thank you, <br>
+                Marriage Gate
+              </h4>
+            </td>
+          </tr>
 
-                <h4 style="margin-bottom: 5px;">Thank you, <br>
-                  Marriage Gate
-                </h4>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td class="innerpadding bodycopy" style="color: #ab5701;">
-          For Any Queries, Please mail to <a href="mailto:contact@marriagegate.com"><b>contact@marriagegate.com</b></a> </td>
-      </tr>
-      <tr>
-        <td class="footer" bgcolor="#e1f6ce">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td align="center" class="footercopy" style="color: #cf51a4">
-                Marriage Gate © <script type="text/JavaScript"> document.write(new Date().getFullYear()); </script> All rights reserved<br/>
-                <a href="#" class="unsubscribe"><font color="#cf51a4">Unsubscribe</font></a> 
-                <span class="hide">If don't like these emails</span>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    </td>
-  </tr>
-</table>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="innerpadding bodycopy" style="color: #ab5701;">
+        For Any Queries, Please mail to <a href="mailto:contact@marriagegate.com"><b>contact@marriagegate.com</b></a> </td>
+    </tr>
+    <tr>
+      <td class="footer" bgcolor="#e1f6ce">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center" class="footercopy" style="color: #cf51a4">
+              Marriage Gate © <script type="text/JavaScript"> document.write(new Date().getFullYear()); </script> All rights reserved<br/>
+              <a href="#" class="unsubscribe"><font color="#cf51a4">Unsubscribe</font></a> 
+              <span class="hide">If don't like these emails</span>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>

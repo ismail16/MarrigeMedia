@@ -47,8 +47,7 @@ class SentMessageController extends Controller
 
         try {
             $PrivateMessages->save();
-
-            $msg = PrivateMessages::find($PrivateMessages->id);
+            $msg = $PrivateMessages;
 
             Mail::to($sent_to_user->email)->queue(new SentMessage($user, $msg));
             

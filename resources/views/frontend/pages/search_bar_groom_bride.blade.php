@@ -22,7 +22,7 @@
 
 					<div class="col-md-6">
 						<div>
-							<label class="search-label text-dark mb-0">Marital Status</label>
+							<label class="search-label text-dark mb-0">M. Status</label>
 						</div>
 						<select class="form-control-sm w-100" name="marital_status">
 							<option value="Never_Married">Never Married</option>
