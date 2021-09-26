@@ -130,8 +130,6 @@ class PagesController extends Controller
         return view('frontend.pages.contact_us');
     } 
 
-    
-
     public function contact_us_post(Request $request)
     {
         $this->validate($request, [
@@ -148,6 +146,11 @@ class PagesController extends Controller
 
         $Contact->save();
         return redirect()->route('contact_us')->with('message','Sent Your Message Successfully.');
+    }
+
+    public function verifying_user()
+    {
+        return view('mail.verification');
     }
   
     public function create()

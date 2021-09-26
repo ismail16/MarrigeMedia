@@ -108,18 +108,17 @@ class RegisterController extends Controller
 
         if ($saveuser) {
             Mail::to($saveuser->email)->queue(new VerificationMail($saveuser));
-            return view('mail.verification');
+            // return view('mail.verification');
+             return $saveuser;
         }else{
             return back();
         }
 
     }
 
-
-
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)

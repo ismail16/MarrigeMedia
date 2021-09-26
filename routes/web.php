@@ -19,6 +19,7 @@ Route::any('/groom-bride-gallary/{id}', 'Frontend\PagesController@single_groom_b
 
 Route::post('/search-groom-bride', 'Frontend\PagesController@search_groom_bride')->name('search_groom_bride');
 
+Route::get('verifying-user', 'Frontend\PagesController@verifying_user')->name('verifying_user');
 
 Auth::routes();
 
