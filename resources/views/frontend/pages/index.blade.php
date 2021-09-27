@@ -21,19 +21,19 @@
 							@if($grooms)
 							@foreach($grooms as $user)
 							<div class="media-image border">
-								<div class="row">
-									<div class="col-md-5 pr-0 ">
+								<div class="row p-1">
+									<div class="col-md-5">
 										@if($user->user_images->first()['status'] == 1)
-											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
+											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid">
 										@else
 											@if($user->gender == 'Female')
-											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid image-size">
+											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid">
 											@else
-											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid image-size">
+											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid">
 											@endif
 										@endif
 									</div>
-									<div class="col-md-7 pl-2">
+									<div class="col-md-7">
 										<div class="border-bottom">
 											Profile ID-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
 												{{ $user->u_id }}
@@ -79,10 +79,10 @@
 							@if($brides)
 								@foreach($brides as $user)
 								<div class="media-image border">
-									<div class="row">
-										<div class="col-md-5 pr-0">
+									<div class="row p-1">
+										<div class="col-md-5">
 											@if($user->user_images->first()['status'] == 1)
-												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid image-size">
+												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid">
 											@else
 												@if($user->gender == 'Female')
 												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image">
@@ -91,9 +91,9 @@
 												@endif
 											@endif
 										</div>
-										<div class="col-md-7 pl-2">
+										<div class="col-md-7">
 											<div class="border-bottom">
-												ID-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
+												Profile ID-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
 													{{ $user->u_id }}
 												</a><br>
 												Name-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">

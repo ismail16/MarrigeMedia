@@ -13,9 +13,9 @@
 		<div class="row ftco-animate mb-2">
 			@if(count($brides)>0)
 				@foreach($brides as $user)
-				<div class="col-md-4 border">
-					<div class="row">
-						<div class="col-md-5 pr-0">
+				<div class="col-md-4 ">
+					<div class="row border m-1">
+						<div class="col-md-5 p-1">
 							@if($user->user_images->first()['status'] == 1)
 								<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
 							@else
@@ -26,7 +26,7 @@
 								@endif
 							@endif
 						</div>
-						<div class="col-md-7 pl-2">
+						<div class="col-md-7 p-1">
 							<div class="border-bottom">
 								ID-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
 									{{ $user->u_id }}
