@@ -33,14 +33,14 @@
 								<p class="form-label">contact@marriagegate.com</p>
 							</div>
 						</div>
-						<div class="col-md-6 p-1 d-flex m-0 card text-center aos-init aos-animate bg-body-green" data-aos="fade-up" data-aos-delay="200">
+						<!-- <div class="col-md-6 p-1 d-flex m-0 card text-center aos-init aos-animate bg-body-green" data-aos="fade-up" data-aos-delay="200">
 							<div class="pt-2 pb-2">
 								<i class="bx bx-phone-call contact-icon"></i>
 								<h5>Call Us</h5>
-								<p class="form-label">+8801686-254438</p>
+								<p class="form-label">+8801686-000000</p>
 							</div>
-						</div>
-						<div class="col-md-12 p-1 d-flex m-0 card text-center aos-init aos-animate bg-body-green" data-aos="fade-up">
+						</div> -->
+						<div class="col-md-6 p-1 d-flex m-0 card text-center aos-init aos-animate bg-body-green" data-aos="fade-up">
 							<div class="pt-2 pb-2">
 								<i class="bx bx-map contact-icon"></i>
 								<h5>Our Address</h5>

@@ -2,12 +2,7 @@
 @section('title','Sign Up')
 
 @section('content')
-<style type="text/css">
-    .invalid-feedback {
-        margin-top: -.25rem !important;
-    }
-</style>
-<section class="hero-wrap" style="background-image: url('https://www.taslimamarriagemedia.com/img/taslima-marriage-media-banner.jpg');">
+<section class="hero-wrap" style="background-image: url('{{ asset('images/reg_bg.jpg')}}');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
            
@@ -19,32 +14,32 @@
                             @endforeach
                     </div>
                 @endif
-                <div class="bg-light-green p-3">
-                    <h2 class="text-center border-bottom">Register or Sign Up</h2>
+                <div class="bg-light-green pl-3 pr-3 pb-3">
+                    <h3 class="text-center border-bottom mb-1 mt-1">Register or Sign Up</h3>
                     <div class="form-row">
                         <div class="col-md-6 form-group mb-1">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 First name<span class="text-danger">* </span>
                             </label>   
                             <input type="text" name="first_name" id="first_name" class="form-control-sm w-100" placeholder="First Name">
                             <span class="invalid-feedback d-block" id="first_name_err"></span>
                         </div>
                         <div class="col-md-6 form-group mb-1">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Last name<span class="text-danger">* </span>
                             </label>
                             <input type="text" name="last_name" id="last_name" class="form-control-sm w-100" placeholder="Last Name">
                             <span class="invalid-feedback d-block" id="last_name_err"></span>
                         </div>
                         <div class="col-md-4 form-group mb-1">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Email<span class="text-danger">* </span>
                             </label>   
                             <input type="email" name="email" id="email" class="form-control-sm w-100" placeholder="Email" autocomplete="off">
                             <span class="invalid-feedback d-block" id="email_err"></span>
                         </div>
                         <div class="col-md-4 form-group mb-1">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Mobile<span class="text-danger">* </span>
                             </label>
                             <input type="number" name="mobile" id="mobile" class="form-control-sm w-100" placeholder="Mobile">
@@ -52,7 +47,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Gender<span class="text-danger">* </span>
                             </label>
                             <select id="gender" name="gender" class="form-control-sm w-100" >
@@ -64,7 +59,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Profession<span class="text-danger">* </span>
                             </label>
                             <select id="profession" name="profession" class="form-control-sm w-100">
@@ -167,7 +162,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Meretial status<span class="text-danger">* </span>
                             </label>
                             <select id="marital_status" name="marital_status"  class="form-control-sm w-100">
@@ -182,7 +177,7 @@
                         </div>
 
                         <div class="col-md-4 form-group mb-1">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Birthday<span class="text-danger">* </span>
                             </label>
                             <input type="date" name="birthday" id="birthday" onchange="date_of_birth_change(event)" class="form-control-sm w-100" placeholder=" ">
@@ -190,7 +185,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Country<span class="text-danger">* </span>
                             </label>
                             <select id="country" name="country" class="form-control-sm w-100">
@@ -201,7 +196,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 City / District<span class="text-danger">* </span>
                             </label>
                             <input type="text" name="district" id="district"  class="form-control-sm w-100" placeholder=" ">
@@ -209,7 +204,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Looking For<span class="text-danger">* </span>
                             </label>
                             <select class="form-control-sm w-100" id="looking_for" name="looking_for">
@@ -221,7 +216,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Religion<span class="text-danger">* </span>
                             </label>
                             <select class="form-control-sm w-100"  id="religion" name="religion">
@@ -241,7 +236,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
-                            <label class="mb-0 form-label">Caste</label>
+                            <label class="mb-0 form-label font-weight-bold">Caste</label>
                            <select class="form-control-sm w-100" id="social_order"  name="social_order">
                                 <option value="">Social Order/Caste</option>
                                 <option value="Just_Muslim">Just Muslim</option>
@@ -263,7 +258,7 @@
                         </div>
 
                         <div class="col-md-4 form-group mb-1">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Profile Create By<span class="text-danger">* </span>
                             </label>
                             <select class="form-control-sm w-100" id="createdby" name="createdby"  autocomplete="off">
@@ -277,12 +272,12 @@
                         </div>
 
                         <!-- <div class="col-md-4 form-group mb-1">
-                            <label class="mb-0 form-label">guardian_mobile</label>
+                            <label class="mb-0 form-label font-weight-bold">guardian_mobile</label>
                             <input type="text" name="guardian_mobile" class="form-control-sm w-100" placeholder="guardian_mobile">
                         </div> -->
 
                         <div class="form-group mb-1 col-md-6">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Create password<span class="text-danger">* </span>
                             </label>
                             <input type="password" name="password" id="password" class="form-control-sm w-100">
@@ -290,7 +285,7 @@
                         </div>
 
                         <div class="form-group mb-1 col-md-6">
-                            <label class="mb-0 form-label">
+                            <label class="mb-0 form-label font-weight-bold">
                                 Re-type password<span class="text-danger">* </span>
                             </label>
                             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control-sm w-100">
@@ -320,10 +315,8 @@
 @endsection
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
-
 <script type="text/javascript">
-    function submit_form(){
-
+        function submit_form(){
         var first_name = $("#first_name").val();
         var last_name = $("#last_name").val();
         var email = $("#email").val();
@@ -346,9 +339,6 @@
         }else{
             var agreement = '';
         }
-
-
-        console.log(agreement);
 
         $.ajax({
             url: "{{route('registration.store')}}",
@@ -381,7 +371,7 @@
             }
         });
     }
-// first_name last_name email mobile gender profession marital_status birthday country district looking_for religion social_order createdby password password_confirmation agreement
+    // first_name last_name email mobile gender profession marital_status birthday country district looking_for religion social_order createdby password password_confirmation agreement
 
     // *****************Validation******************
     function date_of_birth_change(e){

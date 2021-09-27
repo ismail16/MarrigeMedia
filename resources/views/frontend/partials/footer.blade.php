@@ -112,7 +112,7 @@
 
 		gtag('config', 'UA-23581568-13');
 	</script>
-	<script src="{{ asset('frontend_assets/js/rocket-loader.min.js" data-cf-settings="|49" defer=""></script>
+	<!-- <script src="{{ asset('frontend_assets/js/rocket-loader.min.js" data-cf-settings="|49" defer=""></script> -->
 	<script>
 	    $('.select2').select2();
 	</script>

@@ -1,3 +1,6 @@
+.invalid-feedback {
+    margin-top: -.25rem !important;
+}
 span {
     color: #040404;
 }
