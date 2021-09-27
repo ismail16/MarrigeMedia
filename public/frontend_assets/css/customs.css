@@ -16,3 +16,16 @@ span {
 .form-label{
     color: #cf51a4 !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .ftco-navbar-light .navbar-nav>.nav-item>.nav-link{
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+  }
+  .navbar-collapse{
+    background-color: #c2e0a694 !important;
+  }
+  .ftco-navbar-light{
+    padding: 5px 15px 0px 15px !important;
+  }
+}

@@ -73,9 +73,6 @@
           .ftco-navbar-light{
             padding: 5px 15px 0px 15px !important;
           }
-          .navbar-brand{
-            /*margin-left: 100px;*/
-          }
         }
     </style>
 
