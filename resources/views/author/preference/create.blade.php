@@ -865,3 +865,111 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script type="text/javascript">
+
+    // ============marital_status==============
+    var marital_status = new SlimSelect({
+      select: '#marital_status'
+    })
+
+
+    // ============family_status==============
+    var family_status = new SlimSelect({
+      select: '#family_status'
+    })
+
+
+    // ============skin_color==============
+    var skin_color = new SlimSelect({
+      select: '#skin_color'
+    })
+
+
+    // ============education_level==============
+    var education_level = new SlimSelect({
+      select: '#education_level'
+    })
+
+
+
+    // ============education_level==============
+    var subject = new SlimSelect({
+      select: '#subject'
+    })
+
+
+    // ============education_level==============
+    var profession = new SlimSelect({
+      select: '#profession'
+    })
+
+
+    // ============language==============
+    var language = new SlimSelect({
+      select: '#language'
+    })
+
+
+
+    // complextion, bodytype, country, district, residency,Partner Knows, 
+
+    // My Hobbies, Interests & More, Favorite Music,Favorite Reads,Preferred Movies,Favourite Cooking,Dress Style
+
+    // Religious View,
+
+    var url = "{{URL('member/preference/store')}}";
+    function EditPrefference() {
+
+        $.ajax({
+            url: url,
+            type: "PATCH",
+            cache: false,
+            data:{
+                _token:'{{ csrf_token() }}',
+                minAge: $("#minAge").val(),
+                maxAge : $("#maxAge").val(),
+                religion : $("#religion").val(),
+                family_status : family_status.selected(),
+                marital_status : marital_status.selected(),
+                allow_children : $("#allow_children").val(),
+                details_you_prefer : $("#details_you_prefer").val(),
+                minHeight : $("#minHeight").val(),
+                maxHeight : $("#maxHeight").val(),
+                minWeight : $("#minWeight").val(),
+                maxWeight : $("#maxWeight").val(),
+                blood_group : $("#blood_group").val(),
+                hair_color : $("#hair_color").val(),
+                eye_color : $("#eye_color").val(),
+                skin_color : skin_color.selected(),
+                disabilities_status : $("#disabilities_status").val(),
+                education_level : education_level.selected(),
+                subject : subject.selected(),
+                profession : profession.selected(),
+                country : $("#country").val(),
+                district : $("#district").val(),
+                citizenship : $("#citizenship").val(),
+                smoke_status : $("#smoke_status").val(),
+                alcohol_status : $("#alcohol_status").val(),
+                diat_status : $("#diat_status").val(),
+                language : language.selected()
+            },
+            success:function(data) {
+                Toast.fire({
+                  icon: 'success',
+                  title: 'Save preference successfully'
+                })
+            },
+            error: function(request,status,errorThrown) {
+                Toast.fire({
+                  icon: 'error',
+                  title: 'Something went wrong!'
+                })
+            }
+            
+        });
+    }
+    
+  </script>
+@endpush
