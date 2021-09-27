@@ -182,7 +182,7 @@
 				<h3 class="subheading form-label">Choose the Best Package from the List Below</h3>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row d-flex justify-content-center">
 			@foreach($package_prices as $package_price)
 			<div class="col-md-3 ftco-animate">
 				<div class="card p-2">
@@ -294,7 +294,7 @@
 					<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 						<div class="block-18 text-center">
 							<div class="text">
-								<strong class="number form-label" data-number="1030">0</strong>
+								<strong class="number form-label" data-number="235">0</strong>
 								<p class="text-dark">Happy Customers</p>
 							</div>
 						</div>
@@ -302,7 +302,7 @@
 					<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 						<div class="block-18 text-center">
 							<div class="text">
-								<strong class="number form-label" data-number="4560">0</strong>
+								<strong class="number form-label" data-number="1342">0</strong>
 								<p class="text-dark">Membes</p>
 							</div>
 						</div>
@@ -310,7 +310,7 @@
 					<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 						<div class="block-18 text-center">
 							<div class="text">
-								<strong class="number form-label" data-number="5">0</strong>
+								<strong class="number form-label" data-number="3">0</strong>
 								<p class="text-dark">Years of Experience</p>
 							</div>
 						</div>
@@ -318,7 +318,7 @@
 					<div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
 						<div class="block-18 text-center">
 							<div class="text">
-								<strong class="number form-label" data-number="466">0</strong>
+								<strong class="number form-label" data-number="137">0</strong>
 								<p class="text-dark">Success Story</p>
 							</div>
 						</div>

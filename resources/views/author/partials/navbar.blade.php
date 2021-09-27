@@ -1,5 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar"  style="background: #e1f6ce !important;">
-    <div class="container-fluid">
+    <div class="container">
+
+        <div class="sidebar d-lg-none">
+            <div class="toggle">
+                <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                    <!-- <i class="fa fa-align-justify text-primary h5"></i> -->
+                </a>
+            </div>
+        </div>
+
         <a class="navbar-brand" href="/">
             <img class="img-responsive" src="{{ asset('images/logo.png') }}" alt="Taslima Marriage Media" style="width: 115px;border-radius: 4px;margin-top: -12px;">
         </a>

@@ -14,7 +14,7 @@
     <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
+            <a class="nav-link" data-toggle="dropdown" href="{{ route('admin.message.index') }}">
                 <i class="far fa-comments"></i>
                 <span class="badge badge-danger navbar-badge">
                     {{ \App\Models\Contact::where('status', 0)->count() }}
@@ -23,9 +23,11 @@
         </li>
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
+            <a class="nav-link" data-toggle="dropdown" href="{{ route('admin.user-info.index') }}">
                 <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge">0</span>
+                <span class="badge badge-warning navbar-badge">
+                    {{ \App\User::where('activation', 0)->where('role_id', 2)->count() }}
+                </span>
             </a>
         </li>
         <li class="nav-item dropdown">

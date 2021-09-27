@@ -174,8 +174,8 @@ main {
 
 /* Burger */
 .burger {
-  width: 28px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   position: relative;
   z-index: 99;
@@ -201,20 +201,20 @@ main {
   content: ""; }
 
 .burger:before {
-  top: 3px; }
+  top: 6px; }
 
 .burger span {
   top: 12px; }
 
 .burger:after {
-  top: 20px; }
+  top: 18px; }
 
 /* Hover */
 .burger:hover:before {
   top: 5px; }
 
 .burger:hover:after {
-  top: 23px; 
+  top: 20px; 
 }
 
 /* Click */

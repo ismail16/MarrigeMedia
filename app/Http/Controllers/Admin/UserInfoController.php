@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Models\PersonalInfo;
 use App\Models\UserProfileImage;
+use App\Models\Preference;
 
 class UserInfoController extends Controller
 {
@@ -78,15 +79,22 @@ class UserInfoController extends Controller
              $PersonalInfo->delete();
         }
         $UserProfileImages = UserProfileImage::where('user_id', $user->id)->get();
-        if ($UserProfileImages) {
-             $UserProfileImages->delete();
+        foreach($UserProfileImages as $image){
+            if (file_exists('images/user_profile_image/'.$image->image)){
+                unlink('images/user_profile_image/'.$image->image);
+            }
+            $image->delete();
         }
+
+
         // $receive_proposal = Proposal::where('receive_proposal_user', Auth::user()->id)->get();
         // $sent_messages =  PrivateMessages::where('from_id', $user->id)->orderBy('id', 'desc')->get();
         $preference =  Preference::where('user_id', $user->id)->first();
-
-        $success_story->delete();
-        return redirect()->route('admin.success-story.index')->with('message','Success Story Delete Successfully.');
+        if ($preference) {
+             $preference->delete();
+        }
+        $user->delete();
+        return back()->with('message','User Delete Successfully.');
 
     }
 }

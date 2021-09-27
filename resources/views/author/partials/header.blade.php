@@ -62,6 +62,21 @@
         .table.table-bordered.dataTable tbody td{
             background-color: #fff !important;
         }
+        @media only screen and (max-width: 600px) {
+          .ftco-navbar-light .navbar-nav>.nav-item>.nav-link{
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+          }
+          .navbar-collapse{
+            background-color: #c2e0a694 !important;
+          }
+          .ftco-navbar-light{
+            padding: 5px 15px 0px 15px !important;
+          }
+          .navbar-brand{
+            /*margin-left: 100px;*/
+          }
+        }
     </style>
 
     <link rel="stylesheet" href="{{ asset('backend_assets/slimselect.min.css') }}">

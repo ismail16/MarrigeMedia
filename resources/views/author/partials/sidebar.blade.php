@@ -1,7 +1,3 @@
-
-
-
-
 <div class="card mt-2 bg-light-green d-none d-lg-block">
   <div class="card-header pb-0 pt-2">
       <h4>Quick Access</h4>
@@ -108,12 +104,7 @@
 
 
 <aside class="sidebar d-lg-none">
-    <div class="toggle">
-        <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
-            <span></span>
-            <!-- <i class="fa fa-align-justify text-primary h5"></i> -->
-        </a>
-    </div>
+    
     <div class="side-inner">
 
 

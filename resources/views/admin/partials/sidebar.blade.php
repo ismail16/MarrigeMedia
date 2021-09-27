@@ -20,7 +20,7 @@
                         <p>Message</p>
                     </a>
                 </li>
-                <li class="">Settings</li>
+                <!-- <li class="">Settings</li> -->
                 <li class="nav-item has-treeview">
                     <a href="{{ route('admin.success-story.index') }}" class="nav-link {{Request::is('admin/success-story*') ? 'active':''}}">
                         <i class="nav-icon fas fa-hands-helping"></i>
