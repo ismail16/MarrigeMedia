@@ -24,18 +24,18 @@
                         <div class="col-sm-3">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Minimum Age *</label>
-                                <input type="number" id="minAge" class="form-control-sm w-100" name="minAge" placeholder="Ex. 22">
+                                <input type="number" id="minAge" class="form-control-sm w-100" name="minAge" placeholder="Ex. 22" required>
                             </div>
                         </div>
                         <div class="col-sm-3"> 
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Maximum Age *</label>
-                                <input type="number" id="maxAge" class="form-control-sm w-100" name="maxAge" placeholder="Ex. 30">
+                                <input type="number" id="maxAge" class="form-control-sm w-100" name="maxAge" placeholder="Ex. 30" required>
                             </div>
                         </div>
                         <div class="col-sm-3">
                             <label class="mb-0 form-label">Religion *</label>
-                            <select class="form-control-sm w-100"  id="religion" name="religion">
+                            <select class="form-control-sm w-100"  id="religion" name="religion" required>
                                 <option value="Islam">Islam</option>
                                 <option value="Hindu">Hindu</option>
                                 <option value="Christian">Christian</option>
@@ -51,8 +51,8 @@
                         <div class="col-sm-3"> 
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Family status *</label>
-                                <select class="form-control-sm w-100 change-with-other" name="family_status">
-                                    <option value="Middle_class" selected>Middle Class</option>
+                                <select class="form-control-sm w-100 change-with-other" id="family_status" name="family_status" multiple required>
+                                    <option value="Middle_class">Middle Class</option>
                                     <option value="Upper_middle_class">Upper middle class</option>
                                     <option value="Lower_middle_class">Lower middle class</option>
                                     <option value="Upper_class">Upper Class</option>
@@ -63,7 +63,7 @@
 
                         <div class="col-md-3">
                             <label class="mb-0 form-label">Meretial status *</label>
-                            <select id="marital_status" name="marital_status"  class="form-control-sm w-100">
+                            <select class="form-control-sm w-100 change-with-other" id="marital_status" name="marital_status" multiple required>
                                 <option value="Never_Married">Never Married</option>
                                 <option value="Legally_Separated">Legally Separated</option>
                                 <option value="Divorced">Divorced</option>
@@ -73,8 +73,8 @@
                         </div>
                         <div class="col-sm-3">
                             <div class="form-group mb-1">
-                                <label class="mb-0 form-label">Children?</label>
-                                <select class="form-control-sm w-100" name="do_u_have_children">
+                                <label class="mb-0 form-label">Allow Children?</label>
+                                <select class="form-control-sm w-100" name="allow_children">
                                     <option value="No" selected="">No</option>
                                     <option value="Yes">Yes</option>
                                 </select>
@@ -84,7 +84,7 @@
                         <div class="col-sm-6">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Details you preferance(short)</label>
-                                <textarea class="form-control-sm w-100" rows="1" cols="50" name="details_you_prefer"></textarea>
+                                <textarea class="form-control-sm w-100" rows="1" cols="50" name="details_you_prefer">I am </textarea>
                             </div>
                         </div>
 
@@ -97,7 +97,7 @@
                         <div class="col-sm-3">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Min Height *</label>
-                                <select class="form-control-sm w-100" name="minHeight">
+                                <select class="form-control-sm w-100" name="minHeight" required>
                                     <option value="4.0">4 Feet</option>
                                     <option value="4.1">4 Feet 1 Inch</option>
                                     <option value="4.2">4 Feet 2 Inch</option>
@@ -141,7 +141,7 @@
                         <div class="col-sm-3">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Max Height *</label>
-                                <select class="form-control-sm w-100" name="maxHeight">
+                                <select class="form-control-sm w-100" name="maxHeight" required>
                                     <option value="4.0">4 Feet</option>
                                     <option value="4.1">4 Feet 1 Inch</option>
                                     <option value="4.2">4 Feet 2 Inch</option>
@@ -179,19 +179,19 @@
                                     <option value="6.10">6 Feet 10 Inch</option>
                                     <option value="7.0">6 Feet 10 Inch</option>
                                     <option value="7+">More than 7 Feet</option>
-                                </select>
+                                </select >
                             </div>
                         </div>
                         <div class="col-sm-3"> 
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Min Weight(kg) *</label>
-                                <input type="number" class="form-control-sm w-100" name="minWeight" placeholder="Ex. 50">
+                                <input type="number" class="form-control-sm w-100" name="minWeight" placeholder="Ex. 50" required>
                             </div>
                         </div>
                         <div class="col-sm-3"> 
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Max Weight(kg) *</label>
-                                <input type="number" class="form-control-sm w-100" name="maxWeight" placeholder="Ex. 65">
+                                <input type="number" class="form-control-sm w-100" name="maxWeight" placeholder="Ex. 65" required>
                             </div>
                         </div>
 
@@ -199,8 +199,9 @@
                         <div class="col-sm-3">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Blood Group *</label>
-                                <select class="form-control-sm w-100" name="blood_group">
-                                    <option value="B+" selected>B (+)ve</option>
+                                <select class="form-control-sm w-100 change-with-other" id="blood_group" name="blood_group" multiple required>
+                                    <option value="Any" selected>Any</option>
+                                    <option value="B+">B (+)ve</option>
                                     <option value="A+">A (+)ve</option>
                                     <option value="A-">A (-)ve</option>
                                     <option value="B-">B (-)ve</option>
@@ -215,11 +216,11 @@
                             <div class="other-area">
                                 <div class="form-group mb-1">
                                     <label class="mb-0 form-label">Hair Color *</label>
-                                    <select class="form-control-sm w-100" name="hair_color">
+                                    <select class="form-control-sm w-100" name="hair_color" required>
                                         <option value="Black" selected>Black</option>
                                         <option value="Brown">Brown</option>
                                         <option value="White">White</option>
-                                        <option value="Others">Others</option>
+                                        <option value="Any">Any</option>
                                     </select>
                                 </div>
                             </div>
@@ -228,11 +229,11 @@
                             <div class="other-area">
                                 <div class="form-group mb-1">
                                     <label class="mb-0 form-label">Eye Color *</label>
-                                    <select class="form-control-sm w-100 change-with-other" name="eye_color">
+                                    <select class="form-control-sm w-100 change-with-other" name="eye_color" required>
                                         <option value="Black" selected>Black</option>
                                         <option value="Brown">Brown</option>
                                         <option value="White">White</option>
-                                        <option value="Others">Others</option>
+                                        <option value="Any">Any</option>
                                     </select>
                                 </div>
                             </div>    
@@ -241,12 +242,12 @@
                             <div class="other-area">
                                 <div class="form-group mb-1">
                                     <label class="mb-0 form-label">Skin Color *</label>
-                                    <select class="form-control-sm w-100 change-with-other" id="skin_color" name="skin_color" multiple>
+                                    <select class="form-control-sm w-100 change-with-other" id="skin_color" name="skin_color" multiple required>
                                        <option value="Very_Fair">Very Fair</option>
                                        <option value="Fair">Fair</option>
                                         <option value="Brown">Brown</option>
                                         <option value="Dark">Dark</option>
-                                        <option value="Others">Others</option>
+                                        <option value="Any">Any</option>
                                     </select>
                                 </div>
                             </div>
@@ -255,7 +256,7 @@
                             <div class="other-area">
                                 <div class="form-group mb-1">
                                     <label class="mb-0 form-label">Disabilities? *</label>
-                                    <select class="form-control-sm w-100 change-with-other" name="disabilities_status">
+                                    <select class="form-control-sm w-100 change-with-other" name="disabilities_status" required>
                                         <option value="No" selected="">No</option>
                                         <option value="Yes">Yes</option>
                                     </select>
@@ -270,7 +271,7 @@
                             <div class="other-area">
                                 <div class="form-group mb-1">
                                     <label class="mb-0 form-label">Education Level *</label>
-                                    <select class="form-control-sm w-100" name="education_level">
+                                    <select class="form-control-sm w-100 change-with-other" id="education_level" name="education_level" multiple required>
                                         <option value="M_A" selected>M A</option>
                                         <option class="High_School_pass">High School pass</option>
                                         <option value="SSC">SSC</option>
@@ -303,7 +304,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Major Subject *</label>
-                                <select class="form-control-sm w-100" name="subject">
+                                <select class="form-control-sm w-100 change-with-other" id="subject" name="subject" multiple required>
                                     <option value="IT">IT</option>
                                     <option value="Accounting">Accounting</option>
                                     <option value="English">English</option>
@@ -411,7 +412,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">My Profession *</label>
-                                <select class="form-control-sm w-100" name="profession">
+                                <select class="form-control-sm w-100 change-with-other" id="profession" name="profession" multiple required>
                                     <option value="Engineer">Engineer</option>
                                     <option value="Banker">Banker</option>
                                     <option value="Doctor">Doctor</option>
@@ -513,7 +514,7 @@
                                     <option value="Transportation_professional">Transportation professional</option>
                                     <option value="Voiunteer">Voiunteer</option>
                                     <option value="Zoologist">Zoologist</option>
-                                </select>
+                                </select>                                
                             </div>
                         </div>
                     </div>
@@ -524,7 +525,7 @@
                         <div class="col-md-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Country of Residence *</label>
-                                <select class="form-control-sm w-100" name="country">
+                                <select class="form-control-sm w-100 change-with-other" id="country" name="country" multiple required>
                                     <option value="Bangladesh" selected>Bangladesh</option>
                                     <option value="UK">United Kingdom</option>
                                     <option value="USA">United States</option>
@@ -562,12 +563,13 @@
                                     <option value="Brazil">Brazil</option>
                                     <option value="Other">Other</option>
                                 </select>
+                               
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">District *</label>
-                                <select class="form-control-sm w-100" name="district">
+                                <select class="form-control-sm w-100 change-with-other" id="district" name="district" multiple required>
                                     <option value="Tangail">Tangail</option>
                                     <option value="Bagerhat">Bagerhat</option>
                                     <option value="Bandarban">Bandarban</option>
@@ -638,8 +640,8 @@
                         <div class="col-md-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Citizenship *</label>
-                                <select class="form-control-sm w-100" name="citizenship">
-                                    <option value="Bangali">Bangali</option>
+                                <select class="form-control-sm w-100 change-with-other" id="citizenship" name="citizenship" multiple required>
+                                    <option value="Bangali">Bangladeshi</option>
                                     <option value="Indian">Indian</option>
                                     <option value="Canada">Canada</option>
                                     <option value="USA">USA</option>
@@ -683,7 +685,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Smoke? *</label>
-                                <select class="form-control-sm w-100" name="smoke_status">
+                                <select class="form-control-sm w-100" name="smoke_status" required>
                                     <option value="No" selected="">No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="Sometimes">Sometimes</option>
@@ -693,7 +695,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Addicted to alcohol? *</label>
-                                <select class="form-control-sm w-100" name="alcohol_status">
+                                <select class="form-control-sm w-100" name="alcohol_status" required>
                                     <option value="No" selected="">No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="Sometimes">Sometimes</option>
@@ -704,7 +706,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Diat Status *</label>
-                                <select class="form-control-sm w-100" name="diat_status">
+                                <select class="form-control-sm w-100" name="diat_status" required>
                                     <option value="Not_to_say" selected>Not to say</option>
                                     <option value="Vag">Vag</option>
                                     <option value="Non_Vag">Non Vag</option>
@@ -715,142 +717,80 @@
                     <div class="row bg-off-pink">
                         <div class="col-md-12">
                             <label class="mb-0 form-label">Language preferance *</label>
-                            <div class="row">
-
-                                <div class="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Bangla"> Bangla
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="English" checked=""> English
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Hindi"> Hindi
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Arabic"> Arabic
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Spanish"> Spanish
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="German"> German
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Italian"> Italian
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Russian"> Russian
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Urdu"> Urdu
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Chinese"> Chinese
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="French"> French
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Tamil"> Tamil
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Dutch"> Dutch
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Persian"> Persian
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="language[]" value="Malay based"> Malay based
-                                            <span class="form-check-sign">
-                                                <span class="check"></span>
-                                            </span>
-                                        </label>
-                                    </div> 
-                                </div>
-                            </div>
+                            <select class="form-control-sm w-100 change-with-other" id="language" name="language" multiple required>
+                              <option value="Afrikaans">Afrikaans</option>
+                              <option value="Albanian">Albanian</option>
+                              <option value="Arabic">Arabic</option>
+                              <option value="Armenian">Armenian</option>
+                              <option value="Basque">Basque</option>
+                              <option value="Bengali">Bengali</option>
+                              <option value="Bulgarian">Bulgarian</option>
+                              <option value="Catalan">Catalan</option>
+                              <option value="Cambodian">Cambodian</option>
+                              <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                              <option value="Croatian">Croatian</option>
+                              <option value="Czech">Czech</option>
+                              <option value="Danish">Danish</option>
+                              <option value="Dutch">Dutch</option>
+                              <option value="English">English</option>
+                              <option value="Estonian">Estonian</option>
+                              <option value="Fiji">Fiji</option>
+                              <option value="Finnish">Finnish</option>
+                              <option value="French">French</option>
+                              <option value="Georgian">Georgian</option>
+                              <option value="German">German</option>
+                              <option value="Greek">Greek</option>
+                              <option value="Gujarati">Gujarati</option>
+                              <option value="Hebrew">Hebrew</option>
+                              <option value="Hindi">Hindi</option>
+                              <option value="Hungarian">Hungarian</option>
+                              <option value="Icelandic">Icelandic</option>
+                              <option value="Indonesian">Indonesian</option>
+                              <option value="Irish">Irish</option>
+                              <option value="Italian">Italian</option>
+                              <option value="Japanese">Japanese</option>
+                              <option value="Javanese">Javanese</option>
+                              <option value="Korean">Korean</option>
+                              <option value="Latin">Latin</option>
+                              <option value="Latvian">Latvian</option>
+                              <option value="Lithuanian">Lithuanian</option>
+                              <option value="Macedonian">Macedonian</option>
+                              <option value="Malay">Malay</option>
+                              <option value="Malayalam">Malayalam</option>
+                              <option value="Maltese">Maltese</option>
+                              <option value="Maori">Maori</option>
+                              <option value="Marathi">Marathi</option>
+                              <option value="Mongolian">Mongolian</option>
+                              <option value="Nepali">Nepali</option>
+                              <option value="Norwegian">Norwegian</option>
+                              <option value="Persian">Persian</option>
+                              <option value="Polish">Polish</option>
+                              <option value="Portuguese">Portuguese</option>
+                              <option value="Punjabi">Punjabi</option>
+                              <option value="Quechua">Quechua</option>
+                              <option value="Romanian">Romanian</option>
+                              <option value="Russian">Russian</option>
+                              <option value="Samoan">Samoan</option>
+                              <option value="Serbian">Serbian</option>
+                              <option value="Slovak">Slovak</option>
+                              <option value="Slovenian">Slovenian</option>
+                              <option value="Spanish">Spanish</option>
+                              <option value="Swahili">Swahili</option>
+                              <option value="Swedish ">Swedish </option>
+                              <option value="Tamil">Tamil</option>
+                              <option value="Tatar">Tatar</option>
+                              <option value="Telugu">Telugu</option>
+                              <option value="Thai">Thai</option>
+                              <option value="Tibetan">Tibetan</option>
+                              <option value="Tonga">Tonga</option>
+                              <option value="Turkish">Turkish</option>
+                              <option value="Ukrainian">Ukrainian</option>
+                              <option value="Urdu">Urdu</option>
+                              <option value="Uzbek">Uzbek</option>
+                              <option value="Vietnamese">Vietnamese</option>
+                              <option value="Welsh">Welsh</option>
+                              <option value="Xhosa">Xhosa</option>
+                            </select>
                         </div>
                     </div>
                     
@@ -873,39 +813,42 @@
     var marital_status = new SlimSelect({
       select: '#marital_status'
     })
-
-
     // ============family_status==============
     var family_status = new SlimSelect({
       select: '#family_status'
     })
-
-
     // ============skin_color==============
     var skin_color = new SlimSelect({
       select: '#skin_color'
     })
-
-
+    // ============skin_color==============
+    var blood_group = new SlimSelect({
+      select: '#blood_group'
+    })
     // ============education_level==============
     var education_level = new SlimSelect({
       select: '#education_level'
     })
-
-
-
-    // ============education_level==============
+    // ============subject==============
     var subject = new SlimSelect({
       select: '#subject'
     })
-
-
-    // ============education_level==============
+    // ============profession==============
     var profession = new SlimSelect({
       select: '#profession'
     })
-
-
+    // ============district==============
+    var country = new SlimSelect({
+      select: '#country'
+    })
+    // ============district==============
+    var district = new SlimSelect({
+      select: '#district'
+    }) 
+    // ============district==============
+    var citizenship = new SlimSelect({
+      select: '#citizenship'
+    })
     // ============language==============
     var language = new SlimSelect({
       select: '#language'

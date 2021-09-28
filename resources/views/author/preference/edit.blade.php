@@ -205,7 +205,7 @@
                                    <option value="Fair">Fair</option>
                                     <option value="Brown">Brown</option>
                                     <option value="Dark">Dark</option>
-                                    <option value="Others">Others</option>
+                                    <option value="Any">Any</option>
                                 </select>
                             </div>
                         </div>
@@ -223,6 +223,7 @@
                                 <option value="AB-" {{ $preference->blood_group=='AB-'?'selected':'' }}>AB (-)ve</option>
                                 <option value="O+" {{ $preference->blood_group=='O+'?'selected':'' }}>O (+)ve</option>
                                 <option value="O-" {{ $preference->blood_group=='O-'?'selected':'' }}>O (-)ve</option>
+                                <option value="Any" {{ $preference->blood_group=='Any'?'selected':'' }}>Any</option>
                             </select>
                         </div>   
                     </div>
@@ -717,7 +718,6 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Language preferance *</label>
-                            
                             <select name="language" id="language" multiple>
                               <option value="Afrikaans">Afrikaans</option>
                               <option value="Albanian">Albanian</option>
