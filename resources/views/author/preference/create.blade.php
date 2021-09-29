@@ -21,19 +21,19 @@
                 <div class="card-body pt-2 bg-light-green">
                     <h5 class="border-bottom font-italic font-weight-bold pt-2">Basic Information</h5>
                     <div class="row bg-off-pink">
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Minimum Age *</label>
                                 <input type="number" id="minAge" class="form-control-sm w-100" name="minAge" placeholder="Ex. 22" required>
                             </div>
                         </div>
-                        <div class="col-sm-3"> 
+                        <div class="col-sm-4"> 
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Maximum Age *</label>
                                 <input type="number" id="maxAge" class="form-control-sm w-100" name="maxAge" placeholder="Ex. 30" required>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <label class="mb-0 form-label">Religion *</label>
                             <select class="form-control-sm w-100"  id="religion" name="religion" required>
                                 <option value="Islam">Islam</option>
@@ -48,11 +48,11 @@
                                 <option value="No_Religion">No Religion</option>
                             </select>   
                         </div>
-                        <div class="col-sm-3"> 
+                        <div class="col-sm-4"> 
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Family status *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="family_status" name="family_status" multiple required>
-                                    <option value="Middle_class">Middle Class</option>
+                                <select class="form-control-sm w-100 change-with-other" id="family_status" name="family_status[]" multiple required>
+                                    <option value="Middle_class" selected>Middle Class</option>
                                     <option value="Upper_middle_class">Upper middle class</option>
                                     <option value="Lower_middle_class">Lower middle class</option>
                                     <option value="Upper_class">Upper Class</option>
@@ -61,30 +61,30 @@
                         </div>
 
 
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label class="mb-0 form-label">Meretial status *</label>
-                            <select class="form-control-sm w-100 change-with-other" id="marital_status" name="marital_status" multiple required>
-                                <option value="Never_Married">Never Married</option>
+                            <select class="form-control-sm w-100 change-with-other" id="marital_status" name="marital_status[]" multiple required>
+                                <option value="Never_Married" selected>Never Married</option>
                                 <option value="Legally_Separated">Legally Separated</option>
                                 <option value="Divorced">Divorced</option>
                                 <option value="Widowed">Widowed</option>
                                 <option value="Anulled">Anulled</option>
                             </select>
                         </div>
-                        <div class="col-sm-3">
+                        <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Allow Children?</label>
                                 <select class="form-control-sm w-100" name="allow_children">
-                                    <option value="No" selected="">No</option>
+                                    <option value="No" selected>No</option>
                                     <option value="Yes">Yes</option>
                                 </select>
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Details you preferance(short)</label>
-                                <textarea class="form-control-sm w-100" rows="1" cols="50" name="details_you_prefer">I am </textarea>
+                                <textarea class="form-control-sm w-100" rows="2" cols="50" name="details_you_prefer">I am </textarea>
                             </div>
                         </div>
 
@@ -196,10 +196,10 @@
                         </div>
 
 
-                        <div class="col-sm-3">
+                        <div class="col-sm-6">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Blood Group *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="blood_group" name="blood_group" multiple required>
+                                <select class="form-control-sm w-100 change-with-other" id="blood_group" name="blood_group[]" multiple required>
                                     <option value="Any" selected>Any</option>
                                     <option value="B+">B (+)ve</option>
                                     <option value="A+">A (+)ve</option>
@@ -211,6 +211,20 @@
                                     <option value="O-">O (-)ve</option>
                                 </select>
                             </div>   
+                        </div>
+                        <div class="col-sm-6">              
+                            <div class="other-area">
+                                <div class="form-group mb-1">
+                                    <label class="mb-0 form-label">Skin Color *</label>
+                                    <select class="form-control-sm w-100 change-with-other" id="skin_color" name="skin_color[]" multiple required>
+                                       <option value="Very_Fair">Very Fair</option>
+                                       <option value="Fair" selected>Fair</option>
+                                        <option value="Brown">Brown</option>
+                                        <option value="Dark">Dark</option>
+                                        <option value="Any">Any</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-sm-3">
                             <div class="other-area">
@@ -238,20 +252,7 @@
                                 </div>
                             </div>    
                         </div>
-                        <div class="col-sm-3">              
-                            <div class="other-area">
-                                <div class="form-group mb-1">
-                                    <label class="mb-0 form-label">Skin Color *</label>
-                                    <select class="form-control-sm w-100 change-with-other" id="skin_color" name="skin_color" multiple required>
-                                       <option value="Very_Fair">Very Fair</option>
-                                       <option value="Fair">Fair</option>
-                                        <option value="Brown">Brown</option>
-                                        <option value="Dark">Dark</option>
-                                        <option value="Any">Any</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="col-sm-3">
                             <div class="other-area">
                                 <div class="form-group mb-1">
@@ -271,8 +272,9 @@
                             <div class="other-area">
                                 <div class="form-group mb-1">
                                     <label class="mb-0 form-label">Education Level *</label>
-                                    <select class="form-control-sm w-100 change-with-other" id="education_level" name="education_level" multiple required>
-                                        <option value="M_A" selected>M A</option>
+                                    <select class="form-control-sm w-100 change-with-other" id="education_level" name="education_level[]" multiple required>
+                                        <option value="Any" selected>Any</option>
+                                        <option value="M_A">M A</option>
                                         <option class="High_School_pass">High School pass</option>
                                         <option value="SSC">SSC</option>
                                         <option value="HSC">HSC</option>
@@ -304,7 +306,8 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Major Subject *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="subject" name="subject" multiple required>
+                                <select class="form-control-sm w-100 change-with-other" id="subject" name="subject[]" multiple required>
+                                    <option value="Any" selected>Any</option>
                                     <option value="IT">IT</option>
                                     <option value="Accounting">Accounting</option>
                                     <option value="English">English</option>
@@ -412,7 +415,8 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">My Profession *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="profession" name="profession" multiple required>
+                                <select class="form-control-sm w-100 change-with-other" id="profession" name="profession[]" multiple required>
+                                    <option value="Any" selected>Any</option>
                                     <option value="Engineer">Engineer</option>
                                     <option value="Banker">Banker</option>
                                     <option value="Doctor">Doctor</option>
@@ -525,7 +529,7 @@
                         <div class="col-md-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Country of Residence *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="country" name="country" multiple required>
+                                <select class="form-control-sm w-100 change-with-other" id="country" name="country[]" multiple required>
                                     <option value="Bangladesh" selected>Bangladesh</option>
                                     <option value="UK">United Kingdom</option>
                                     <option value="USA">United States</option>
@@ -569,7 +573,7 @@
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">District *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="district" name="district" multiple required>
+                                <select class="form-control-sm w-100 change-with-other" id="district" name="district[]" multiple required>
                                     <option value="Tangail">Tangail</option>
                                     <option value="Bagerhat">Bagerhat</option>
                                     <option value="Bandarban">Bandarban</option>
@@ -640,8 +644,8 @@
                         <div class="col-md-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Citizenship *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="citizenship" name="citizenship" multiple required>
-                                    <option value="Bangali">Bangladeshi</option>
+                                <select class="form-control-sm w-100 change-with-other" id="citizenship" name="citizenship[]" multiple required>
+                                    <option value="Bangladeshi" selected>Bangladeshi</option>
                                     <option value="Indian">Indian</option>
                                     <option value="Canada">Canada</option>
                                     <option value="USA">USA</option>
@@ -686,7 +690,7 @@
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Smoke? *</label>
                                 <select class="form-control-sm w-100" name="smoke_status" required>
-                                    <option value="No" selected="">No</option>
+                                    <option value="No" selected>No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="Sometimes">Sometimes</option>
                                 </select>
@@ -696,7 +700,7 @@
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Addicted to alcohol? *</label>
                                 <select class="form-control-sm w-100" name="alcohol_status" required>
-                                    <option value="No" selected="">No</option>
+                                    <option value="No" selected>No</option>
                                     <option value="Yes">Yes</option>
                                     <option value="Sometimes">Sometimes</option>
                                 </select>
@@ -717,13 +721,13 @@
                     <div class="row bg-off-pink">
                         <div class="col-md-12">
                             <label class="mb-0 form-label">Language preferance *</label>
-                            <select class="form-control-sm w-100 change-with-other" id="language" name="language" multiple required>
+                            <select class="form-control-sm w-100 change-with-other" id="language" name="language[]" multiple required>
                               <option value="Afrikaans">Afrikaans</option>
                               <option value="Albanian">Albanian</option>
                               <option value="Arabic">Arabic</option>
                               <option value="Armenian">Armenian</option>
                               <option value="Basque">Basque</option>
-                              <option value="Bengali">Bengali</option>
+                              <option value="Bengala" selected>Bengala</option>
                               <option value="Bulgarian">Bulgarian</option>
                               <option value="Catalan">Catalan</option>
                               <option value="Cambodian">Cambodian</option>

@@ -147,8 +147,13 @@
                         <div class="col-sm-6">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Blood Group</label>
+                                <?php 
+                                $blood_groups = json_decode($preference->blood_group) ;
+                                ?>
                                 <p class="pl-2 m-0 bg-light text-dark font-weight-bold">
-                                    {{ $preference->blood_group}}
+                                    @foreach($blood_groups as $blood_group)
+                                        {{str_replace('_', ' ', $blood_group) }},
+                                    @endforeach
                                 </p>
                             </div>   
                         </div>
@@ -235,24 +240,39 @@
                         <div class="col-md-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Country of Residence</label>
+                                <?php 
+                                $countries = json_decode($preference->country) ;
+                                ?>
                                 <p class="pl-2 m-0 bg-light text-dark font-weight-bold">
-                                    {{ $preference->country}}
+                                    @foreach($countries as $country)
+                                        {{str_replace('_', ' ', $country) }},
+                                    @endforeach
                                 </p>
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">District</label>
+                                <?php 
+                                $districts = json_decode($preference->district) ;
+                                ?>
                                 <p class="pl-2 m-0 bg-light text-dark font-weight-bold">
-                                    {{ $preference->district}}
+                                    @foreach($districts as $district)
+                                        {{str_replace('_', ' ', $district) }},
+                                    @endforeach
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Citizenship</label>
+                                <?php 
+                                $citizenships = json_decode($preference->citizenship) ;
+                                ?>
                                 <p class="pl-2 m-0 bg-light text-dark font-weight-bold">
-                                    {{ $preference->citizenship}}
+                                    @foreach($citizenships as $citizenship)
+                                        {{str_replace('_', ' ', $citizenship) }},
+                                    @endforeach
                                 </p>
                             </div>
                         </div>

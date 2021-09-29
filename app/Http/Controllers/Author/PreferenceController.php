@@ -26,6 +26,7 @@ class PreferenceController extends Controller
     public function store(Request $request)
     {
 
+        // return $request;
         $user = Auth::user();
         $preference = new Preference;
         $preference->user_id = $user->id;
@@ -81,7 +82,6 @@ class PreferenceController extends Controller
     {
    
         $preference =  Preference::find($id);
-        $preference->user_id = $user->id;
         $preference->minAge = $request->minAge;
         $preference->maxAge = $request->maxAge;
         $preference->religion = $request->religion;

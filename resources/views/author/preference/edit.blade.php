@@ -29,13 +29,13 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Minimum Age *</label>
-                            <input type="number" class="form-control-sm w-100" value="{{ $preference->minAge }}" id="minAge" name="minAge" placeholder="Ex. 22">
+                            <input type="number" class="form-control-sm w-100" required value="{{ $preference->minAge }}" id="minAge" name="minAge" placeholder="Ex. 22">
                         </div>
                     </div>
                     <div class="col-sm-4"> 
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Maximum Age *</label>
-                            <input type="number" value="{{ $preference->minAge }}" id="minAge" name="maxAge" class="form-control-sm w-100" placeholder="Ex. 30">
+                            <input type="number" value="{{ $preference->minAge }}" required id="minAge" name="maxAge" class="form-control-sm w-100" placeholder="Ex. 30">
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -57,7 +57,7 @@
                     <div class="col-sm-4"> 
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Family status *</label>
-                            <select class="form-control-sm w-100 change-with-other" id="family_status" name="family_status" multiple>
+                            <select class="form-control-sm w-100 change-with-other" id="family_status" name="family_status[]" multiple>
                                 <option value="Middle_class">Middle Class</option>
                                 <option value="Upper_middle_class">Upper middle class</option>
                                 <option value="Lower_middle_class">Lower middle class</option>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-md-4">
                         <label class="mb-0 form-label">Meretial status *</label>
-                        <select id="marital_status" name="marital_status"  class="form-control-sm w-100" multiple>
+                        <select id="marital_status" name="marital_status[]"  class="form-control-sm w-100" multiple>
                             <option value="Never_Married">Never Married</option>
                             <option value="Legally_Separated">Legally Separated</option>
                             <option value="Divorced">Divorced</option>
@@ -87,7 +87,7 @@
                     <div class="col-sm-12">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Details you preferance(short)</label>
-                            <textarea class="form-control-sm w-100" id="details_you_prefer" rows="2" cols="50" name="details_you_prefer">{{ $preference->details_you_prefer }}</textarea>
+                            <textarea class="form-control-sm w-100" id="details_you_prefer" rows="2" cols="50" name="details_you_prefer" required>{{ $preference->details_you_prefer }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -187,20 +187,20 @@
                     <div class="col-sm-3"> 
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Min Weight(kg) *</label>
-                            <input type="number" value="{{ $preference->minWeight }}" class="form-control-sm w-100" id="minWeight" name="minWeight" placeholder="Ex. 50">
+                            <input type="number" value="{{ $preference->minWeight }}" class="form-control-sm w-100" id="minWeight" name="minWeight" required placeholder="Ex. 50">
                         </div>
                     </div>
                     <div class="col-sm-3"> 
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Max Weight(kg) *</label>
-                            <input type="number" value="{{ $preference->maxWeight }}" class="form-control-sm w-100" id="maxWeight" name="maxWeight" placeholder="Ex. 65">
+                            <input type="number" value="{{ $preference->maxWeight }}" class="form-control-sm w-100" id="maxWeight" name="maxWeight" required placeholder="Ex. 65">
                         </div>
                     </div>
                     <div class="col-sm-6">              
                         <div class="other-area">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Skin Color *</label>
-                                <select class="form-control-sm w-100 change-with-other" id="skin_color" name="skin_color" multiple>
+                                <select class="form-control-sm w-100 change-with-other" id="skin_color" name="skin_color[]" multiple>
                                    <option value="Very_Fair">Very Fair</option>
                                    <option value="Fair">Fair</option>
                                     <option value="Brown">Brown</option>
@@ -214,7 +214,7 @@
                     <div class="col-sm-6">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Blood Group *</label>
-                            <select class="form-control-sm w-100" id="blood_group" name="blood_group">
+                            <select class="form-control-sm w-100" id="blood_group" name="blood_group[]" multiple>
                                 <option value="B+" {{ $preference->blood_group=='B+'?'selected':'' }}>B (+)ve</option>
                                 <option value="B-" {{ $preference->blood_group=='B-'?'selected':'' }}>B (-)ve</option>
                                 <option value="A+" {{ $preference->blood_group=='A+'?'selected':'' }}>A (+)ve</option>
@@ -227,7 +227,7 @@
                             </select>
                         </div>   
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="other-area">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Hair Color *</label>
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="other-area">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Eye Color *</label>
@@ -254,7 +254,7 @@
                         </div>    
                     </div>
                     
-                    <div class="col-sm-4">
+                    <div class="col-sm-3">
                         <div class="other-area">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Disabilities? *</label>
@@ -273,7 +273,7 @@
                         <div class="other-area">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Education Level *</label>
-                                <select class="form-control-sm w-100" id="education_level" name="education_level" multiple>
+                                <select class="form-control-sm w-100" id="education_level" name="education_level[]" multiple>
                                     <option value="Any">Any</option>
                                     <option value="M_A">M A</option>
                                     <option class="High_School_pass">High School pass</option>
@@ -307,7 +307,8 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Major Subject *</label>
-                            <select class="form-control-sm w-100" id="subject" name="subject" multiple>
+                            <select class="form-control-sm w-100" id="subject" name="subject[]" multiple>
+                                <option value="Any" selected>Any</option>
                                 <option value="IT">IT</option>
                                 <option value="Accounting">Accounting</option>
                                 <option value="English">English</option>
@@ -415,7 +416,8 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">My Profession *</label>
-                            <select class="form-control-sm w-100" id="profession" name="profession" multiple>
+                            <select class="form-control-sm w-100" id="profession" name="profession[]" multiple>
+                                <option value="Any" selected>Any</option>
                                 <option value="Engineer">Engineer</option>
                                 <option value="Banker">Banker</option>
                                 <option value="Doctor">Doctor</option>
@@ -527,50 +529,50 @@
                     <div class="col-md-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Country of Residence *</label>
-                            <select class="form-control-sm w-100" id="country" name="country">
-                                <option value="Bangladesh" {{ $preference->district=='Bangladesh'?'selected':'' }}>Bangladesh</option>
-                                <option value="UK" {{ $preference->district=='UK'?'selected':'' }}>United Kingdom</option>
-                                <option value="USA" {{ $preference->district=='USA'?'selected':'' }}>United States</option>
-                                <option value="Canada" {{ $preference->district=='Canada'?'selected':'' }}>Canada</option>
-                                <option value="Australia" {{ $preference->district=='Australia'?'selected':'' }}>Australia</option>
-                                <option value="Spain" {{ $preference->district=='Spain'?'selected':'' }}>Spain</option>
-                                <option value="Sweden" {{ $preference->district=='Sweden'?'selected':'' }}>Sweden</option>
-                                <option value="Austria" {{ $preference->district=='Austria'?'selected':'' }}>Austria</option>
-                                <option value="India" {{ $preference->district=='India'?'selected':'' }}>India</option>
-                                <option value="Pakistan" {{ $preference->district=='Pakistan'?'selected':'' }}>Pakistan</option>
-                                <option value="Cyprus" {{ $preference->district=='Cyprus'?'selected':'' }}>Cyprus</option>
-                                <option value="Denmark" {{ $preference->district=='Denmark'?'selected':'' }}>Denmark</option>
-                                <option value="Finland" {{ $preference->district=='Finland'?'selected':'' }}>Finland</option>
-                                <option value="France" {{ $preference->district=='France'?'selected':'' }}>France</option>
-                                <option value="Germany" {{ $preference->district=='Germany'?'selected':'' }}>Germany</option>
-                                <option value="Greece" {{ $preference->district=='Greece'?'selected':'' }}>Greece</option>
-                                <option value="Ireland" {{ $preference->district=='Ireland'?'selected':'' }}>Ireland</option>
-                                <option value="Italy" {{ $preference->district=='Italy'?'selected':'' }}>Italy</option>
-                                <option value="Japan" {{ $preference->district=='Japan'?'selected':'' }}>Japan</option>
-                                <option value="Kuwait" {{ $preference->district=='Kuwait'?'selected':'' }}>Kuwait</option>
-                                <option value="Malaysia" {{ $preference->district=='Malaysia'?'selected':'' }}>Malaysia</option>
-                                <option value="Maldives" {{ $preference->district=='Maldives'?'selected':'' }}>Maldives</option>
-                                <option value="New_Zealand" {{ $preference->district=='New_Zealand'?'selected':'' }}>New Zealand</option>
-                                <option value="Nigeria" {{ $preference->district=='Nigeria'?'selected':'' }}>Nigeria</option>
-                                <option value="Oman" {{ $preference->district=='Oman'?'selected':'' }}>Oman</option>
-                                <option value="Poland" {{ $preference->district=='Poland'?'selected':'' }}>Poland</option>
-                                <option value="Qatar" {{ $preference->district=='Qatar'?'selected':'' }}>Qatar</option>
-                                <option value="Saudi_Arabia" {{ $preference->district=='Saudi_Arabia'?'selected':'' }}>Saudi Arabia</option>
-                                <option value="Singapore" {{ $preference->district=='Singapore'?'selected':'' }}>Singapore</option>
-                                <option value="South_Africa" {{ $preference->district=='South_Africa'?'selected':'' }}>South Africa</option>
-                                <option value="South_Korea" {{ $preference->district=='South_Korea'?'selected':'' }}>South Korea</option>
-                                <option value="Thailand" {{ $preference->district=='Thailand'?'selected':'' }}>Thailand</option>
-                                <option value="United_Arab_Emirates" {{ $preference->district=='United_Arab_Emirates'?'selected':'' }}>United Arab Emirates</option>
-                                <option value="Bahrain" {{ $preference->district=='Bahrain'?'selected':'' }}>Bahrain</option>
-                                <option value="Brazil" {{ $preference->district=='Brazil'?'selected':'' }}>Brazil</option>
-                                <option value="Other" {{ $preference->district=='Other'?'selected':'' }}>Other</option>
+                            <select class="form-control-sm w-100 change-with-other" id="country" name="country[]" multiple>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="USA">United States</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="India">India</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="Cyprus">Cyprus</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Ireland">Ireland</option>
+                                    <option value="Italy">Italy</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Kuwait">Kuwait</option>
+                                    <option value="Malaysia">Malaysia</option>
+                                    <option value="Maldives">Maldives</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Oman">Oman</option>
+                                    <option value="Poland">Poland</option>
+                                    <option value="Qatar">Qatar</option>
+                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="South Korea">South Korea</option>
+                                    <option value="Thailand">Thailand</option>
+                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                    <option value="Bahrain">Bahrain</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Other">Other</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">District *</label>
-                            <select class="form-control-sm w-100" id="district" name="district">
+                            <select class="form-control-sm w-100" id="district" name="district[]" multiple>
                                 <option value="Tangail" {{ $preference->district=='Tangail'?'selected':'' }}>Tangail</option>
                                 <option value="Bagerhat" {{ $preference->district=='Bagerhat'?'selected':'' }}>Bagerhat</option>
                                 <option value="Bandarban" {{ $preference->district=='Bandarban'?'selected':'' }}>Bandarban</option>
@@ -641,40 +643,40 @@
                     <div class="col-md-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Citizenship *</label>
-                            <select class="form-control-sm w-100" id="citizenship" name="citizenship">
-                                <option value="Bangali" {{ $preference->citizenship=='Bangali'?'selected':'' }}>Bangali</option>
-                                <option value="Indian" {{ $preference->citizenship=='Indian'?'selected':'' }}>Indian</option>
-                                <option value="Canada" {{ $preference->citizenship=='Canada'?'selected':'' }}>Canada</option>
-                                <option value="USA" {{ $preference->citizenship=='USA'?'selected':'' }}>USA</option>
-                                <option value="UK" {{ $preference->citizenship=='UK'?'selected':'' }}>UK</option>
-                                <option value="Germany" {{ $preference->citizenship=='Germany'?'selected':'' }}>Germany</option>
-                                <option value="Italy" {{ $preference->citizenship=='Italy'?'selected':'' }}>Italy</option>
-                                <option value="Spain" {{ $preference->citizenship=='Spain'?'selected':'' }}>Spain</option>
-                                <option value="Sweden" {{ $preference->citizenship=='Sweden'?'selected':'' }}>Sweden</option>
-                                <option value="France" {{ $preference->citizenship=='France'?'selected':'' }}>France</option>
-                                <option value="Cyprus" {{ $preference->citizenship=='Cyprus'?'selected':'' }}>Cyprus</option>
-                                <option value="Denmark" {{ $preference->citizenship=='Denmark'?'selected':'' }}>Denmark</option>
-                                <option value="Finland" {{ $preference->citizenship=='Finland'?'selected':'' }}>Finland</option>
-                                <option value="Greece" {{ $preference->citizenship=='Greece'?'selected':'' }}>Greece</option>
-                                <option value="Ireland" {{ $preference->citizenship=='Ireland'?'selected':'' }}>Ireland</option>
-                                <option value="Japan" {{ $preference->citizenship=='Japan'?'selected':'' }}>Japan</option>
-                                <option value="Kuwait" {{ $preference->citizenship=='Kuwait'?'selected':'' }}>Kuwait</option>
-                                <option value="Malaysia" {{ $preference->citizenship=='Malaysia'?'selected':'' }}>Malaysia</option>
-                                <option value="Maldives" {{ $preference->citizenship=='Maldives'?'selected':'' }}>Maldives</option>
-                                <option value="NewZealand" {{ $preference->citizenship=='NewZealand'?'selected':'' }}>New Zealand</option>
-                                <option value="Nigeria" {{ $preference->citizenship=='Nigeria'?'selected':'' }}>Nigeria</option>
-                                <option value="Oman" {{ $preference->citizenship=='Oman'?'selected':'' }}>Oman</option>
-                                <option value="Poland" {{ $preference->citizenship=='Poland'?'selected':'' }}>Poland</option>
-                                <option value="Qatar" {{ $preference->citizenship=='Qatar'?'selected':'' }}>Qatar</option>
-                                <option value="SaudiArabia" {{ $preference->citizenship=='SaudiArabia'?'selected':'' }}>Saudi Arabia</option>
-                                <option value="Singapore" {{ $preference->citizenship=='Singapore'?'selected':'' }}>Singapore</option>
-                                <option value="Other" {{ $preference->citizenship=='Other'?'selected':'' }}>Other</option>
-                                <option value="SouthAfrica" {{ $preference->citizenship=='SouthAfrica'?'selected':'' }}>South Africa</option>
-                                <option value="SouthKorea" {{ $preference->citizenship=='SouthKorea'?'selected':'' }}>South Korea</option>
-                                <option value="Thailand" {{ $preference->citizenship=='Thailand'?'selected':'' }}>Thailand</option>
-                                <option value="UnitedArabEmirates" {{ $preference->citizenship=='UnitedArabEmirates'?'selected':'' }}>United Arab Emirates</option>
-                                <option value="Pakistan" {{ $preference->citizenship=='Pakistan'?'selected':'' }}>Pakistan</option>
-                                <option value="Australia" {{ $preference->citizenship=='Australia'?'selected':'' }}>Australia</option>
+                            <select class="form-control-sm w-100 change-with-other" id="citizenship" name="citizenship[]" multiple required>
+                                <option value="Bangladeshi" selected>Bangladeshi</option>
+                                <option value="Indian">Indian</option>
+                                <option value="Canada">Canada</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="France">France</option>
+                                <option value="Cyprus">Cyprus</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Finland">Finland</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Maldives">Maldives</option>
+                                <option value="NewZealand">New Zealand</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="SaudiArabia">Saudi Arabia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Other">Other</option>
+                                <option value="SouthAfrica">South Africa</option>
+                                <option value="SouthKorea">South Korea</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="UnitedArabEmirates">United Arab Emirates</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Australia">Australia</option>
                             </select>
                         </div>
                     </div>
@@ -706,7 +708,6 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Diat Status *</label>
-                            
                             <select class="form-control-sm w-100" id="diat_status" name="diat_status">
                                 <option value="Not_to_say" {{ $preference->diat_status=='Not_to_say'?'selected':'' }}>Not to say</option>
                                 <option value="Vag" {{ $preference->diat_status=='Vag'?'selected':'' }}>Vag</option>
@@ -718,13 +719,13 @@
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Language preferance *</label>
-                            <select name="language" id="language" multiple>
+                            <select class="form-control-sm w-100 change-with-other" id="language" name="language[]" multiple required>
                               <option value="Afrikaans">Afrikaans</option>
                               <option value="Albanian">Albanian</option>
                               <option value="Arabic">Arabic</option>
                               <option value="Armenian">Armenian</option>
                               <option value="Basque">Basque</option>
-                              <option value="Bengali">Bengali</option>
+                              <option value="Bengala" selected>Bengala</option>
                               <option value="Bulgarian">Bulgarian</option>
                               <option value="Catalan">Catalan</option>
                               <option value="Cambodian">Cambodian</option>
@@ -834,6 +835,14 @@
     var x_sc_arr = JSON.parse(x_sc);
     skin_color.set(x_sc_arr)
 
+    // ============skin_color==============
+    var blood_group = new SlimSelect({
+      select: '#blood_group'
+    })
+    var x_bg = '<?php echo json_encode(json_decode($preference->blood_group)) ?>';
+    var x_bg_arr = JSON.parse(x_bg);
+    blood_group.set(x_bg_arr)
+
     // ============education_level==============
     var education_level = new SlimSelect({
       select: '#education_level'
@@ -858,7 +867,31 @@
     })
     var x_p = '<?php echo json_encode(json_decode($preference->profession)) ?>';
     var x_p_arr = JSON.parse(x_p);
-    profession.set(x_p_arr)
+    profession.set(x_p_arr) 
+
+    // ============country==============
+    var country = new SlimSelect({
+      select: '#country'
+    })
+    var x_c = '<?php echo json_encode(json_decode($preference->country)) ?>';
+    var x_c_arr = JSON.parse(x_c);
+    country.set(x_c_arr)
+
+    // ============country==============
+    var district  = new SlimSelect({
+      select: '#district'
+    })
+    var x_d = '<?php echo json_encode(json_decode($preference->district)) ?>';
+    var x_d_arr = JSON.parse(x_d);
+    district.set(x_d_arr)
+
+    // ============citizenship==============
+    var citizenship = new SlimSelect({
+      select: '#citizenship'
+    })
+    var x_ct = '<?php echo json_encode(json_decode($preference->citizenship)) ?>';
+    var x_ct_arr = JSON.parse(x_ct);
+    citizenship.set(x_ct_arr)
 
     // ============language==============
     var language = new SlimSelect({
@@ -867,13 +900,6 @@
     var x_l = '<?php echo json_encode(json_decode($preference->language)) ?>';
     var x_l_arr = JSON.parse(x_l);
     language.set(x_l_arr)
-
-
-    // complextion, bodytype, country, district, residency,Partner Knows, 
-
-    // My Hobbies, Interests & More, Favorite Music,Favorite Reads,Preferred Movies,Favourite Cooking,Dress Style
-
-    // Religious View,
 
     var url = "{{URL('member/preference/'.$preference->id)}}";
     function EditPrefference() {
@@ -916,6 +942,7 @@
                   icon: 'success',
                   title: 'Save preference successfully'
                 })
+                window.location.href = "{{ route('member.preference.index') }}"
             },
             error: function(request,status,errorThrown) {
                 Toast.fire({
@@ -923,7 +950,6 @@
                   title: 'Something went wrong!'
                 })
             }
-            
         });
     }
     
