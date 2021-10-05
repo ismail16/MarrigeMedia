@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
            
-            <div class="col-md-9 ftco-animate m-3">
+            <div class="col-md-9 ftco-animate ml-1 mr-1 mb-3 mt-3">
                  @if ($errors->any())
                     <div class="alert alert-danger">
                             @foreach ($errors->all() as $error)
@@ -346,10 +346,13 @@
             dataType: "JSON",
             data: {first_name:first_name, last_name:last_name, email:email, mobile:mobile, gender:gender, profession:profession, marital_status:marital_status, birthday:birthday, country:country, district:district, looking_for:looking_for, religion:religion, social_order:social_order, createdby:createdby, password:password, password_confirmation:password_confirmation, agreement:agreement,  _token: '{{csrf_token()}}'},
             success: function (data) {
+                console.log('success')
+                console.log(data)
                window.location.href = "{{ route('verifying_user') }}"
             },
 
             error: function(response) {
+                console.log('errors')
                 console.log(response.responseJSON.errors)
                 $('#first_name_err').text(response.responseJSON.errors.first_name);
                 $('#last_name_err').text(response.responseJSON.errors.last_name);
