@@ -1,10 +1,12 @@
 <section class="testimony-section _bg-body-green bg-light">
 	<div class="container">
 		<div class="row no-gutters slider-text  align-items-end justify-content-start">
-			<div class="col-md-12 ftco-animate">
+			<div class="col-md-12 mb-5 pt-4 pb-5 ftco-animate">
+				<h2 class="text-center h3 form-label mb-0">Marriage Gate</h2>
+				<p class="text-center form-label mb-4">Preferred and Trusted Service for Finding a Life-Partner</p>
 				<form class="" action="{{ route('search_groom_bride')}}" method="post" enctype="multipart/form-data">
 					@csrf
-					<div class="row _bg-body-green mt-1 mb-1 p-2 search_option_div">
+					<div class="row bg-body-green p-2 search_option_div">
 						<div class="col-sm-6 col-md-2 col-lg-2 mb-1 search_option">
 							<h6 class="mb-0 form-label">Looking</h6>
 							<select class="form-control-sm w-100" name="looking_for">
@@ -24,77 +26,84 @@
 						</div>
 						<div class="col-12 col-lg-3 mb-1 search_option">
 							<h6 class="mb-0 form-label">Age (MIN - MAX)</h6>
-							<select class="form-control-sm age_limit w-50" name="minAge">
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-								<option value="21">21</option>
-								<option value="22">22</option>
-								<option value="23">23</option>
-								<option value="24">24</option>
-								<option value="25">25</option>
-								<option value="26">26</option>
-								<option value="27">27</option>
-								<option value="28">28</option>
-								<option value="29">29</option>
-								<option value="30">30</option>
-								<option value="31">31</option>
-								<option value="32">32</option>
-								<option value="33">33</option>
-								<option value="34">34</option>
-								<option value="35">35</option>
-								<option value="36">36</option>
-								<option value="37">37</option>
-								<option value="38">38</option>
-								<option value="39">39</option>
-								<option value="40">40</option>
-								<option value="41">41</option>
-								<option value="42">42</option>
-								<option value="43">43</option>
-								<option value="44">44</option>
-								<option value="45">45</option>
-								<option value="46">46</option>
-								<option value="47">47</option>
-								<option value="48">48</option>
-								<option value="49">49</option>
-								<option value="50">50</option>
-							</select> 
-							<select class="form-control-sm age_limit w-50" name="maxAge" style="float: right;">
-								<option value="50">Max Age</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-								<option value="21">21</option>
-								<option value="22">22</option>
-								<option value="23">23</option>
-								<option value="24">24</option>
-								<option value="25">25</option>
-								<option value="26">26</option>
-								<option value="27">27</option>
-								<option value="28">28</option>
-								<option value="29">29</option>
-								<option value="30">30</option>
-								<option value="31">31</option>
-								<option value="32">32</option>
-								<option value="33">33</option>
-								<option value="34">34</option>
-								<option value="35">35</option>
-								<option value="36">36</option>
-								<option value="37">37</option>
-								<option value="38">38</option>
-								<option value="39">39</option>
-								<option value="40">40</option>
-								<option value="41">41</option>
-								<option value="42">42</option>
-								<option value="43">43</option>
-								<option value="44">44</option>
-								<option value="45">45</option>
-								<option value="46">46</option>
-								<option value="47">47</option>
-								<option value="48">48</option>
-								<option value="49">49</option>
-								<option value="50">50</option>
-							</select>
+							<div class="row">
+								<div class="col-6 _pr-2">
+									<select class="form-control-sm age_limit w-100" name="minAge">
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+										<option value="32">32</option>
+										<option value="33">33</option>
+										<option value="34">34</option>
+										<option value="35">35</option>
+										<option value="36">36</option>
+										<option value="37">37</option>
+										<option value="38">38</option>
+										<option value="39">39</option>
+										<option value="40">40</option>
+										<option value="41">41</option>
+										<option value="42">42</option>
+										<option value="43">43</option>
+										<option value="44">44</option>
+										<option value="45">45</option>
+										<option value="46">46</option>
+										<option value="47">47</option>
+										<option value="48">48</option>
+										<option value="49">49</option>
+										<option value="50">50</option>
+									</select> 
+								</div>
+
+								<div class="col-6 _pl-2">
+									<select class="form-control-sm age_limit w-100" name="maxAge" style="float: right;">
+										<option value="50">Max Age</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+										<option value="32">32</option>
+										<option value="33">33</option>
+										<option value="34">34</option>
+										<option value="35">35</option>
+										<option value="36">36</option>
+										<option value="37">37</option>
+										<option value="38">38</option>
+										<option value="39">39</option>
+										<option value="40">40</option>
+										<option value="41">41</option>
+										<option value="42">42</option>
+										<option value="43">43</option>
+										<option value="44">44</option>
+										<option value="45">45</option>
+										<option value="46">46</option>
+										<option value="47">47</option>
+										<option value="48">48</option>
+										<option value="49">49</option>
+										<option value="50">50</option>
+									</select>
+								</div>
+							</div>
 						</div>
 
 						<div class="col-sm-6 col-md-4 col-lg-2 mb-1 search_option">
@@ -212,7 +221,9 @@
 							</select>
 						</div>
 						<div class="col-sm-6 col-md-6 col-lg-1 d-flex align-items-center d-flex justify-content-center">
-							<button class="btn btn-sm  btn-block btn-primary p-2 px-1 mt-1">Search</button>
+							<button class="btn btn-sm btn-block btn-primary">
+								Search
+							</button>
 						</div>
 					</div>
 				</form>

@@ -8,17 +8,17 @@
 			</div>
 			<div >
 				<div class="row">
-				<div class="col-md-6">
-					<div>
-						<label class="search-label text-dark mb-0">Looking for :</label>
+					<div class="col-md-6">
+						<div>
+							<label class="search-label text-dark mb-0">Looking for :</label>
+						</div>
+						<div>
+							<select class="form-control-sm w-100" name="looking_for">
+								<option value="Bride">Male</option>
+								<option value="Groom">Female</option>
+							</select>
+						</div>
 					</div>
-					<div>
-						<select class="form-control-sm w-100" name="looking_for">
-							<option value="Bride">Male</option>
-							<option value="Groom">Female</option>
-						</select>
-					</div>
-				</div>
 
 					<div class="col-md-6">
 						<div>
