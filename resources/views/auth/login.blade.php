@@ -7,6 +7,7 @@
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-4 ftco-animate m-3 bg-light-green p-3">
 
+
                 <h2 class="text-center border-bottom form-label">Login</h2>
 
                 <div class=" p-2">
@@ -19,20 +20,31 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" name="email" class="form-control-sm w-100" placeholder="Enter email" id="email">
+                                    <label for="email" class="form-label mb-0">Email</label>
+                                    <input id="email" type="email" placeholder="Username or Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <label for="pwd" class="form-label">Password:</label>
-                                    <input type="password" name="password" class="form-control-sm w-100" placeholder="Enter password" id="pwd">
+                                    <label for="pwd" class="form-label mb-0">Password:</label>
+                                     <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Password" required>
+                                    
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
 
                                 <div class="form-group form-check">
-                                    <label class="form-check-label form-label">
+                                    <label class="form-check-label form-label ml-2">
                                         <input class="form-check-input" type="checkbox"> Remember me
                                     </label>
 
-                                    <button type="submit" class="btn btn-sm btn-primary mr-2 float-right">Login</button>
+                                    <button type="submit" class="btn btn-sm btn-primary float-right">Login</button>
                                 </div>
 
                                 <div class="form-group row">
