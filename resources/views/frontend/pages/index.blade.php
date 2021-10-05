@@ -75,7 +75,7 @@
 				</div>
 				<div class="row ftco-animate">
 					<div class="col-md-12 block-13 p-0 nav-direction-white">
-						<div class="nonloop-block-13 owl-carousel ">
+						<div class="nonloop-block-14 owl-carousel ">
 							@if($brides)
 								@foreach($brides as $user)
 								<div class="media-image border">
