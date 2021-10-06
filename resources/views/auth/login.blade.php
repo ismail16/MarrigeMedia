@@ -2,7 +2,7 @@
 @section('title','Login')
 
 @section('content')
-<section class="hero-wrap" style="background-image: url('https://www.taslimamarriagemedia.com/img/taslima-marriage-media-banner.jpg');">
+<section class="hero-wrap" style="background-image: url('{{ asset('images/reg_bg.jpg')}}');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
             <div class="col-md-4 ftco-animate m-3 bg-light-green p-3">

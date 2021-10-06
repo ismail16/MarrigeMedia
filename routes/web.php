@@ -35,6 +35,11 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::resource('success-story', 'SuccessStoryController');
     Route::resource('package-price', 'PackagePriceController');
     Route::resource('message', 'ContactController');
+    Route::resource('email-excel', 'EmailExcelController');
+    Route::get('email-excel-sent','EmailExcelController@sent')->name('sentmail');
+    Route::post('email-excel-send','EmailExcelController@send')->name('send');
+    Route::get('email-excel-resend','EmailExcelController@resend')->name('resend');
+    Route::get('email-excel-truncate','EmailExcelController@truncate')->name('truncate');
 });
 
 //======================================== Author route==================================

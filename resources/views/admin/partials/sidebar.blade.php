@@ -20,6 +20,12 @@
                         <p>Message</p>
                     </a>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('admin.email-excel.index')}}" class="nav-link {{Request::is('admin/email-excel*') ? 'active':''}}">
+                        <i class="nav-icon fa fa-envelope"></i>
+                        <p>Send Email</p>
+                    </a>
+                </li>
                 <!-- <li class="">Settings</li> -->
                 <li class="nav-item has-treeview">
                     <a href="{{ route('admin.success-story.index') }}" class="nav-link {{Request::is('admin/success-story*') ? 'active':''}}">
