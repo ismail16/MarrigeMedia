@@ -28,10 +28,6 @@ class EmailExcelController extends Controller
     }
     
     public function send(Request $request){
-
-
-
-        return $request->emailID;
         
         $this->validate($request, [
             'subject' => 'required|max:150',

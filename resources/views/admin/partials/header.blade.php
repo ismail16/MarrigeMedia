@@ -44,6 +44,7 @@
             top: -38px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" id="theme-styles">
     @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
