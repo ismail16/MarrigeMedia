@@ -260,12 +260,9 @@
 
 			<div class="row">
 				<div class="col-md-3 mb-2">
-					@include('frontend.pages.search_bar_groom_bride')                            
+					@include('frontend.pages.search_bar_groom_bride')                        
 				</div> 
-
 				<div class="col-md-9 pl-0 mb-2">
-
-
 					<div class="card mt-2 bg-light-green">
                             <div class="card-header pb-0 pt-2">
                                 <div id="verifiedItems" class="float-right">
@@ -307,7 +304,7 @@
                                             	<div class="row">
                                             		<div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Age *</label>
+                                                            <label class="mb-0 form-label"> Age </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ date_diff(date_create($user->birthday), date_create('now'))->y }}
                                                             </p>
@@ -316,7 +313,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Marital Status *</label>
+                                                            <label class="mb-0 form-label"> Marital Status </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ str_replace('_', ' ', $user->marital_status) }}
                                                             </p>
@@ -324,7 +321,7 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Height *</label>
+                                                            <label class="mb-0 form-label"> Height </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->height }}''
                                                             </p>
@@ -333,7 +330,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Weight *</label>
+                                                            <label class="mb-0 form-label"> Weight </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->weight }} Kg
                                                             </p>
@@ -342,7 +339,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Weight *</label>
+                                                            <label class="mb-0 form-label"> Weight </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->weight }} Kg
                                                             </p>
@@ -351,7 +348,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Religion *</label>
+                                                            <label class="mb-0 form-label"> Religion </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->religion }}
                                                             </p>
@@ -360,7 +357,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Blood Group *</label>
+                                                            <label class="mb-0 form-label"> Blood Group </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->blood_group }}
                                                             </p>
@@ -383,7 +380,7 @@
                                             	<div class="row">
                                             		<div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Education Level *</label>
+                                                            <label class="mb-0 form-label">Education Level </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ str_replace('_', ' ', $user->user_info->education_level) }}
                                                             </p>
@@ -391,7 +388,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Major Subject *</label>
+                                                            <label class="mb-0 form-label">Major Subject </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ str_replace('_', ' ', $user->user_info->major_subject) }}
                                                             </p>
@@ -399,7 +396,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">My Profession *</label>
+                                                            <label class="mb-0 form-label">My Profession </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ str_replace('_', ' ', $user->user_info->my_profession) }}
                                                             </p>
@@ -407,7 +404,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Job Title *</label>
+                                                            <label class="mb-0 form-label">Job Title </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->job_title }}
                                                             </p>
@@ -415,7 +412,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Company Name *</label>
+                                                            <label class="mb-0 form-label">Company Name </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->job_company_name }}
                                                             </p>
@@ -423,7 +420,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">My Income *</label>
+                                                            <label class="mb-0 form-label">My Income </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ str_replace('_', ' ', $user->user_info->income) }}
                                                             </p>
@@ -447,7 +444,7 @@
                                             	<div class="row">
                                             		<div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">District *</label>
+                                                            <label class="mb-0 form-label">District </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->district }}
                                                             </p>
@@ -455,7 +452,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Thana *</label>
+                                                            <label class="mb-0 form-label">Thana </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->thana }}
                                                             </p>
@@ -463,7 +460,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Zip Code *</label>
+                                                            <label class="mb-0 form-label">Zip Code </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->zip_code }}
                                                             </p>
@@ -471,7 +468,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Residence(Country) *</label>
+                                                            <label class="mb-0 form-label">Residence(Country) </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->country_of_residence }}
                                                             </p>
@@ -479,7 +476,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Residence(City) *</label>
+                                                            <label class="mb-0 form-label">Residence(City) </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->state_of_residence }}
                                                             </p>
@@ -487,7 +484,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Citizenship *</label>
+                                                            <label class="mb-0 form-label">Citizenship </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->citizenship }}
                                                             </p>
@@ -511,7 +508,7 @@
                                             	<div class="row">
 													<div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Father's Name *</label>
+                                                            <label class="mb-0 form-label">Father's Name </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->father_name }}
                                                             </p>
@@ -519,7 +516,7 @@
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Father's Occupation *</label>
+                                                            <label class="mb-0 form-label">Father's Occupation </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ str_replace('_', ' ', $user->user_info->father_occupation) }}
                                                             </p>
@@ -528,7 +525,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Mother's Name *</label>
+                                                            <label class="mb-0 form-label">Mother's Name </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->mother_name }}
                                                             </p>
@@ -537,7 +534,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Mother's Occupation *</label>
+                                                            <label class="mb-0 form-label">Mother's Occupation </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->mother_occupation }}
                                                             </p>
@@ -546,7 +543,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Number of Brother *</label>
+                                                            <label class="mb-0 form-label">Number of Brother </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->number_of_brother }}
                                                             </p>
@@ -555,7 +552,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">brother Married? *</label>
+                                                            <label class="mb-0 form-label">brother Married? </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->how_many_brother_married }}
                                                             </p>
@@ -564,7 +561,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Number of Sister *</label>
+                                                            <label class="mb-0 form-label">Number of Sister </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->number_of_sister }}
                                                             </p>
@@ -573,7 +570,7 @@
 
                                                     <div class="col-sm-3">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Sister Married? r *</label>
+                                                            <label class="mb-0 form-label">Sister Married? </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $user->user_info->how_many_sister_married }}
                                                             </p>
@@ -597,7 +594,7 @@
                                                 <div class="row bg-off-pink">
                                                 	<div class="col-sm-12">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Details you preferance(short)</label>
+                                                            <label class="mb-0 form-label">Details you preferance</label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
 	                                                        	{{ $preference->details_you_prefer}}
 	                                                        </p>
@@ -605,7 +602,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Age *</label>
+                                                            <label class="mb-0 form-label"> Age </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $preference->minAge}} - {{ $preference->maxAge}} years
                                                             </p>
@@ -613,7 +610,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Height *</label>
+                                                            <label class="mb-0 form-label"> Height </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $preference->minHeight}}" - {{ $preference->maxHeight}}" 
                                                             </p>
@@ -621,21 +618,21 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label"> Weight *</label>
+                                                            <label class="mb-0 form-label"> Weight </label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                             	{{ $preference->minWeight}} - {{ $preference->maxWeight}} Kg 
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
-                                                        <label class="mb-0 form-label">Religion *</label>
+                                                        <label class="mb-0 form-label">Religion </label>
                                                         <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
                                                         	{{ $preference->religion}}
                                                         </p>
                                                     </div>
                                                     <div class="col-sm-4"> 
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Family status *</label>
+                                                            <label class="mb-0 form-label">Family status </label>
 	                                                        <?php 
 															$family_statuss = json_decode($preference->family_status) ;
 															?>
@@ -649,7 +646,7 @@
 
 
                                                     <div class="col-md-4">
-                                                        <label class="mb-0 form-label">Meretial status *</label> <br>
+                                                        <label class="mb-0 form-label">Meretial status </label> <br>
                                                         <?php 
 														$marital_statuss = json_decode($preference->marital_status) ;
 														?>
@@ -661,16 +658,17 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Children?</label>
+                                                            <label class="mb-0 form-label">
+                                                            Allow Children?</label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
-	                                                        	{{ $preference->have_children}}
+	                                                        	{{ $preference->allow_children}}
 	                                                        </p>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-sm-4">         
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Skin Color *</label>
+                                                            <label class="mb-0 form-label">Skin Color </label>
                                                             <?php 
 															$skin_colors = json_decode($preference->skin_color) ;
 															?>
@@ -683,17 +681,22 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Blood Group *</label>
-                                                            <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
-	                                                        	{{ $preference->blood_group}}
-	                                                        </p>
+                                                            <label class="mb-0 form-label">Blood Group </label>
+	                                                        <?php 
+															$blood_groups = json_decode($preference->blood_group) ;
+															?>
+															<p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+																@foreach($blood_groups as $blood_group)
+																	{{str_replace('_', ' ', $blood_group) }},
+																@endforeach
+		                                                    </p>
                                                         </div>   
                                                     </div>
                                                     
                                                     <div class="col-sm-4">
                                                         <div class="other-area">
                                                             <div class="form-group mb-1">
-                                                                <label class="mb-0 form-label">Hair Color *</label>
+                                                                <label class="mb-0 form-label">Hair Color </label>
                                                                 <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
 		                                                        	{{ $preference->hair_color}}
 		                                                        </p>
@@ -703,7 +706,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="other-area">
                                                             <div class="form-group mb-1">
-                                                                <label class="mb-0 form-label">Eye Color *</label>
+                                                                <label class="mb-0 form-label">Eye Color </label>
                                                                 <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
 		                                                        	{{ $preference->eye_color}}
 		                                                        </p>
@@ -714,7 +717,7 @@
                                                     <div class="col-sm-4">
                                                         <div class="other-area">
                                                             <div class="form-group mb-1">
-                                                                <label class="mb-0 form-label">Disabilities? *</label>
+                                                                <label class="mb-0 form-label">Allow Disabilities? </label>
                                                                 <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
 		                                                        	{{ $preference->disabilities_status}}
 		                                                        </p>
@@ -724,7 +727,7 @@
                                                     <div class="col-md-4">
                                                         <div class="other-area">
                                                             <div class="form-group mb-1">
-                                                                <label class="mb-0 form-label">Education Level *</label>
+                                                                <label class="mb-0 form-label">Education Level </label>
                                                                 <?php 
 																$education_levels = json_decode($preference->education_level) ;
 																?>
@@ -738,7 +741,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Major Subject *</label>
+                                                            <label class="mb-0 form-label">Major Subject </label>
                                                             <?php 
 															$subjects = json_decode($preference->subject) ;
 															?>
@@ -751,7 +754,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">My Profession *</label>
+                                                            <label class="mb-0 form-label">My Profession </label>
                                                             <?php 
 															$professions = json_decode($preference->profession) ;
 															?>
@@ -766,33 +769,49 @@
                                                 <div class="row bg-off-pink">
                                                     <div class="col-md-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Country of Residence *</label>
-                                                            <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
-	                                                        	{{ $preference->country}}
-	                                                        </p>
+                                                            <label class="mb-0 form-label">Country of Residence </label>
+	                                                        <?php 
+															$countrys = json_decode($preference->country) ;
+															?>
+															<p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+																@foreach($countrys as $country)
+																	{{str_replace('_', ' ', $country) }},
+																@endforeach
+		                                                    </p>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">District *</label>
-                                                            <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
-	                                                        	{{ $preference->district}}
-	                                                        </p>
+                                                            <label class="mb-0 form-label">District </label>
+	                                                        <?php 
+															$districts = json_decode($preference->district) ;
+															?>
+															<p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+																@foreach($districts as $district)
+																	{{str_replace('_', ' ', $district) }},
+																@endforeach
+		                                                    </p>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Citizenship *</label>
-                                                            <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
-	                                                        	{{ $preference->citizenship}}
-	                                                        </p>
+                                                            <label class="mb-0 form-label">Citizenship </label>
+	                                                        <?php 
+															$citizenships = json_decode($preference->citizenship) ;
+															?>
+															<p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+																@foreach($citizenships as $citizenship)
+																	{{str_replace('_', ' ', $citizenship) }},
+																@endforeach
+		                                                    </p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row bg-off-pink">
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Smoke? *</label>
+                                                            <label class="mb-0 form-label">
+                                                            Allow Smoke?</label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
 	                                                        	{{ $preference->smoke_status}}
 	                                                        </p>
@@ -800,7 +819,7 @@
                                                     </div>
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Addicted to alcohol? *</label>
+                                                            <label class="mb-0 form-label">Allow Alcohol?</label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
 	                                                        	{{ $preference->alcohol_status}}
 	                                                        </p>
@@ -809,16 +828,16 @@
                                                     
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Diat Status *</label>
+                                                            <label class="mb-0 form-label">Diat Status</label>
                                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
-	                                                        	{{ $preference->hair_color}}
+	                                                        	{{str_replace('_', ' ', $preference->diat_status) }}
 	                                                        </p>
                                                         </div>
                                                     </div>
 
                                                     <div class="col-sm-4">
                                                         <div class="form-group mb-1">
-                                                            <label class="mb-0 form-label">Language *</label>
+                                                            <label class="mb-0 form-label">Language </label>
                                                             <?php 
 															$languages = json_decode($preference->language) ;
 															?>

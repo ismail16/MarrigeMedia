@@ -4,6 +4,21 @@
 			<div class="col-md-12 mb-5 pt-4 pb-5 ftco-animate">
 				<h2 class="text-center h3 form-label mb-0">Marriage Gate</h2>
 				<p class="text-center form-label mb-4">Preferred and Trusted Service for Finding a Life-Partner</p>
+				<div class="row  mb-3 d-flex justify-content-center border">
+					<div class="col-md-2 m-2">
+						<a href="{{ route('register') }}" class="btn btn-sm btn-block btn-success">
+							Create New Profile
+						</a>
+					</div>
+					<div class="col-md-2 m-2">
+						<a href="{{ route('login') }}" class="btn btn-sm btn-block btn-success">
+							Login
+						</a>
+					</div>
+				</div>
+				
+
+				<h2 class="text-center h3 form-label mb-0">Search Groom/Bride</h2>
 				<form class="" action="{{ route('search_groom_bride')}}" method="post" enctype="multipart/form-data">
 					@csrf
 					<div class="row bg-body-green p-2 search_option_div">
