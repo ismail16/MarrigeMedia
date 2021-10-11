@@ -21,7 +21,15 @@ Route::post('/search-groom-bride', 'Frontend\PagesController@search_groom_bride'
 
 Route::get('verifying-user', 'Frontend\PagesController@verifying_user')->name('verifying_user');
 
-Auth::routes();
+Auth::routes(['register'=>false]);
+
+//================== Registration route==========================
+Route::get('profile/create', 'Author\RegisterController@index')->name('profile_create');
+Route::post('member/take', 'Author\RegisterController@author_take')->name('author_take');
+Route::get('member/login', 'Author\RegisterController@login')->name('authorlogin');
+Route::get('member/registration/verification', 'Auth\RegisterController@authormailverification')->name('authormailverification');
+Route::get('member-registration-verification-done/{token}/{id}', 'Auth\RegisterController@authormailverificationdone')->name('authormailverificationdone');
+Route::resource('registration', 'Author\AuthorRegisterController');
 
 Route::resource('registration', 'Author\RegisterController');
 

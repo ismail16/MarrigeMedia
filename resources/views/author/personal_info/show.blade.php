@@ -19,8 +19,8 @@
                 </div> 
 
                 <div class="col-md-9 pl-0">
-                     @if($PersonalInfo)
-
+                    @include('author.partials.progress_message')
+                    @if($PersonalInfo)
                     <div class="card mt-2 mb-2 bg-light-green">
                         <div class="card-header pb-0 pt-2">
                             <div id="verifiedItems" class="float-right">

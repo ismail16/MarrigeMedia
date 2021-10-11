@@ -50,7 +50,7 @@
 				</li> -->
 
 				<li class="nav-item">
-					<a class="nav-link form-label" href="{{ route('register') }}">Sign UP</a>
+					<a class="nav-link form-label" href="{{ route('profile_create') }}">Create New Profile </a>
 				</li>
                  <li class="nav-item">
 					<a class="nav-link form-label" href="{{ route('login') }}">Login</a>
@@ -79,3 +79,10 @@
 
 	</div>
 </nav>
+@if(Auth::check())
+<section class="content">
+    <div class="container-fluid">
+			@include('author.partials.progress_message')
+	</div>
+@endif
+</section>

@@ -4,50 +4,47 @@
     .circle-tile {
     margin-bottom: 15px;
     text-align: center;
-}
-.circle-tile-heading {
-    border: 3px solid rgb(148 184 122);
-    border-radius: 100%;
-    color: #cf51a480;
-    height: 80px;
-    margin: 0 auto -40px;
-    position: relative;
-    transition: all 0.3s ease-in-out 0s;
-    width: 80px;
-}
-.circle-tile-heading i {
-    line-height: 80px;
-}
-.circle-tile-content {
-    padding-top: 50px;
-}
-.circle-tile-number {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    padding: 5px 0 15px;
-}
-.circle-tile-description {
-    text-transform: uppercase;
-}
-.circle-tile-footer {
-    background-color: rgba(0, 0, 0, 0.1);
-    display: block;
-    padding: 5px;
-    transition: all 0.3s ease-in-out 0s;
-}
-.circle-tile-footer:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-}
+    }
+    .circle-tile-heading {
+        border: 3px solid rgb(148 184 122);
+        border-radius: 100%;
+        color: #cf51a480;
+        height: 80px;
+        margin: 0 auto -40px;
+        position: relative;
+        transition: all 0.3s ease-in-out 0s;
+        width: 80px;
+    }
+    .circle-tile-heading i {
+        line-height: 80px;
+    }
+    .circle-tile-content {
+        padding-top: 50px;
+    }
+    .circle-tile-number {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1;
+        padding: 5px 0 15px;
+    }
+    .circle-tile-description {
+        text-transform: uppercase;
+    }
+    .circle-tile-footer {
+        background-color: rgba(0, 0, 0, 0.1);
+        display: block;
+        padding: 5px;
+        transition: all 0.3s ease-in-out 0s;
+    }
+    .circle-tile-footer:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+    }
 
-.tile-img {
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
-}
-
-
-
+    .tile-img {
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    }
 </style>
 @section('content')
 <section class="content">
@@ -57,6 +54,7 @@
                 @include('author.partials.sidebar')
             </div>
             <div class="col-md-9">
+                @include('author.partials.progress_message')
                 <div class="row mt-2">
                     <div class="container bootstrap snippets bootdey">     
                         <div class="row">

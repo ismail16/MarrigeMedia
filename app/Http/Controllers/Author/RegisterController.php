@@ -25,20 +25,16 @@ class RegisterController extends Controller
 
     public function index()
     {
-        return view('author.register');
+        return view('auth.register');
     }
 
     public function login()
     {
-//        return "hello";
         return view('author.login');
     }
 
     public function store(Request $request)
     {
-
-        // return $request;
-
         $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
@@ -78,7 +74,6 @@ class RegisterController extends Controller
         }
         $last_id = date("ym")+$last_id_temp+1;
 
-
         $saveuser = User::create([
             'u_id'  => $last_id,
             'role_id'  => 2,
@@ -104,7 +99,6 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'verifyToken' => Str::random(40),
         ]);
-
 
         if ($saveuser) {
             Mail::to($saveuser->email)->queue(new VerificationMail($saveuser));

@@ -107,7 +107,7 @@ class PagesController extends Controller
 
     public function login()
     {
-        return view('frontend.pages.login');
+        return view('auth.login');
     }
 
     public function about_us()

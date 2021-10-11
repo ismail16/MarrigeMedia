@@ -17,7 +17,7 @@
 					<h3>Need Help?</h3>
 					<ul class="footer_link">
 						<li><a href="{{ route('login') }}" class="form-label">Member Login</a></li>
-						<li><a href="{{ route('register') }}" class="form-label">Sign Up</a></li>
+						<li><a href="{{ route('profile_create') }}" class="form-label">Sign Up</a></li>
 						<!-- <li><a href="" class="form-label">Partner Search</a></li> -->
 						<!-- <li><a href="" class="form-label" target="_blank">How to Use marriagegate.com</a></li> -->
 						<!-- <li><a href="" class="form-label">Premium Memberships</a></li> -->

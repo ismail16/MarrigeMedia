@@ -9,6 +9,7 @@
             </div>
             @if($preference)
             <div class="col-md-9">
+                @include('author.partials.progress_message')
                 <div class="card mt-2">
                     @if ($errors->any())
                     <div class="alert">

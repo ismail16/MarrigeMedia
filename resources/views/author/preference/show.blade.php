@@ -12,6 +12,7 @@
                 @include('author.partials.sidebar')
             </div>
             <div class="col-md-9">
+            @include('author.partials.progress_message')
             @if($preference)
             <div class="card bg-light-green mt-2 mb-2">
                 <div class="card-header pb-0 pt-2">

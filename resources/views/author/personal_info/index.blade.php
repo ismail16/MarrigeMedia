@@ -19,6 +19,7 @@
                 </div> 
 
                 <div class="col-md-9">
+                    @include('author.partials.progress_message')
                     @if($PersonalInfo)
 
                     <div class="card card mt-2 mb-2 bg-light-green">

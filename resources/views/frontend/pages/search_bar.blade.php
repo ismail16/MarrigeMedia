@@ -6,7 +6,7 @@
 				<p class="text-center form-label mb-1">Preferred and Trusted Service for Finding a Life-Partner</p>
 				<div class="row  mb-3 d-flex justify-content-center border">
 					<div class="col-md-2 m-2">
-						<a href="{{ route('register') }}" class="btn btn-sm btn-block btn-success">
+						<a href="{{ route('profile_create') }}" class="btn btn-sm btn-block btn-success">
 							Create New Profile
 						</a>
 					</div>

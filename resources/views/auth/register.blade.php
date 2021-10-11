@@ -15,7 +15,7 @@
                     </div>
                 @endif
                 <div class="bg-light-green pl-3 pr-3 pb-3">
-                    <h3 class="text-center border-bottom mb-1 mt-1">Register or Sign Up</h3>
+                    <h3 class="text-center border-bottom mb-1 mt-1">Create New Profile</h3>
                     <div class="form-row">
                         <div class="col-md-6 form-group mb-1">
                             <label class="mb-0 form-label font-weight-bold">
@@ -317,6 +317,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
 <script type="text/javascript">
         function submit_form(){
+
+        $('#ftco-loader').addClass('show');
+
         var first_name = $("#first_name").val();
         var last_name = $("#last_name").val();
         var email = $("#email").val();
@@ -348,11 +351,13 @@
             success: function (data) {
                 console.log('success')
                 console.log(data)
+                $('#ftco-loader').removeClass('show');
                window.location.href = "{{ route('verifying_user') }}"
             },
 
             error: function(response) {
                 console.log('errors')
+                $('#ftco-loader').removeClass('show');
                 console.log(response.responseJSON.errors)
                 $('#first_name_err').text(response.responseJSON.errors.first_name);
                 $('#last_name_err').text(response.responseJSON.errors.last_name);
