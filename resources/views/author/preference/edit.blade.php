@@ -725,7 +725,7 @@
                               <option value="Arabic">Arabic</option>
                               <option value="Armenian">Armenian</option>
                               <option value="Basque">Basque</option>
-                              <option value="Bengala" selected>Bengala</option>
+                              <option value="Bangla" selected>Bangla</option>
                               <option value="Bulgarian">Bulgarian</option>
                               <option value="Catalan">Catalan</option>
                               <option value="Cambodian">Cambodian</option>
