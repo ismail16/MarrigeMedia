@@ -45,7 +45,7 @@
                                         @foreach($sent_messages as $sent_message)
                                             @php  
                                                 $sent_to = \App\User::find($sent_message->to_id);
-                                                $sent_to_image = \App\Models\UserProfileImage::Where('user_id', $sent_to->id)->first();
+                                                $sent_to_image = \App\Models\UserProfileImage::Where('user_id', $sent_to->id)->where('status', 1)->first();
                                             @endphp
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
