@@ -33,9 +33,12 @@ class UserInfoController extends Controller
     {
         $user = User::find($id);
         $PersonalInfo = PersonalInfo::where('user_id', $id)->first();
+        $Preference = Preference::where('user_id', $id)->first();
+
+        // return $Preference;
         if ($PersonalInfo) {
             $UserProfileImages = UserProfileImage::where('user_id', $id)->get();
-            return view('admin.user_info.show', compact('user', 'PersonalInfo', 'UserProfileImages'));
+            return view('admin.user_info.show', compact('user', 'PersonalInfo', 'UserProfileImages','Preference'));
         }else{
             return view('admin.user_info.inactive_show', compact('user'));
         }
@@ -57,11 +60,14 @@ class UserInfoController extends Controller
         }
 
         $PersonalInfo = PersonalInfo::where('user_id', $id)->first();
-        if ($request->user_status) {
-            // $PersonalInfo->status = $request->PersonalInfo_status;
+
+
+        if ($request->user_status && $request->activation) {
+            $PersonalInfo->status = 1;
             $user->activation = 1;
         }else{
             $PersonalInfo->status = 0;
+            $user->activation = 0;
         }
         
         $user->save();

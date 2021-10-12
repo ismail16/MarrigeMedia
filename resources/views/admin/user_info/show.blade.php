@@ -1,670 +1,789 @@
 @extends('admin.layouts.master')
 @section('title','Personal Information')
 @section('content')
-
     <section class="content">
         <div class="container-fluid">
-            <div class="card">
-                <div class="card-body pt-2">
-                    <h5 class="border-bottom font-italic font-weight-bold">Basic Information</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>First Name </span>
-                                </div> 
-                                <div class="col-md-8">
-                                    : <b>  {{ $user->first_name }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Last Name </span>
-                                </div> 
-                                <div class="col-md-8">
-                                    : <b>  {{ $user->last_name }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Email address</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $user->email }}</b>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Mobile </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->mobile}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>mobile </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->mobile}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Gender </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->gender}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Profession </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->profession}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Birthday </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->birthday}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Country </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->country}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>City / District </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->district}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Looking For </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->looking_for}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Religion </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->religion}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Religion </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->religion}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Caste </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->social_order}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Profile Create By </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->createdby}}</b>
-                                </div>
-                            </div>
-                        </div>
-
+            <div class="card mt-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div id="verifiedItems" class="float-right">
+                    <span>Verified:</span>
+                    <i class="fas fa-user-check text-success"></i>
                     </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold">Images</h5>
-                    <div class="row">
-                        @foreach($UserProfileImages as $UserProfileImage)
-                            <div class="_col-md-3 p-2 m-2 border">
-                                <img src="{{ asset('images/user_profile_image/'.$UserProfileImage->image) }}" class="img-fluid" style="height: 100px;">
-                            </div>
-                        @endforeach
+                    <div >
+                        <h3>Basic Information</h3>
                     </div>
+                </div>  
+                <div class="card-body p-2">
+                    <ul class="timeline timeline-left">
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/018-info-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Name </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->first_name }} {{ $user->last_name }}
+                                                </p>
+                                            </div>
+                                        </div>
 
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Email address </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->email }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Mobile </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->mobile }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                    <h5 class="border-bottom font-italic font-weight-bold">Education and Profession</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Education Level </span>
-                                </div> 
-                                <div class="col-md-8">
-                                    : <b>  {{ $PersonalInfo->education_level }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Major Subject</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{str_replace('_', ' ', $PersonalInfo->major_subject)}}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>My Profession : </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{str_replace('_', ' ', $PersonalInfo->my_profession)}}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Job Title : </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->job_title }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Job Company Name </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->job_company_name }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>My Income</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{str_replace('_', ' to ', $PersonalInfo->income)}} </b> Lac
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Address</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>District</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{str_replace('_', ' ', $PersonalInfo->district) }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Thana</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->thana }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Zip Code</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->zip_code }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Gender </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->gender }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Country of Residence</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{str_replace('_', ' ', $PersonalInfo->country_of_residence) }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>City of Residence</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->state_of_residence }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Profession </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{str_replace('_', ' ',  $user->profession) }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Citizenship </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->citizenship }}</b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Family Information</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Father's Name </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->father_name }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Father's Occupation </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{str_replace('_', ' ', $PersonalInfo->father_occupation) }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Meretial status </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                   {{str_replace('_', ' ', $user->marital_status) }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Mother's Name </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->mother_name }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Birthday</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->birthday }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Mother's Occupation </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->mother_occupation }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Country</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->country }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Number of Brother </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->number_of_brother }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> City / District</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->district }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>brother Married? </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->how_many_brother_married }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Looking For</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->looking_for }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Number of Sister </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->number_of_sister }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Religion</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->religion }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Sister Married? </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->how_many_sister_married }}</b>
-                                </div>
-                            </div>
-                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Caste</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{str_replace('_', ' ', $user->social_order) }}
+                                                </p>
+                                            </div>
+                                        </div>
 
-                    </div>
-
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Physical Information</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>My Height</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->height }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4"> 
-                                    <span>Weight(kg)</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->weight }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Blood Group</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->blood_group }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="hair_color">My Hair Color</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->hair_color }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="eye_color">My Eye Color </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->eye_color }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">              
-                                    <span for="skin_color">My Skin Color </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $PersonalInfo->skin_color }}</b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Others</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="smoke_status">Do I smoke?</span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{ $PersonalInfo->smoke_status }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="alcohol_status">Addicted to alcohol?</span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{ $PersonalInfo->alcohol_status }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="disabilities_status">Any disabilities?</span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{ $PersonalInfo->disabilities_status }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="do_u_have_children">Have children?</span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{ $PersonalInfo->do_u_have_children }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="hear_about_us">Know about us from </span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{ $PersonalInfo->hear_about_us }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span for="diat_status">Diat Status</span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{str_replace('_', ' ', $PersonalInfo->diat_status)}}</b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">language</h5>
-
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <span for="mother_tongue">Mother Tongue</span>
-                                </div>
-                                <div class="col-md-6">
-                                    : <b>{{ $PersonalInfo->mother_tongue }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        
- 
-                        <div class="col-md-8">
-                            <span for="hear_about_us">Others Language i know : </span>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input  type="checkbox"  onclick="return false;"  <?php if (in_array('Bangla',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Bangla"> Bangla
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('English',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="English" checked=""> English
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Hindi',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Hindi"> Hindi
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Arabic',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Arabic"> Arabic
-                                            
-                                        </span>
-                                    </div>     
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Spanish',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Spanish"> Spanish
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('German',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="German"> German
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Italian',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Italian"> Italian
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Russian',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Russian"> Russian
-                                            
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Urdu',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Urdu"> Urdu
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Dutch',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Dutch"> Dutch
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Persian',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Persian"> Persian
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Malay_based',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Malay_based"> Malay based
-                                            
-                                        </span>
-                                    </div> 
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Chinese',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Chinese"> Chinese
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('French',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="French"> French
-                                            
-                                        </span>
-                                    </div>
-                                    <div class="form-check">
-                                        <span class="form-check-label">
-                                            <input type="checkbox"  onclick="return false;"  <?php if (in_array('Tamil',json_decode($PersonalInfo->can_speak))){ echo "checked";} ?> value="Tamil"> Tamil
-                                            
-                                        </span>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Profile Create By</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->createdby }}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="card-footer border-top">
-                        <form action="{{route('admin.user-info.update', $user->id)}}" method="post"
-                          style="display: inline;"
-                          onsubmit="return confirm('Are you Sure? Confirming User')">
-                            @csrf
-                            @method('PUT')
-                            <input type="checkbox" name="user_status" value="1" {{ $user->status==1?'checked':'' }}> Confirm User <br>
-                            <input type="checkbox" name="PersonalInfo_status" value="1" {{ $PersonalInfo->status==1?'checked':'' }}> Confirm Personal Information <br> 
-                            <button class="btn btn-md btn-success" type="submit"> Confirm </button>
-                        </form>
-                    </div>
-
+                        </li>
+                    </ul>
                 </div>
+            </div>
+
+            <!-- IMAGE -->
+            <div class="card mt-2 mb-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div>
+                        <h3>Images</h3>
+                    </div>
+                </div>
+                    <div class="card-body">
+                    <div class="row">
+                    @foreach($UserProfileImages as $UserProfileImage)
+                        <div class="col-md-3 border">
+                            <img src="{{ asset('images/user_profile_image/'.$UserProfileImage->image) }}" class="img-fluid" style="height: 100px;">
+                            @if($UserProfileImage->status == 0 )
+                                <button class="btn btn-xs bg-red-active"><i class="fa fa-times-circle"></i> Not Show Public</button>
+                            @else
+                                <button class="btn btn-xs bg-green-active"><i class="fa fa-check-circle"></i> Show Public</button>
+                            @endif
+                        </div>
+                    @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div id="verifiedItems" class="float-right">
+                    <span>Verified:</span>
+                    <i class="fas fa-user-check text-success"></i>
+                    </div>
+                    <div >
+                        <h3>Profile Details</h3>
+                    </div>
+                </div>  
+                <div class="card-body p-2">
+                    <ul class="timeline timeline-left">
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/065-love-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">ABOUT HE</h4>
+                                </div>
+                                <div class="timeline-body text-dark">
+                                    <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                        {!! $user->user_info->about_me_family !!}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/018-info-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Basic Information</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Age </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ date_diff(date_create($user->birthday), date_create('now'))->y }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Marital Status </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ str_replace('_', ' ', $user->marital_status) }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Height </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->height }}''
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Weight </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->weight }} Kg
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Weight </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->weight }} Kg
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Religion </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->religion }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Blood Group </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->blood_group }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/016-graduated.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Education and Profession</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Education Level </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ str_replace('_', ' ', $user->user_info->education_level) }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Major Subject </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ str_replace('_', ' ', $user->user_info->major_subject) }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">My Profession </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ str_replace('_', ' ', $user->user_info->my_profession) }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Job Title </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->job_title }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Company Name </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->job_company_name }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">My Income </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ str_replace('_', ' ', $user->user_info->income) }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/009-address.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Address</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">District </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->district }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Thana </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->thana }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Zip Code </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->zip_code }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Residence(Country) </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->country_of_residence }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Residence(City) </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->state_of_residence }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Citizenship </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->citizenship }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/022-family-2.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Family Information</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Father's Name </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->father_name }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Father's Occupation </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ str_replace('_', ' ', $user->user_info->father_occupation) }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Mother's Name </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->mother_name }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Mother's Occupation </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->mother_occupation }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Number of Brother </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->number_of_brother }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">brother Married? </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->how_many_brother_married }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Number of Sister </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->number_of_sister }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Sister Married? </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->user_info->how_many_sister_married }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/065-love-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Preferences</h4>
+                                </div>
+                                @if($Preference)
+                                <div class="timeline-body">
+                                    <div class="row bg-off-pink">
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Details you preferance</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->details_you_prefer}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Age </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->minAge}} - {{ $Preference->maxAge}} years
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Height </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->minHeight}}" - {{ $Preference->maxHeight}}" 
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Weight </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->minWeight}} - {{ $Preference->maxWeight}} Kg 
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="mb-0 form-label">Religion </label>
+                                            <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                {{ $Preference->religion}}
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-4"> 
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Family status </label>
+                                                <?php 
+                                                $family_statuss = json_decode($Preference->family_status) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($family_statuss as $family_status)
+                                                        {{str_replace('_', ' ', $family_status) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <label class="mb-0 form-label">Meretial status </label> <br>
+                                            <?php 
+                                            $marital_statuss = json_decode($Preference->marital_status) ;
+                                            ?>
+                                            <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                @foreach($marital_statuss as $marital_status)
+                                                    {{str_replace('_', ' ', $marital_status) }},
+                                                @endforeach
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">
+                                                Allow Children?</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->allow_children}}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">         
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Skin Color </label>
+                                                <?php 
+                                                $skin_colors = json_decode($Preference->skin_color) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($skin_colors as $skin_color)
+                                                        {{str_replace('_', ' ', $skin_color) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Blood Group </label>
+                                                <?php 
+                                                $blood_groups = json_decode($Preference->blood_group) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($blood_groups as $blood_group)
+                                                        {{str_replace('_', ' ', $blood_group) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>   
+                                        </div>
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="other-area">
+                                                <div class="form-group mb-1">
+                                                    <label class="mb-0 form-label">Hair Color </label>
+                                                    <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                        {{ $Preference->hair_color}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="other-area">
+                                                <div class="form-group mb-1">
+                                                    <label class="mb-0 form-label">Eye Color </label>
+                                                    <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                        {{ $Preference->eye_color}}
+                                                    </p>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="other-area">
+                                                <div class="form-group mb-1">
+                                                    <label class="mb-0 form-label">Allow Disabilities? </label>
+                                                    <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                        {{ $Preference->disabilities_status}}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="other-area">
+                                                <div class="form-group mb-1">
+                                                    <label class="mb-0 form-label">Education Level </label>
+                                                    <?php 
+                                                    $education_levels = json_decode($Preference->education_level) ;
+                                                    ?>
+                                                    <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                        @foreach($education_levels as $education_level)
+                                                            {{str_replace('_', ' ', $education_level) }},
+                                                        @endforeach
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Major Subject </label>
+                                                <?php 
+                                                $subjects = json_decode($Preference->subject) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($subjects as $subject)
+                                                        {{str_replace('_', ' ', $subject) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">My Profession </label>
+                                                <?php 
+                                                $professions = json_decode($Preference->profession) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($professions as $profession)
+                                                        {{str_replace('_', ' ', $profession) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-off-pink">
+                                        <div class="col-md-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Country of Residence </label>
+                                                <?php 
+                                                $countrys = json_decode($Preference->country) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($countrys as $country)
+                                                        {{str_replace('_', ' ', $country) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">District </label>
+                                                <?php 
+                                                $districts = json_decode($Preference->district) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($districts as $district)
+                                                        {{str_replace('_', ' ', $district) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Citizenship </label>
+                                                <?php 
+                                                $citizenships = json_decode($Preference->citizenship) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($citizenships as $citizenship)
+                                                        {{str_replace('_', ' ', $citizenship) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-off-pink">
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">
+                                                Allow Smoke?</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->smoke_status}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Allow Alcohol?</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $Preference->alcohol_status}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Diat Status</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{str_replace('_', ' ', $Preference->diat_status) }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label">Language </label>
+                                                <?php 
+                                                $languages = json_decode($Preference->language) ;
+                                                ?>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    @foreach($languages as $language)
+                                                        {{str_replace('_', ' ', $language) }},
+                                                    @endforeach
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @else
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card-body pt-2 bg-light-green">
+                                                <div class="alert alert-warning" role="alert">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="card-footer border-top">
+                <form action="{{route('admin.user-info.update', $user->id)}}" method="post"
+                  style="display: inline;"
+                  onsubmit="return confirm('Are you Sure? Confirming User')">
+                    @csrf
+                    @method('PUT')
+                    <input type="checkbox" name="user_status" value="1" {{ $user->status==1?'checked':'' }}> Verified User <br>
+                    <!-- <input type="checkbox" name="PersonalInfo_status" value="1" {{ $PersonalInfo->status==1?'checked':'' }}> Confirm Personal Information <br>  -->
+                    <input type="checkbox" name="activation" value="1" {{ $user->activation==1?'checked':'' }}> Activation User <span class="text-danger">(Be Sure All information is correct)</span> <br> 
+                    <button class="btn btn-md btn-success" type="submit"> Confirm </button>
+                </form>
             </div>
         </div>
     </section>

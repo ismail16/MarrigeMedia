@@ -58,7 +58,7 @@
 
 <div class="card mt-2 mb-2 bg-light-green d-none d-lg-block">
   <div class="card-header pb-0 pt-2">
-      <h4>Profile</h4>
+      <h4>Profile  (<a href="{{ route('member.my_biodata',Auth::user()->id ) }}">My Biodata</a>)</h4>
   </div>
   <div class="card-body p-1 bg-body-green">
         <a href="{{ route('member.basic-info.index') }}" class="nav-link form-label {{Request::is('member/basic-info*') ? 'bg-white border':''}}">

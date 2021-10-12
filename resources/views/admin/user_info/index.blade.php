@@ -57,9 +57,9 @@
                                             </td>
                                             <td class="text-center">
                                                 @if($user->status == 0 )
-                                                    <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Show frontend</button>
+                                                    <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Verify</button>
                                                 @else
-                                                    <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Show frontend</button>
+                                                    <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Verified</button>
                                                 @endif
                                             </td>
                                             <td class="text-center">

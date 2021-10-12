@@ -382,13 +382,13 @@
                                 </div>
                             </div>
                         </div>
-
-            
                     </div>
                     @else
-                       <a class="btn btn-sm mt-2 btn-primary" href="{{route('member.personal-info.create')}}">
-                            <i class="nav-icon fas fa-plus"></i> Create
-                        </a>
+                        <div class="col-md-9 d-flex justify-content-center d-flex align-items-center">
+                           <a class="btn btn-lg mt-2 btn-primary" href="{{route('member.personal-info.create')}}">
+                                <i class="nav-icon fas fa-plus"></i> Set Personal Information
+                            </a>
+                        </div>
                     @endif
                 </div>
             </div>

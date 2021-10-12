@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
 Route::get('/', 'Frontend\PagesController@index')->name('index');
 Route::get('/grooms', 'Frontend\PagesController@grooms')->name('grooms');
 Route::get('/brides', 'Frontend\PagesController@brides')->name('brides');
@@ -60,13 +58,11 @@ Route::group(['as' => 'member.', 'prefix' => 'member', 'namespace' => 'Author', 
     Route::resource('sent-message', 'SentMessageController');
     Route::resource('receive-message', 'RecieveMessageController');
     Route::resource('peyment', 'PaymentController');
-
     Route::resource('image-access', 'ImageAccessController');
     Route::resource('image-request-receive', 'ImageReqReceiveController');
-
     Route::resource('sent-proposal', 'SentProposalController');
     Route::resource('receive-proposal', 'ReceiveProposalController');
-
+    Route::get('my-biodata/{id}', 'BasicInfoController@my_biodata')->name('my_biodata');
 
     // Route::post('image-access-approved', 'ImageAccessController@imageAccessApproved')->name('image_access_approved');
     // Route::post('image-access-declined', 'ImageAccessController@imageAccessDeclined')->name('image_access_declined');

@@ -26,12 +26,48 @@
                             </div>
                         </div>
                     @endif
-                    <div class="col-md-12">
+                    @foreach($UserProfileImages as $UserProfileImage)
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center border">
+                                <img height="200" src="{{asset('images/user_profile_image/'.$UserProfileImage->image)}}"
+                                     alt="{{$UserProfileImage->image}}">
+                            </div>
+                            <div class="col-md-12 border text-center">
+                                @if($UserProfileImage->status == 0 )
+                                    <button class="btn btn-xs bg-red-active"><i class="fa fa-times-circle"></i> Not Show Public</button>
+                                @else
+                                    <button class="btn btn-xs bg-green-active"><i class="fa fa-check-circle"></i> Show Public</button>
+                                @endif
+                                <a href="{{route('member.images.edit', $UserProfileImage->id)}}"
+                                   class="btn btn-xs btn-success"><i class="fa fa-edit"></i></a>
+                                <form action="{{route('member.images.destroy', $UserProfileImage->id)}}" method="post"
+                                      style="display: inline;"
+                                      onsubmit="return confirm('Are you Sure? Want to delete')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    <div class="col-md-4 d-flex align-items-center">
+                        <div class="p-5">
+                            <a href="{{ route('member.images.create') }}" class="btn btn-lg btn-primary"> 
+                            <i class="fa fa-plus"></i> Add New Image
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
                         <div class="card mt-2 mb-2 bg-light-green">
                             <div class="card-body">
                                 <div class="table-responsive">
-                                <a href="{{ route('member.images.create') }}" class="float-right btn btn-sm btn-primary"> <i
-                                    class="fa fa-plus"></i> Add New</a>
+                                <a href="{{ route('member.images.create') }}" class="float-right btn btn-sm btn-primary ml-1"> <i
+                                    class="fa fa-plus"></i> Add New Image</a>
                                 <table id="example1" class="table table-bordered table-striped bg-light">
                                     <thead>
                                         <tr>
@@ -75,7 +111,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
     </div>

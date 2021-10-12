@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Models\PersonalInfo;
+use App\Models\UserProfileImage;
+use App\Models\Preference;
 
 class BasicInfoController extends Controller
 {
@@ -15,6 +18,16 @@ class BasicInfoController extends Controller
     {
         $user = Auth::user();
         return view('author.basic_info.index', compact('user'));
+    }
+
+    public function my_biodata($id)
+    {
+
+        $user = Auth::user();
+        $PersonalInfo =  PersonalInfo::where('user_id', $user->id)->first();
+        $UserProfileImage = UserProfileImage::where('user_id', $user->id)->first();
+        $Preference =  Preference::where('user_id', $user->id)->first();
+        return view('author.basic_info.my_biodata', compact('user','PersonalInfo', 'UserProfileImage', 'Preference'));
     }
 
     public function create()

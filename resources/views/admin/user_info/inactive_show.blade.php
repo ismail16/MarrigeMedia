@@ -4,222 +4,361 @@
 
     <section class="content">
         <div class="container-fluid">
+
+
+            <div class="card mt-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div id="verifiedItems" class="float-right">
+                    <span>Verified:</span>
+                    <i class="fas fa-user-check text-success"></i>
+                    </div>
+                    <div >
+                        <h3>Basic Information</h3>
+                    </div>
+                </div>  
+                <div class="card-body p-2">
+                    <ul class="timeline timeline-left">
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/018-info-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Name </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->first_name }} {{ $user->last_name }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Email address </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->email }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Mobile </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->mobile }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Gender </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->gender }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Profession </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{str_replace('_', ' ',  $user->profession) }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Meretial status </label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                   {{str_replace('_', ' ', $user->marital_status) }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Birthday</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->birthday }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Country</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->country }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> City / District</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->district }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Looking For</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->looking_for }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Religion</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->religion }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Caste</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{str_replace('_', ' ', $user->social_order) }}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <div class="form-group mb-1">
+                                                <label class="mb-0 form-label"> Profile Create By</label>
+                                                <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
+                                                    {{ $user->createdby }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- IMAGE -->
+            <div class="card mt-2 mb-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div>
+                        <h3>Images</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="p-0">
+                                <div class="alert p-2 text-center alert-warning m-0">
+                                    Not Upload Yet
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div id="verifiedItems" class="float-right">
+                    <span>Not Verified:</span>
+                    <i class="fas fa-user-check text-success"></i>
+                    </div>
+                    <div >
+                        <h3>Profile Details</h3>
+                    </div>
+                </div>  
+       
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="p-0">
+                                <div class="alert p-2 text-center alert-warning m-0">
+                                    Not Set Yet
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <!--  <ul class="timeline timeline-left">
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/065-love-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">ABOUT HE</h4>
+                                </div>
+                                <div class="timeline-body text-dark">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="p-0">
+                                                <div class="alert p-2 text-center alert-warning m-0">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/018-info-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Basic Information</h4>
+                                </div>
+                                <div class="timeline-body">
+                                   <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="p-0">
+                                                <div class="alert p-2 text-center alert-warning m-0">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/016-graduated.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Education and Profession</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="p-0">
+                                                <div class="alert p-2 text-center alert-warning m-0">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/009-address.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Address</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="p-0">
+                                                <div class="alert p-2 text-center alert-warning m-0">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/022-family-2.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Family Information</h4>
+                                </div>
+                                <div class="timeline-body">
+                                   <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="p-0">
+                                                <div class="alert p-2 text-center alert-warning m-0">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="timeline-inverted timeline-item">
+                            <div class="timeline-badge bg_primary">
+                                <img src="{{ asset('images/icons/flaticon/065-love-1.png') }}" class="w-75">
+                            </div>
+                            <div class="timeline-panel bg-body-green border-0">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">Preferences</h4>
+                                </div>
+                                <div class="timeline-body">
+                                   <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="p-0">
+                                                <div class="alert p-2 text-center alert-warning m-0">
+                                                    Not Set Yet
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> -->
+                </div>
+            </div>
+
+            <!-- IMAGE -->
+            <div class="card mt-2 mb-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div>
+                        <h3>Preference</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="p-0">
+                                <div class="alert p-2 text-center alert-warning m-0">
+                                    Not set Yet
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-body pt-2">
-                    <h5 class="border-bottom font-italic font-weight-bold">Basic Information</h5>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>First Name </span>
-                                </div> 
-                                <div class="col-md-8">
-                                    : <b>  {{ $user->first_name }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Last Name </span>
-                                </div> 
-                                <div class="col-md-8">
-                                    : <b>  {{ $user->last_name }}</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Email address</span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{ $user->email }}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Mobile </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->mobile}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>mobile </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->mobile}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Gender </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->gender}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Profession </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->profession}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Birthday </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->birthday}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Country </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->country}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>City / District </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->district}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Looking For </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->looking_for}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Religion </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->religion}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Religion </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->religion}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Caste </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->social_order}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <span>Profile Create By </span>
-                                </div>
-                                <div class="col-md-8">
-                                    : <b>{{$user->createdby}}</b>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold">Images</h5>
-                    <div class="row">
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold">Images</h5>
-                    <div class="row">
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold">Education and Profession</h5>
-                    <div class="row">
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Address</h5>
-                    <div class="row">
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Family Information</h5>
-                    <div class="row">
-                    </div>
-
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Physical Information</h5>
-                    <div class="row">
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">Others</h5>
-                    <div class="row">
-                    </div>
-
-                    <h5 class="border-bottom font-italic font-weight-bold pt-2">language</h5>
-                    <div class="row">
-                    </div>
-
-
-
                     <div class="card-footer border-top">
                         <form action="{{route('admin.user-info.update', $user->id)}}" method="post"
                           style="display: inline;"
                           onsubmit="return confirm('Are you Sure? Confirming User')">
                             @csrf
                             @method('PUT')
-                            <input type="checkbox" name="user_status" value="1" {{ $user->status==1?'checked':'' }}> Confirm User <br>
+                            <input type="checkbox" name="user_status" value="1" {{ $user->status==1?'checked':'' }}> Verified User <br>
                             <button class="btn btn-md btn-success" type="submit"> Confirm </button>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>

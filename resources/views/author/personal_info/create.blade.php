@@ -179,6 +179,7 @@
                                 <div class="form-group ">
                                     <label class="form-label" for="my_profession">My Profession *</label>
                                     <select class="form-control-sm w-100" name="my_profession">
+                                        <option value="Student">Student</option>
                                         <option value="Engineer">Engineer</option>
                                         <option value="Banker">Banker</option>
                                         <option value="Doctor">Doctor</option>
@@ -228,7 +229,6 @@
                                         <option value="Retail_Professional">Retail Professional</option>
                                         <option value="Retired_Person">Retired Person</option>
                                         <option value="Sales_Professional">Sales Professional</option>
-                                        <option value="Student">Student</option>
                                         <option value="Technician">Technician</option>
                                         <option value="Training_Professional">Training Professional</option>
                                         <option value="Veterinary Doctor">Veterinary Doctor</option>
@@ -285,13 +285,13 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group ">
-                                    <label class="form-label" for="job_title">Job Title </label>
+                                    <label class="form-label" for="job_title">Job Title (if any)</label>
                                     <input type="text" id="job_title" class="form-control-sm w-100" name="job_title" placeholder="Job Title...">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group ">
-                                    <label class="form-label" for="job_company_name">Job Company Name </label>
+                                    <label class="form-label" for="job_company_name">Job Company Name (if any)</label>
                                     <input type="text" id="job_company_name" class="form-control-sm w-100" name="job_company_name" placeholder="Company Name...">
                                 </div>
                             </div>

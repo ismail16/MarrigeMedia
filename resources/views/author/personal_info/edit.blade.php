@@ -285,13 +285,13 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group ">
-                                <label class="form-label mb-0" for="job_title">Job Title </label>
+                                <label class="form-label mb-0" for="job_title">Job Title (if any) </label>
                                 <input type="text" id="job_title" name="job_title" value="{{ $PersonalInfo->job_title }}" class="form-control-sm w-100"  placeholder="Job Title...">
                             </div>
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group ">
-                                <label class="form-label mb-0" for="job_company_name">Job Company Name </label>
+                                <label class="form-label mb-0" for="job_company_name">Job Company Name (if any)</label>
                                 <input type="text" id="job_company_name" name="job_company_name" value="{{ $PersonalInfo->job_company_name }}" class="form-control-sm w-100" placeholder="Company Name...">
                             </div>
                         </div>
