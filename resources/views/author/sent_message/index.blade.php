@@ -55,7 +55,15 @@
                                                     </a>
                                                 </td>
                                                 <td>
+                                                    @if($sent_to_image)
                                                     <img src="{{ asset('images/user_profile_image/'.$sent_to_image->image) }}" class="img-fluid" style="width: 50px;">
+                                                    @else
+                                                        @if($sent_to->gender == 'Female')
+                                                            <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" style="width: 50px;">
+                                                        @else
+                                                            <img src="{{ asset('images/icons/flaticon/businessman.png') }}" style="width: 50px;">
+                                                        @endif
+                                                    @endif
                                                 </td>
                                                 <td>{{$sent_message->subject}}</td>
                                                 <td class="w-25">{{$sent_message->message}}</td>
