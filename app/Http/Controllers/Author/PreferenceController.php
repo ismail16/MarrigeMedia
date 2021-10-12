@@ -26,7 +26,34 @@ class PreferenceController extends Controller
     public function store(Request $request)
     {
 
-        // return $request;
+        $this->validate($request, [
+            'minAge' => 'required',
+            'maxAge' => 'required',             
+            'religion' => 'required', 
+            'family_status' => 'required', 
+            'marital_status' => 'required', 
+            'details_you_prefer' => 'required', 
+            'minHeight' => 'required', 
+            'maxHeight' => 'required', 
+            'minWeight' => 'required', 
+            'maxWeight' => 'required', 
+            'blood_group' => 'required', 
+            'hair_color' => 'required', 
+            'eye_color' => 'required', 
+            'skin_color' => 'required', 
+            'disabilities_status' => 'required', 
+            'education_level' => 'required', 
+            'subject' => 'required', 
+            'profession' => 'required', 
+            'country' => 'required', 
+            'district' => 'required', 
+            'citizenship' => 'required', 
+            'smoke_status' => 'required', 
+            'alcohol_status' => 'required', 
+            'diat_status' => 'required', 
+            'language' => 'required',
+        ]);
+
         $user = Auth::user();
         $preference = new Preference;
         $preference->user_id = $user->id;
@@ -58,7 +85,6 @@ class PreferenceController extends Controller
         $preference->smoke_status = $request->smoke_status;
         $preference->alcohol_status = $request->alcohol_status;
         $preference->diat_status = $request->diat_status;
-        $preference->language = $request->have_children;
         $preference->language = json_encode($request->language);
         $preference->status = 0;
         $preference->save();
@@ -81,7 +107,33 @@ class PreferenceController extends Controller
     public function update(Request $request, $id)
     {
 
-        // return $request;
+        $this->validate($request, [
+            'minAge' => 'required',
+            'maxAge' => 'required',             
+            'religion' => 'required', 
+            'family_status' => 'required', 
+            'marital_status' => 'required', 
+            'details_you_prefer' => 'required', 
+            'minHeight' => 'required', 
+            'maxHeight' => 'required', 
+            'minWeight' => 'required', 
+            'maxWeight' => 'required', 
+            'blood_group' => 'required', 
+            'hair_color' => 'required', 
+            'eye_color' => 'required', 
+            'skin_color' => 'required', 
+            'disabilities_status' => 'required', 
+            'education_level' => 'required', 
+            'subject' => 'required', 
+            'profession' => 'required', 
+            'country' => 'required', 
+            'district' => 'required', 
+            'citizenship' => 'required', 
+            'smoke_status' => 'required', 
+            'alcohol_status' => 'required', 
+            'diat_status' => 'required', 
+            'language' => 'required',
+        ]);
    
         $preference =  Preference::find($id);
         $preference->minAge = $request->minAge;
