@@ -80,6 +80,8 @@ class PreferenceController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        // return $request;
    
         $preference =  Preference::find($id);
         $preference->minAge = $request->minAge;
@@ -112,6 +114,8 @@ class PreferenceController extends Controller
         $preference->diat_status = $request->diat_status;
         $preference->language = $request->have_children;
         $preference->language = json_encode($request->language);
+
+        // return $preference;
         $preference->save();
 
         return $preference;
