@@ -24,10 +24,20 @@ class BasicInfoController extends Controller
     {
 
         $user = Auth::user();
-        $PersonalInfo =  PersonalInfo::where('user_id', $user->id)->first();
-        $UserProfileImage = UserProfileImage::where('user_id', $user->id)->first();
+
+        // $PInfo =  PersonalInfo::where('user_id', $user->id)->first();
+        $UPImage = UserProfileImage::where('user_id', $user->id)->first();
         $Preference =  Preference::where('user_id', $user->id)->first();
-        return view('author.basic_info.my_biodata', compact('user','PersonalInfo', 'UserProfileImage', 'Preference'));
+
+        if ($UPImage) {
+            $UserProfileImage = $UPImage;
+        }else{
+            $UserProfileImage = null;
+        }
+  
+
+        // return $Preference;
+        return view('author.basic_info.my_biodata', compact('user', 'UserProfileImage', 'Preference'));
     }
 
     public function create()
