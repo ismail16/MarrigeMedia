@@ -95,10 +95,10 @@
                                                     @endif
                                                 </td>
                                                 <td class="text-center">
-                                                    <a href="{{route('member.recieve-message.show', $receive_message->id)}}"
+                                                    <a href="{{route('member.receive-message.show', $receive_message->id)}}"
                                                        class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a>
 
-                                                    <form action="{{route('member.recieve-message.destroy', $receive_message->id)}}" method="post"
+                                                    <form action="{{route('member.receive-message.destroy', $receive_message->id)}}" method="post"
                                                           style="display: inline;"
                                                           onsubmit="return confirm('Are you Sure? Want to delete')">
                                                         @csrf

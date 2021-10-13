@@ -45,7 +45,7 @@
                                         @foreach($sent_messages as $sent_message)
                                             @php  
                                                 $sent_to = \App\User::find($sent_message->to_id);
-                                                $sent_to_image = \App\Models\UserProfileImage::Where('user_id', $sent_to->id)->first();
+                                                $sent_to_image = \App\Models\UserProfileImage::Where('user_id', $sent_to->id)->where('status', 1)->first();
                                             @endphp
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
@@ -55,7 +55,15 @@
                                                     </a>
                                                 </td>
                                                 <td>
+                                                    @if($sent_to_image)
                                                     <img src="{{ asset('images/user_profile_image/'.$sent_to_image->image) }}" class="img-fluid" style="width: 50px;">
+                                                    @else
+                                                        @if($sent_to->gender == 'Female')
+                                                            <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" style="width: 50px;">
+                                                        @else
+                                                            <img src="{{ asset('images/icons/flaticon/businessman.png') }}" style="width: 50px;">
+                                                        @endif
+                                                    @endif
                                                 </td>
                                                 <td>{{$sent_message->subject}}</td>
                                                 <td class="w-25">{{$sent_message->message}}</td>

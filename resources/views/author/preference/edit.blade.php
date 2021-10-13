@@ -35,7 +35,7 @@
                     <div class="col-sm-4"> 
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Maximum Age *</label>
-                            <input type="number" value="{{ $preference->minAge }}" required id="minAge" name="maxAge" class="form-control-sm w-100" placeholder="Ex. 30">
+                            <input type="number" value="{{ $preference->maxAge }}" required id="maxAge" name="maxAge" class="form-control-sm w-100" placeholder="Ex. 30">
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -98,44 +98,44 @@
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Min Height *</label>
                             <select class="form-control-sm w-100" id="minHeight" name="minHeight">
-                                <option value="4.0" {{ $preference->height=='4.0'?'selected':'' }}>4 Feet</option>
-                                <option value="4.1" {{ $preference->height=='4.1'?'selected':'' }}>4 Feet 1 Inch</option>
-                                <option value="4.2" {{ $preference->height=='4.2'?'selected':'' }}>4 Feet 2 Inch</option>
-                                <option value="4.3" {{ $preference->height=='4.3'?'selected':'' }}>4 Feet 3 Inch</option>
-                                <option value="4.4" {{ $preference->height=='4.4'?'selected':'' }}>4 Feet 4 Inch</option>
-                                <option value="4.5" {{ $preference->height=='4.5'?'selected':'' }}>4 Feet 5 Inch</option>
-                                <option value="4.6" {{ $preference->height=='4.6'?'selected':'' }}>4 Feet 6 Inch</option>
-                                <option value="4.7" {{ $preference->height=='4.7'?'selected':'' }}>4 Feet 7 Inch</option>
-                                <option value="4.8" {{ $preference->height=='4.8'?'selected':'' }}>4 Feet 8 Inch</option>
-                                <option value="4.9" {{ $preference->height=='4.9'?'selected':'' }}>4 Feet 9 Inch</option>
-                                <option value="4.10" {{ $preference->height=='4.10'?'selected':'' }}>4 Feet 10 Inch</option>
-                                <option value="4.11" {{ $preference->height=='4.11'?'selected':'' }}>4 Feet 11 Inch</option>
-                                <option value="5.0" {{ $preference->height=='5.0'?'selected':'' }}>5 Feet</option>
-                                <option value="5.1" {{ $preference->height=='5.1'?'selected':'' }}>5 Feet 1 Inch</option>
-                                <option value="5.2" {{ $preference->height=='5.2'?'selected':'' }}>5 Feet 2 Inch</option>
-                                <option value="5.3" {{ $preference->height=='5.3'?'selected':'' }}>5 Feet 3 Inch</option>
-                                <option value="5.4" {{ $preference->height=='5.4'?'selected':'' }}>5 Feet 4 Inch</option>
-                                <option value="5.5" {{ $preference->height=='5.5'?'selected':'' }}>5 Feet 5 Inch</option>
-                                <option value="5.6" {{ $preference->height=='5.6'?'selected':'' }}>5 Feet 6 Inch</option>
-                                <option value="5.7" {{ $preference->height=='5.7'?'selected':'' }}>5 Feet 7 Inch</option>
-                                <option value="5.8" {{ $preference->height=='5.8'?'selected':'' }}>5 Feet 8 Inch</option>
-                                <option value="5.9" {{ $preference->height=='5.9'?'selected':'' }}>5 Feet 9 Inch</option>
-                                <option value="5.10" {{ $preference->height=='5.10'?'selected':'' }}>5 Feet 10 Inch</option>
-                                <option value="5.11" {{ $preference->height=='5.11'?'selected':'' }}>5 Feet 11 Inch</option>
-                                <option value="6.0" {{ $preference->height=='6.0'?'selected':'' }}>6 Feet</option>
-                                <option value="6.1" {{ $preference->height=='6.1'?'selected':'' }}>6 Feet 1 Inch</option>
-                                <option value="6.2" {{ $preference->height=='6.2'?'selected':'' }}>6 Feet 2 Inch</option>
-                                <option value="6.3" {{ $preference->height=='6.3'?'selected':'' }}>6 Feet 3 Inch</option>
-                                <option value="6.4" {{ $preference->height=='6.4'?'selected':'' }}>6 Feet 4 Inch</option>
-                                <option value="6.5" {{ $preference->height=='6.5'?'selected':'' }}>6 Feet 5 Inch</option>
-                                <option value="6.6" {{ $preference->height=='6.6'?'selected':'' }}>6 Feet 6 Inch</option>
-                                <option value="6.7" {{ $preference->height=='6.7'?'selected':'' }}>6 Feet 7 Inch</option>
-                                <option value="6.8" {{ $preference->height=='6.8'?'selected':'' }}>6 Feet 8 Inch</option>
-                                <option value="6.9" {{ $preference->height=='6.9'?'selected':'' }}>6 Feet 9 Inch</option>
-                                <option value="6.10" {{ $preference->height=='6.10'?'selected':'' }}>6 Feet 10 Inch</option>
-                                <option value="6.11" {{ $preference->height=='6.11'?'selected':'' }}>6 Feet 11 Inch</option>
-                                <option value="7.0" {{ $preference->height=='7.0'?'selected':'' }}>7 Feet</option>
-                                <option value="7+" {{ $preference->height=='7+'?'selected':'' }}>More than 7 Feet</option>
+                                <option value="4.0" {{ $preference->minHeight=='4.0'?'selected':'' }}>4 Feet</option>
+                                <option value="4.1" {{ $preference->minHeight=='4.1'?'selected':'' }}>4 Feet 1 Inch</option>
+                                <option value="4.2" {{ $preference->minHeight=='4.2'?'selected':'' }}>4 Feet 2 Inch</option>
+                                <option value="4.3" {{ $preference->minHeight=='4.3'?'selected':'' }}>4 Feet 3 Inch</option>
+                                <option value="4.4" {{ $preference->minHeight=='4.4'?'selected':'' }}>4 Feet 4 Inch</option>
+                                <option value="4.5" {{ $preference->minHeight=='4.5'?'selected':'' }}>4 Feet 5 Inch</option>
+                                <option value="4.6" {{ $preference->minHeight=='4.6'?'selected':'' }}>4 Feet 6 Inch</option>
+                                <option value="4.7" {{ $preference->minHeight=='4.7'?'selected':'' }}>4 Feet 7 Inch</option>
+                                <option value="4.8" {{ $preference->minHeight=='4.8'?'selected':'' }}>4 Feet 8 Inch</option>
+                                <option value="4.9" {{ $preference->minHeight=='4.9'?'selected':'' }}>4 Feet 9 Inch</option>
+                                <option value="4.10" {{ $preference->minHeight=='4.10'?'selected':'' }}>4 Feet 10 Inch</option>
+                                <option value="4.11" {{ $preference->minHeight=='4.11'?'selected':'' }}>4 Feet 11 Inch</option>
+                                <option value="5.0" {{ $preference->minHeight=='5.0'?'selected':'' }}>5 Feet</option>
+                                <option value="5.1" {{ $preference->minHeight=='5.1'?'selected':'' }}>5 Feet 1 Inch</option>
+                                <option value="5.2" {{ $preference->minHeight=='5.2'?'selected':'' }}>5 Feet 2 Inch</option>
+                                <option value="5.3" {{ $preference->minHeight=='5.3'?'selected':'' }}>5 Feet 3 Inch</option>
+                                <option value="5.4" {{ $preference->minHeight=='5.4'?'selected':'' }}>5 Feet 4 Inch</option>
+                                <option value="5.5" {{ $preference->minHeight=='5.5'?'selected':'' }}>5 Feet 5 Inch</option>
+                                <option value="5.6" {{ $preference->minHeight=='5.6'?'selected':'' }}>5 Feet 6 Inch</option>
+                                <option value="5.7" {{ $preference->minHeight=='5.7'?'selected':'' }}>5 Feet 7 Inch</option>
+                                <option value="5.8" {{ $preference->minHeight=='5.8'?'selected':'' }}>5 Feet 8 Inch</option>
+                                <option value="5.9" {{ $preference->minHeight=='5.9'?'selected':'' }}>5 Feet 9 Inch</option>
+                                <option value="5.10" {{ $preference->minHeight=='5.10'?'selected':'' }}>5 Feet 10 Inch</option>
+                                <option value="5.11" {{ $preference->minHeight=='5.11'?'selected':'' }}>5 Feet 11 Inch</option>
+                                <option value="6.0" {{ $preference->minHeight=='6.0'?'selected':'' }}>6 Feet</option>
+                                <option value="6.1" {{ $preference->minHeight=='6.1'?'selected':'' }}>6 Feet 1 Inch</option>
+                                <option value="6.2" {{ $preference->minHeight=='6.2'?'selected':'' }}>6 Feet 2 Inch</option>
+                                <option value="6.3" {{ $preference->minHeight=='6.3'?'selected':'' }}>6 Feet 3 Inch</option>
+                                <option value="6.4" {{ $preference->minHeight=='6.4'?'selected':'' }}>6 Feet 4 Inch</option>
+                                <option value="6.5" {{ $preference->minHeight=='6.5'?'selected':'' }}>6 Feet 5 Inch</option>
+                                <option value="6.6" {{ $preference->minHeight=='6.6'?'selected':'' }}>6 Feet 6 Inch</option>
+                                <option value="6.7" {{ $preference->minHeight=='6.7'?'selected':'' }}>6 Feet 7 Inch</option>
+                                <option value="6.8" {{ $preference->minHeight=='6.8'?'selected':'' }}>6 Feet 8 Inch</option>
+                                <option value="6.9" {{ $preference->minHeight=='6.9'?'selected':'' }}>6 Feet 9 Inch</option>
+                                <option value="6.10" {{ $preference->minHeight=='6.10'?'selected':'' }}>6 Feet 10 Inch</option>
+                                <option value="6.11" {{ $preference->minHeight=='6.11'?'selected':'' }}>6 Feet 11 Inch</option>
+                                <option value="7.0" {{ $preference->minHeight=='7.0'?'selected':'' }}>7 Feet</option>
+                                <option value="7+" {{ $preference->minHeight=='7+'?'selected':'' }}>More than 7 Feet</option>
                             </select>
                         </div>
                     </div>
@@ -143,44 +143,44 @@
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Max Height *</label>
                             <select class="form-control-sm w-100" id="maxHeight" name="maxHeight">
-                                <option value="4.0" {{ $preference->height=='4.0'?'selected':'' }}>4 Feet</option>
-                                <option value="4.1" {{ $preference->height=='4.1'?'selected':'' }}>4 Feet 1 Inch</option>
-                                <option value="4.2" {{ $preference->height=='4.2'?'selected':'' }}>4 Feet 2 Inch</option>
-                                <option value="4.3" {{ $preference->height=='4.3'?'selected':'' }}>4 Feet 3 Inch</option>
-                                <option value="4.4" {{ $preference->height=='4.4'?'selected':'' }}>4 Feet 4 Inch</option>
-                                <option value="4.5" {{ $preference->height=='4.5'?'selected':'' }}>4 Feet 5 Inch</option>
-                                <option value="4.6" {{ $preference->height=='4.6'?'selected':'' }}>4 Feet 6 Inch</option>
-                                <option value="4.7" {{ $preference->height=='4.7'?'selected':'' }}>4 Feet 7 Inch</option>
-                                <option value="4.8" {{ $preference->height=='4.8'?'selected':'' }}>4 Feet 8 Inch</option>
-                                <option value="4.9" {{ $preference->height=='4.9'?'selected':'' }}>4 Feet 9 Inch</option>
-                                <option value="4.10" {{ $preference->height=='4.10'?'selected':'' }}>4 Feet 10 Inch</option>
-                                <option value="4.11" {{ $preference->height=='4.11'?'selected':'' }}>4 Feet 11 Inch</option>
-                                <option value="5.0" {{ $preference->height=='5.0'?'selected':'' }}>5 Feet</option>
-                                <option value="5.1" {{ $preference->height=='5.1'?'selected':'' }}>5 Feet 1 Inch</option>
-                                <option value="5.2" {{ $preference->height=='5.2'?'selected':'' }}>5 Feet 2 Inch</option>
-                                <option value="5.3" {{ $preference->height=='5.3'?'selected':'' }}>5 Feet 3 Inch</option>
-                                <option value="5.4" {{ $preference->height=='5.4'?'selected':'' }}>5 Feet 4 Inch</option>
-                                <option value="5.5" {{ $preference->height=='5.5'?'selected':'' }}>5 Feet 5 Inch</option>
-                                <option value="5.6" {{ $preference->height=='5.6'?'selected':'' }}>5 Feet 6 Inch</option>
-                                <option value="5.7" {{ $preference->height=='5.7'?'selected':'' }}>5 Feet 7 Inch</option>
-                                <option value="5.8" {{ $preference->height=='5.8'?'selected':'' }}>5 Feet 8 Inch</option>
-                                <option value="5.9" {{ $preference->height=='5.9'?'selected':'' }}>5 Feet 9 Inch</option>
-                                <option value="5.10" {{ $preference->height=='5.10'?'selected':'' }}>5 Feet 10 Inch</option>
-                                <option value="5.11" {{ $preference->height=='5.11'?'selected':'' }}>5 Feet 11 Inch</option>
-                                <option value="6.0" {{ $preference->height=='6.0'?'selected':'' }}>6 Feet</option>
-                                <option value="6.1" {{ $preference->height=='6.1'?'selected':'' }}>6 Feet 1 Inch</option>
-                                <option value="6.2" {{ $preference->height=='6.2'?'selected':'' }}>6 Feet 2 Inch</option>
-                                <option value="6.3" {{ $preference->height=='6.3'?'selected':'' }}>6 Feet 3 Inch</option>
-                                <option value="6.4" {{ $preference->height=='6.4'?'selected':'' }}>6 Feet 4 Inch</option>
-                                <option value="6.5" {{ $preference->height=='6.5'?'selected':'' }}>6 Feet 5 Inch</option>
-                                <option value="6.6" {{ $preference->height=='6.6'?'selected':'' }}>6 Feet 6 Inch</option>
-                                <option value="6.7" {{ $preference->height=='6.7'?'selected':'' }}>6 Feet 7 Inch</option>
-                                <option value="6.8" {{ $preference->height=='6.8'?'selected':'' }}>6 Feet 8 Inch</option>
-                                <option value="6.9" {{ $preference->height=='6.9'?'selected':'' }}>6 Feet 9 Inch</option>
-                                <option value="6.10" {{ $preference->height=='6.10'?'selected':'' }}>6 Feet 10 Inch</option>
-                                <option value="6.11" {{ $preference->height=='6.11'?'selected':'' }}>6 Feet 11 Inch</option>
-                                <option value="7.0" {{ $preference->height=='7.0'?'selected':'' }}>7 Feet</option>
-                                <option value="7+" {{ $preference->height=='7+'?'selected':'' }}>More than 7 Feet</option>
+                                <option value="4.0" {{ $preference->maxHeight=='4.0'?'selected':'' }}>4 Feet</option>
+                                <option value="4.1" {{ $preference->maxHeight=='4.1'?'selected':'' }}>4 Feet 1 Inch</option>
+                                <option value="4.2" {{ $preference->maxHeight=='4.2'?'selected':'' }}>4 Feet 2 Inch</option>
+                                <option value="4.3" {{ $preference->maxHeight=='4.3'?'selected':'' }}>4 Feet 3 Inch</option>
+                                <option value="4.4" {{ $preference->maxHeight=='4.4'?'selected':'' }}>4 Feet 4 Inch</option>
+                                <option value="4.5" {{ $preference->maxHeight=='4.5'?'selected':'' }}>4 Feet 5 Inch</option>
+                                <option value="4.6" {{ $preference->maxHeight=='4.6'?'selected':'' }}>4 Feet 6 Inch</option>
+                                <option value="4.7" {{ $preference->maxHeight=='4.7'?'selected':'' }}>4 Feet 7 Inch</option>
+                                <option value="4.8" {{ $preference->maxHeight=='4.8'?'selected':'' }}>4 Feet 8 Inch</option>
+                                <option value="4.9" {{ $preference->maxHeight=='4.9'?'selected':'' }}>4 Feet 9 Inch</option>
+                                <option value="4.10" {{ $preference->maxHeight=='4.10'?'selected':'' }}>4 Feet 10 Inch</option>
+                                <option value="4.11" {{ $preference->maxHeight=='4.11'?'selected':'' }}>4 Feet 11 Inch</option>
+                                <option value="5.0" {{ $preference->maxHeight=='5.0'?'selected':'' }}>5 Feet</option>
+                                <option value="5.1" {{ $preference->maxHeight=='5.1'?'selected':'' }}>5 Feet 1 Inch</option>
+                                <option value="5.2" {{ $preference->maxHeight=='5.2'?'selected':'' }}>5 Feet 2 Inch</option>
+                                <option value="5.3" {{ $preference->maxHeight=='5.3'?'selected':'' }}>5 Feet 3 Inch</option>
+                                <option value="5.4" {{ $preference->maxHeight=='5.4'?'selected':'' }}>5 Feet 4 Inch</option>
+                                <option value="5.5" {{ $preference->maxHeight=='5.5'?'selected':'' }}>5 Feet 5 Inch</option>
+                                <option value="5.6" {{ $preference->maxHeight=='5.6'?'selected':'' }}>5 Feet 6 Inch</option>
+                                <option value="5.7" {{ $preference->maxHeight=='5.7'?'selected':'' }}>5 Feet 7 Inch</option>
+                                <option value="5.8" {{ $preference->maxHeight=='5.8'?'selected':'' }}>5 Feet 8 Inch</option>
+                                <option value="5.9" {{ $preference->maxHeight=='5.9'?'selected':'' }}>5 Feet 9 Inch</option>
+                                <option value="5.10" {{ $preference->maxHeight=='5.10'?'selected':'' }}>5 Feet 10 Inch</option>
+                                <option value="5.11" {{ $preference->maxHeight=='5.11'?'selected':'' }}>5 Feet 11 Inch</option>
+                                <option value="6.0" {{ $preference->maxHeight=='6.0'?'selected':'' }}>6 Feet</option>
+                                <option value="6.1" {{ $preference->maxHeight=='6.1'?'selected':'' }}>6 Feet 1 Inch</option>
+                                <option value="6.2" {{ $preference->maxHeight=='6.2'?'selected':'' }}>6 Feet 2 Inch</option>
+                                <option value="6.3" {{ $preference->maxHeight=='6.3'?'selected':'' }}>6 Feet 3 Inch</option>
+                                <option value="6.4" {{ $preference->maxHeight=='6.4'?'selected':'' }}>6 Feet 4 Inch</option>
+                                <option value="6.5" {{ $preference->maxHeight=='6.5'?'selected':'' }}>6 Feet 5 Inch</option>
+                                <option value="6.6" {{ $preference->maxHeight=='6.6'?'selected':'' }}>6 Feet 6 Inch</option>
+                                <option value="6.7" {{ $preference->maxHeight=='6.7'?'selected':'' }}>6 Feet 7 Inch</option>
+                                <option value="6.8" {{ $preference->maxHeight=='6.8'?'selected':'' }}>6 Feet 8 Inch</option>
+                                <option value="6.9" {{ $preference->maxHeight=='6.9'?'selected':'' }}>6 Feet 9 Inch</option>
+                                <option value="6.10" {{ $preference->maxHeight=='6.10'?'selected':'' }}>6 Feet 10 Inch</option>
+                                <option value="6.11" {{ $preference->maxHeight=='6.11'?'selected':'' }}>6 Feet 11 Inch</option>
+                                <option value="7.0" {{ $preference->maxHeight=='7.0'?'selected':'' }}>7 Feet</option>
+                                <option value="7+" {{ $preference->maxHeight=='7+'?'selected':'' }}>More than 7 Feet</option>
                             </select>
                         </div>
                     </div>
@@ -215,15 +215,15 @@
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Blood Group *</label>
                             <select class="form-control-sm w-100" id="blood_group" name="blood_group[]" multiple>
-                                <option value="B+" {{ $preference->blood_group=='B+'?'selected':'' }}>B (+)ve</option>
-                                <option value="B-" {{ $preference->blood_group=='B-'?'selected':'' }}>B (-)ve</option>
-                                <option value="A+" {{ $preference->blood_group=='A+'?'selected':'' }}>A (+)ve</option>
-                                <option value="A-" {{ $preference->blood_group=='A-'?'selected':'' }}>A (-)ve</option>
-                                <option value="AB+" {{ $preference->blood_group=='AB+'?'selected':'' }}>AB (+)ve</option>
-                                <option value="AB-" {{ $preference->blood_group=='AB-'?'selected':'' }}>AB (-)ve</option>
-                                <option value="O+" {{ $preference->blood_group=='O+'?'selected':'' }}>O (+)ve</option>
-                                <option value="O-" {{ $preference->blood_group=='O-'?'selected':'' }}>O (-)ve</option>
-                                <option value="Any" {{ $preference->blood_group=='Any'?'selected':'' }}>Any</option>
+                                <option value="Any">Any</option>
+                                <option value="B+">B (+)ve</option>
+                                <option value="A+">A (+)ve</option>
+                                <option value="A-">A (-)ve</option>
+                                <option value="B-">B (-)ve</option>
+                                <option value="AB+">AB (+)ve</option>
+                                <option value="AB-">AB (-)ve</option>
+                                <option value="O+">O (+)ve</option>
+                                <option value="O-">O (-)ve</option>
                             </select>
                         </div>   
                     </div>
@@ -530,42 +530,42 @@
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">Country of Residence *</label>
                             <select class="form-control-sm w-100 change-with-other" id="country" name="country[]" multiple>
-                                    <option value="Bangladesh">Bangladesh</option>
-                                    <option value="UK">United Kingdom</option>
-                                    <option value="USA">United States</option>
-                                    <option value="Canada">Canada</option>
-                                    <option value="Australia">Australia</option>
-                                    <option value="Spain">Spain</option>
-                                    <option value="Sweden">Sweden</option>
-                                    <option value="Austria">Austria</option>
-                                    <option value="India">India</option>
-                                    <option value="Pakistan">Pakistan</option>
-                                    <option value="Cyprus">Cyprus</option>
-                                    <option value="Denmark">Denmark</option>
-                                    <option value="Finland">Finland</option>
-                                    <option value="France">France</option>
-                                    <option value="Germany">Germany</option>
-                                    <option value="Greece">Greece</option>
-                                    <option value="Ireland">Ireland</option>
-                                    <option value="Italy">Italy</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="Kuwait">Kuwait</option>
-                                    <option value="Malaysia">Malaysia</option>
-                                    <option value="Maldives">Maldives</option>
-                                    <option value="New Zealand">New Zealand</option>
-                                    <option value="Nigeria">Nigeria</option>
-                                    <option value="Oman">Oman</option>
-                                    <option value="Poland">Poland</option>
-                                    <option value="Qatar">Qatar</option>
-                                    <option value="Saudi Arabia">Saudi Arabia</option>
-                                    <option value="Singapore">Singapore</option>
-                                    <option value="South Africa">South Africa</option>
-                                    <option value="South Korea">South Korea</option>
-                                    <option value="Thailand">Thailand</option>
-                                    <option value="United Arab Emirates">United Arab Emirates</option>
-                                    <option value="Bahrain">Bahrain</option>
-                                    <option value="Brazil">Brazil</option>
-                                    <option value="Other">Other</option>
+                                <option value="Bangladesh">Bangladesh</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="USA">United States</option>
+                                <option value="Canada">Canada</option>
+                                <option value="Australia">Australia</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Sweden">Sweden</option>
+                                <option value="Austria">Austria</option>
+                                <option value="India">India</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Cyprus">Cyprus</option>
+                                <option value="Denmark">Denmark</option>
+                                <option value="Finland">Finland</option>
+                                <option value="France">France</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Greece">Greece</option>
+                                <option value="Ireland">Ireland</option>
+                                <option value="Italy">Italy</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Kuwait">Kuwait</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Maldives">Maldives</option>
+                                <option value="New Zealand">New Zealand</option>
+                                <option value="Nigeria">Nigeria</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Poland">Poland</option>
+                                <option value="Qatar">Qatar</option>
+                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="South Africa">South Africa</option>
+                                <option value="South Korea">South Korea</option>
+                                <option value="Thailand">Thailand</option>
+                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                <option value="Bahrain">Bahrain</option>
+                                <option value="Brazil">Brazil</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                     </div>
@@ -725,7 +725,7 @@
                               <option value="Arabic">Arabic</option>
                               <option value="Armenian">Armenian</option>
                               <option value="Basque">Basque</option>
-                              <option value="Bengala" selected>Bengala</option>
+                              <option value="Bangla" selected>Bangla</option>
                               <option value="Bulgarian">Bulgarian</option>
                               <option value="Catalan">Catalan</option>
                               <option value="Cambodian">Cambodian</option>
@@ -942,6 +942,8 @@
                   icon: 'success',
                   title: 'Save preference successfully'
                 })
+
+                // console.log(data)
                 window.location.href = "{{ route('member.preference.index') }}"
             },
             error: function(request,status,errorThrown) {
