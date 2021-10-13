@@ -22,11 +22,11 @@
                 <form method="post" action="{{ route('member.personal-info.store') }}">
                     @csrf                
                     <div class="card-body pt-2">
-                        <h5 class="border-bottom">About Me and My Family(short)</h5>
+                        <h5 class="border-bottom">About Me and My Family(short) *</h5>
                         <div class="row bg-body-green">
                             <div class="col-md-12">
                                 <div class="other-area">
-                                    <textarea class="form-control-sm w-100" name="about_me_family"></textarea>
+                                    <textarea class="form-control-sm w-100" name="about_me_family" required></textarea>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <div class="other-area">
                                     <div class="form-group ">
                                         <label class="form-label" for="education_level">Education Level *</label>
-                                        <select class="form-control-sm w-100" name="education_level">
+                                        <select class="form-control-sm w-100" name="education_level" required>
                                             <option value="M_A" selected>M A</option>
                                             <option class="High_School_pass">High School pass</option>
                                             <option value="SSC">SSC</option>
@@ -70,7 +70,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="major_subject">Major Subject *</label>
-                                    <select class="form-control-sm w-100" name="major_subject">
+                                    <select class="form-control-sm w-100" name="major_subject" required>
                                         <option value="IT">IT</option>
                                         <option value="Accounting">Accounting</option>
                                         <option value="English">English</option>
@@ -178,7 +178,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="my_profession">My Profession *</label>
-                                    <select class="form-control-sm w-100" name="my_profession">
+                                    <select class="form-control-sm w-100" name="my_profession" required>
                                         <option value="Student">Student</option>
                                         <option value="Engineer">Engineer</option>
                                         <option value="Banker">Banker</option>
@@ -298,7 +298,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="income">My Income *</label>
-                                    <select class="form-control-sm w-100" name="income">
+                                    <select class="form-control-sm w-100" name="income" required>
                                         <option value="0_to_20K">Less than 20k</option>
                                         <option value="20k_to_30K">20k to 30k</option>
                                         <option value="30k_to_50K">30k to 50k</option>
@@ -319,8 +319,8 @@
                         <div class="row bg-body-green">
                             <div class="col-sm-4">
                                 <div class="form-group ">
-                                    <label class="form-label" for="district">District *</label>
-                                    <select class="form-control-sm w-100" name="district">
+                                    <label class="form-label" for="district">Home District *</label>
+                                    <select class="form-control-sm w-100" name="district" required>
                                         <option value="Tangail">Tangail</option>
                                         <option value="Bagerhat">Bagerhat</option>
                                         <option value="Bandarban">Bandarban</option>
@@ -391,7 +391,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="thana">Thana *</label>
-                                    <input type="text" id="thana" class="form-control-sm w-100" name="thana" placeholder="Thana Name...">
+                                    <input type="text" id="thana" class="form-control-sm w-100" name="thana" placeholder="Thana Name..." required>
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -404,7 +404,7 @@
                             <div class="col-md-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="country_of_residence">Country of Residence *</label>
-                                    <select class="form-control-sm w-100" name="country_of_residence">
+                                    <select class="form-control-sm w-100" name="country_of_residence" required>
                                         <option value="Bangladesh" selected>Bangladesh</option>
                                         <option value="UK">United Kingdom</option>
                                         <option value="USA">United States</option>
@@ -447,15 +447,15 @@
                             <div class="col-md-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="height">State / City / Division of Residence *</label>
-                                    <input type="text" id="state_of_residence" class="form-control-sm w-100" name="state_of_residence" placeholder="State / Division...">
+                                    <input type="text" id="state_of_residence" class="form-control-sm w-100" name="state_of_residence" placeholder="State / Division..." required>
                                 </div>
                             </div>
 
                             <div class="col-md-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="citizenship">Citizenship *</label>
-                                    <select class="form-control-sm w-100" name="citizenship">
-                                        <option value="Bangali">Bangali</option>
+                                    <select class="form-control-sm w-100" name="citizenship" required>
+                                        <option value="Bangladeshi">Bangladeshi</option>
                                         <option value="Indian">Indian</option>
                                         <option value="Canada">Canada</option>
                                         <option value="USA">USA</option>
@@ -498,13 +498,13 @@
                             <div class="col-md-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="father_name">Father's Name *</label>
-                                    <input type="text" id="father_name" class="form-control-sm w-100" name="father_name" placeholder="Father's Name...">
+                                    <input type="text" id="father_name" class="form-control-sm w-100" name="father_name" placeholder="Father's Name..." required>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="father_occupation">Father's Occupation *</label>
-                                    <select class="form-control-sm w-100" name="father_occupation">
+                                    <select class="form-control-sm w-100" name="father_occupation" required>
                                         <option value="Business" selected>Business</option>
                                         <option value="Doctor">Doctor</option>
                                         <option value="Engineer">Engineer</option>
@@ -519,13 +519,13 @@
                             <div class="col-sm-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="mother_name">Mother's Name *</label>
-                                    <input type="text" id="mother_name" class="form-control-sm w-100" name="mother_name" placeholder="Mother's Name...">
+                                    <input type="text" id="mother_name" class="form-control-sm w-100" name="mother_name" placeholder="Mother's Name..." required>
                                 </div>
                             </div>
                             <div class="col-sm-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="mother_occupation">Mother's Occupation *</label>
-                                    <select class="form-control-sm w-100" name="mother_occupation">
+                                    <select class="form-control-sm w-100" name="mother_occupation" required>
                                         <option value="Housewife" selected>Housewife</option>
                                         <option value="Business" selected>Business</option>
                                         <option value="Doctor">Doctor</option>
@@ -540,7 +540,7 @@
                             <div class="col-sm-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="number_of_brother">Number of Brother *</label>
-                                    <select class="form-control-sm w-100" name="number_of_brother">
+                                    <select class="form-control-sm w-100" name="number_of_brother" required>
                                         <option value="0">0</option>
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
@@ -557,7 +557,7 @@
                             <div class="col-sm-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="how_many_brother_married">Brother Married? *</label>
-                                    <select class="form-control-sm w-100" name="how_many_brother_married">
+                                    <select class="form-control-sm w-100" name="how_many_brother_married" required>
                                         <option value="0">0</option>
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
@@ -575,7 +575,7 @@
 
                                 <div class="form-group ">
                                     <label class="form-label" for="number_of_sister">Number of Sister *</label>
-                                    <select class="form-control-sm w-100" name="number_of_sister">
+                                    <select class="form-control-sm w-100" name="number_of_sister" required>
                                         <option value="0">0</option>
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
@@ -592,7 +592,7 @@
                             <div class="col-sm-3">
                                 <div class="form-group ">
                                     <label class="form-label" for="how_many_sister_married">Sister Married? *</label>
-                                    <select class="form-control-sm w-100" name="how_many_sister_married">
+                                    <select class="form-control-sm w-100" name="how_many_sister_married" required>
                                         <option value="0">0</option>
                                         <option value="1" selected>1</option>
                                         <option value="2">2</option>
@@ -613,7 +613,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="height">My Height *</label>
-                                    <select class="form-control-sm w-100" name="height">
+                                    <select class="form-control-sm w-100" name="height" required>
                                         <option value="4.0">4 Feet</option>
                                         <option value="4.1">4 Feet 1 Inch</option>
                                         <option value="4.2">4 Feet 2 Inch</option>
@@ -657,13 +657,13 @@
                             <div class="col-sm-4"> 
                                 <div class="form-group ">
                                     <label class="form-label" for="body_build">Weight(kg) *</label>
-                                    <input type="number" id="weight" class="form-control-sm w-100" name="weight" placeholder="Ex. 65">
+                                    <input type="number" id="weight" class="form-control-sm w-100" name="weight" placeholder="Ex. 65" required>
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="blood_group">Blood Group *</label>
-                                    <select class="form-control-sm w-100" name="blood_group">
+                                    <select class="form-control-sm w-100" name="blood_group" required>
                                         <option value="B+" selected>B (+)ve</option>
                                         <option value="A+">A (+)ve</option>
                                         <option value="A-">A (-)ve</option>
@@ -681,7 +681,7 @@
                                 <div class="other-area">
                                     <div class="form-group ">
                                         <label class="form-label" for="hair_color">My Hair Color *</label>
-                                        <select class="form-control-sm w-100" name="hair_color">
+                                        <select class="form-control-sm w-100" name="hair_color" required>
                                             <option value="Black" selected>Black</option>
                                             <option value="Brown">Brown</option>
                                             <option value="White">White</option>
@@ -694,7 +694,7 @@
                                 <div class="other-area">
                                     <div class="form-group ">
                                         <label class="form-label" for="eye_color">My Eye Color *</label>
-                                        <select class="form-control-sm w-100 change-with-other" name="eye_color">
+                                        <select class="form-control-sm w-100 change-with-other" name="eye_color" required>
                                             <option value="Black" selected>Black</option>
                                             <option value="Brown">Brown</option>
                                             <option value="White">White</option>
@@ -707,7 +707,7 @@
                                 <div class="other-area">
                                     <div class="form-group ">
                                         <label class="form-label" for="skin_color">My Skin Color *</label>
-                                        <select class="form-control-sm w-100 change-with-other" name="skin_color">
+                                        <select class="form-control-sm w-100 change-with-other" name="skin_color" required>
                                             <option value="Fair" selected>Fair</option>
                                             <option value="Brown">Brown</option>
                                             <option value="Black">Black</option>
@@ -723,7 +723,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="smoke_status">Do I smoke? *</label>
-                                    <select class="form-control-sm w-100" name="smoke_status">
+                                    <select class="form-control-sm w-100" name="smoke_status" required>
                                         <option value="No" selected="">No</option>
                                         <option value="Yes">Yes</option>
                                         <option value="Sometimes">Sometimes</option>
@@ -733,7 +733,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="alcohol_status">Do I addicted to alcohol? *</label>
-                                    <select class="form-control-sm w-100" name="alcohol_status">
+                                    <select class="form-control-sm w-100" name="alcohol_status" required>
                                         <option value="No" selected="">No</option>
                                         <option value="Yes">Yes</option>
                                         <option value="Sometimes">Sometimes</option>
@@ -744,7 +744,7 @@
                                 <div class="other-area">
                                     <div class="form-group ">
                                         <label class="form-label" for="disabilities_status">Do I have any disabilities? *</label>
-                                        <select class="form-control-sm w-100 change-with-other" name="disabilities_status">
+                                        <select class="form-control-sm w-100 change-with-other" name="disabilities_status" required>
                                             <option value="No" selected="">No</option>
                                             <option value="Yes">Yes</option>
                                         </select>
@@ -754,7 +754,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="do_u_have_children">Do you have children?</label>
-                                    <select class="form-control-sm w-100" name="do_u_have_children">
+                                    <select class="form-control-sm w-100" name="do_u_have_children" required>
                                         <option value="No" selected="">No</option>
                                         <option value="Yes">Yes</option>
                                     </select>
@@ -763,7 +763,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="hear_about_us">How did you know about us? *</label>
-                                    <select class="form-control-sm w-100" name="hear_about_us">
+                                    <select class="form-control-sm w-100" name="hear_about_us" required>
                                         <option value="Google">Google</option>
                                         <option value="Facebook">Facebook</option>
                                         <option value="LinkedIn">LinkedIn</option>
@@ -777,7 +777,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group ">
                                     <label class="form-label" for="diat_status">Diat Status *</label>
-                                    <select class="form-control-sm w-100" name="diat_status">
+                                    <select class="form-control-sm w-100" name="diat_status" required>
                                         <option value="Not_to_say" selected>Not to say</option>
                                         <option value="Vag">Vag</option>
                                         <option value="Non_Vag">Non Vag</option>

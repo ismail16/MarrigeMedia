@@ -23,11 +23,11 @@
             @method('PUT')
             @csrf              
                 <div class="card-body pt-2 pb-1">
-                    <h5 class="border-bottom">About Me and My Family(short)</h5>
+                    <h5 class="border-bottom">About Me and My Family(short)*</h5>
                     <div class="row bg-body-green">
                         <div class="col-md-12 pt-2">
                             <div class="other-area">
-                                <textarea class="form-control-sm w-100" name="about_me_family">{{ $PersonalInfo->about_me_family }}</textarea>
+                                <textarea class="form-control-sm w-100" name="about_me_family" required>{{ $PersonalInfo->about_me_family }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -318,7 +318,7 @@
                     <div class="row bg-off-pink bg-body-green">
                         <div class="col-sm-4">
                             <div class="form-group ">
-                                <label class="form-label mb-0" for="district">District *</label>
+                                <label class="form-label mb-0" for="district">Home District *</label>
                                 <select class="form-control-sm w-100" name="district">
                                     <option value="Tangail" {{ $PersonalInfo->district=='Tangail'?'selected':'' }}>Tangail</option>
                                     <option value="Bagerhat" {{ $PersonalInfo->district=='Bagerhat'?'selected':'' }}>Bagerhat</option>
@@ -454,7 +454,7 @@
                             <div class="form-group ">
                                 <label class="form-label mb-0" for="citizenship">Citizenship *</label>
                                 <select class="form-control-sm w-100" name="citizenship">
-                                    <option value="Bangali" {{ $PersonalInfo->citizenship=='Bangali'?'selected':'' }}>Bangali</option>
+                                    <option value="Bangladeshi" {{ $PersonalInfo->citizenship=='Bangladeshi'?'selected':'' }}>Bangladeshi</option>
                                     <option value="Indian" {{ $PersonalInfo->citizenship=='Indian'?'selected':'' }}>Indian</option>
                                     <option value="Canada" {{ $PersonalInfo->citizenship=='Canada'?'selected':'' }}>Canada</option>
                                     <option value="USA" {{ $PersonalInfo->citizenship=='USA'?'selected':'' }}>USA</option>
@@ -496,7 +496,7 @@
                         <div class="col-md-4">
                             <div class="form-group ">
                                 <label class="form-label mb-0" for="father_name">Father's Name *</label>
-                                <input type="text" id="father_name" class="form-control-sm w-100" name="father_name" value="{{ $PersonalInfo->father_name }}" placeholder="Father's Name...">
+                                <input type="text" id="father_name" class="form-control-sm w-100" name="father_name" value="{{ $PersonalInfo->father_name }}" placeholder="Father's Name..." required>
                             </div>
                         </div>
                         <div class="col-sm-4">
@@ -517,7 +517,7 @@
                         <div class="col-sm-4">
                             <div class="form-group ">
                                 <label class="form-label mb-0" for="mother_name">Mother's Name *</label>
-                                <input type="text" id="mother_name" class="form-control-sm w-100" name="mother_name" value="{{ $PersonalInfo->mother_name }}" placeholder="Mother's Name...">
+                                <input type="text" id="mother_name" class="form-control-sm w-100" name="mother_name" value="{{ $PersonalInfo->mother_name }}" placeholder="Mother's Name..." required>
                             </div>
                         </div>
                         <div class="col-sm-4">
