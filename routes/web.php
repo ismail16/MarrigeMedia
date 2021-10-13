@@ -46,6 +46,12 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::post('email-excel-send','EmailExcelController@send')->name('send');
     Route::get('email-excel-resend','EmailExcelController@resend')->name('resend');
     Route::get('email-excel-truncate','EmailExcelController@truncate')->name('truncate');
+
+    Route::resource('basic-info', 'BasicInfoController');
+    Route::resource('personal-info', 'PersonalInfoController');
+    Route::resource('images', 'member\UserProfileImageController');
+    Route::resource('preference', 'PreferenceController');
+
 });
 
 //======================================== Author route==================================

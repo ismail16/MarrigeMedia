@@ -151,9 +151,13 @@
             <!-- IMAGE -->
             <div class="card mt-2 mb-2 bg-light-green">
                 <div class="card-header pb-0 pt-2">
-                    <div>
+                    <a href="{{ route('admin.images.create') }}" class="float-right btn btn-sm btn-primary float-right"> 
+                        <i class="fa fa-plus"></i> Add New Image
+                    </a>
+                    <div class="float-left">
                         <h3>Images</h3>
                     </div>
+                       
                 </div>
                 <div class="card-body">
                     <div class="row">
