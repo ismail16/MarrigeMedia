@@ -23,51 +23,53 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>S.N</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Subject</th>
-                                    <th>Message</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($messages as $message)
-                                <tr>
-                                    <td>{{$loop->index+1}}</td>
-                                    <td>{{$message->name}}</td>
-                                    <td>{{$message->email}}</td>
-                                    <td>{{$message->subject}}</td>
-                                    <td>{{$message->message}}</td>
+                        <div class="table-responsive">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>S.N</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Message</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($messages as $message)
+                                    <tr>
+                                        <td>{{$loop->index+1}}</td>
+                                        <td>{{$message->name}}</td>
+                                        <td>{{$message->email}}</td>
+                                        <td>{{$message->subject}}</td>
+                                        <td>{{$message->message}}</td>
 
-                                    <td class="text-center">
-                                        @if($message->status == 0 )
-                                        <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Seen</button>
-                                        @else
-                                        <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Seen</button>
-                                        @endif
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="{{route('admin.message.show', $message->id)}}"
-                                            class="btn btn-xs btn-success"><i class="fa fa-eye"></i>
-                                        </a>
-                                        <form action="{{route('admin.message.destroy', $message->id)}}" method="post"
-                                            style="display: inline;"
-                                            onsubmit="return confirm('Are you Sure? Want to delete')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                        <td class="text-center">
+                                            @if($message->status == 0 )
+                                            <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Seen</button>
+                                            @else
+                                            <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Seen</button>
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="{{route('admin.message.show', $message->id)}}"
+                                                class="btn btn-xs btn-success"><i class="fa fa-eye"></i>
+                                            </a>
+                                            <form action="{{route('admin.message.destroy', $message->id)}}" method="post"
+                                                style="display: inline;"
+                                                onsubmit="return confirm('Are you Sure? Want to delete')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

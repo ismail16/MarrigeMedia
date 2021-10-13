@@ -26,6 +26,7 @@
                         <a href="{{ route('admin.success-story.create') }}" class="float-right btn btn-sm btn-primary"> 
                             <i class="fa fa-plus"></i> Add New
                         </a>
+                        <div class="table-responsive">
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -76,6 +77,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>

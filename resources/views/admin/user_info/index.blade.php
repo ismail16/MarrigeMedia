@@ -25,59 +25,61 @@
                         <div class="card-body">
                             <a href="#" class="float-right btn btn-sm btn-primary"> <i
                                 class="fa fa-plus"></i> Add New</a>
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>S.N</th>
-                                        <th>Name</th>
-                                        <th>Image</th>
-                                        <th>Mobile</th>
-                                        <th>Email</th>
-                                        <th>Activation</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($users as $user)
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
                                         <tr>
-                                            <td>{{$loop->index+1}}</td>
-                                            <td>{{$user->first_name}}</td>
-                                            <td>
-                                               <img src="{{ asset('images/user_profile_image/'.$user->user_images->first()['image']) }}" class="img-fluid" style="width: 50px;">
-                                            </td>
-                                            <td>{{$user->mobile}}</td>
-                                            <td>{{$user->email}}</td>
-                                            <td class="text-center">
-                                                @if($user->activation == 0 )
-                                                    <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Activated</button>
-                                                @else
-                                                    <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Activated</button>
-                                                @endif
-                                            </td>
-                                            <td class="text-center">
-                                                @if($user->status == 0 )
-                                                    <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Verify</button>
-                                                @else
-                                                    <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Verified</button>
-                                                @endif
-                                            </td>
-                                            <td class="text-center">
-                                                <a href="{{route('admin.user-info.show', $user->id)}}"
-                                                   class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a>
-                                                <form action="{{route('admin.user-info.destroy', $user->id)}}" method="post"
-                                                      style="display: inline;"
-                                                      onsubmit="return confirm('Are you Sure? Want to delete')">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            <th>S.N</th>
+                                            <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Mobile</th>
+                                            <th>Email</th>
+                                            <th>Activation</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
-                                    @endforeach
-                                </tfoot>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($users as $user)
+                                            <tr>
+                                                <td>{{$loop->index+1}}</td>
+                                                <td>{{$user->first_name}}</td>
+                                                <td>
+                                                   <img src="{{ asset('images/user_profile_image/'.$user->user_images->first()['image']) }}" class="img-fluid" style="width: 50px;">
+                                                </td>
+                                                <td>{{$user->mobile}}</td>
+                                                <td>{{$user->email}}</td>
+                                                <td class="text-center">
+                                                    @if($user->activation == 0 )
+                                                        <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Activated</button>
+                                                    @else
+                                                        <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Activated</button>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">
+                                                    @if($user->status == 0 )
+                                                        <button class="btn btn-xs bg-danger"><i class="fa fa-times-circle"></i> Not Verify</button>
+                                                    @else
+                                                        <button class="btn btn-xs bg-success"><i class="fa fa-check-circle"></i> Verified</button>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="{{route('admin.user-info.show', $user->id)}}"
+                                                       class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a>
+                                                    <form action="{{route('admin.user-info.destroy', $user->id)}}" method="post"
+                                                          style="display: inline;"
+                                                          onsubmit="return confirm('Are you Sure? Want to delete')">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
