@@ -22,6 +22,7 @@
                         <form action="{{route('member.images.update', $UserProfileImage->id)}}" method="post" enctype="multipart/form-data" class="p-3 bg-body-green">
                             @method('PUT')
                             @csrf
+                            <input type="hidden" value="{{$UserProfileImage->user_id}}" name="user_id">
                             <div class="form-row">
                                 <div class="col-md-6 form-group mb-1">
                                     <label class="mb-0">Image </label>

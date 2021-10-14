@@ -900,6 +900,7 @@
     var x_l = '<?php echo json_encode(json_decode($preference->language)) ?>';
     var x_l_arr = JSON.parse(x_l);
     language.set(x_l_arr)
+    var user_id = '{{ $preference->user_id }}'
 
     var url = "{{URL('member/preference/'.$preference->id)}}";
     function EditPrefference() {

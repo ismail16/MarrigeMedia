@@ -13,7 +13,7 @@
             <div class="col-md-3">
                 @include('author.partials.sidebar')
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 mt-2">
                 @include('author.partials.progress_message')
                 <div class="row">
                     @if(session()->has('message'))

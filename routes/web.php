@@ -47,10 +47,14 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::get('email-excel-resend','EmailExcelController@resend')->name('resend');
     Route::get('email-excel-truncate','EmailExcelController@truncate')->name('truncate');
 
-    Route::resource('basic-info', 'BasicInfoController');
-    Route::resource('personal-info', 'PersonalInfoController');
-    Route::resource('images', 'member\UserProfileImageController');
-    Route::resource('preference', 'PreferenceController');
+    // Route::resource('basic-info', 'BasicInfoController');
+    // Route::resource('personal-info', 'PersonalInfoController');
+    Route::group(['as' => 'user-info.', 'prefix' => 'user-info/{id}', 'namespace' => 'member'], function () {
+        Route::resource('images', 'UserProfileImageController');
+    });
+
+    
+    // Route::resource('preference', 'PreferenceController');
 
 });
 

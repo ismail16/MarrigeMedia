@@ -20,7 +20,8 @@
                     <h4>Personal Info Create</h4>
                 </div>
                 <form method="post" action="{{ route('member.personal-info.store') }}">
-                    @csrf                
+                    @csrf        
+                    <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">     
                     <div class="card-body pt-2">
                         <h5 class="border-bottom">About Me and My Family(short) *</h5>
                         <div class="row bg-body-green">

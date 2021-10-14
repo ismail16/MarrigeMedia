@@ -21,6 +21,7 @@
                         @endif
                         <form action="{{route('member.images.store')}}" method="post" enctype="multipart/form-data" class="p-3 bg-body-green">
                             @csrf
+                            <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
                             <div class="form-row">
                                 <div class="col-md-6 form-group mb-1">
                                     <label class="mb-0">Image </label>   

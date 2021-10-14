@@ -17,7 +17,8 @@
                 </div>
                 @endif
             <form method="post" action="{{ route('member.preference.store') }}" class="">
-            @csrf                
+            @csrf
+            <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">        
                 <div class="card-body pt-2 bg-light-green">
                     <h5 class="border-bottom font-italic font-weight-bold pt-2">Basic Information</h5>
                     <div class="row bg-off-pink">

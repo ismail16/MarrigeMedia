@@ -21,7 +21,8 @@
             </div>
             <form method="post" action="{{ route('member.personal-info.update',$PersonalInfo->id ) }}" class="">
             @method('PUT')
-            @csrf              
+            @csrf    
+                <input type="hidden" value="{{ $PersonalInfo->user_id }}" name="user_id">
                 <div class="card-body pt-2 pb-1">
                     <h5 class="border-bottom">About Me and My Family(short)*</h5>
                     <div class="row bg-body-green">
