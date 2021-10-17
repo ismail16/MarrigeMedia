@@ -61,11 +61,20 @@
 				<div class="col-md-9 pl-0 mb-2">
 					<div class="card bg-light-green">
 						<div class="card-header pb-0 pt-2">
-							<div class="float-right">
-								Profile Created By: {{ $user->createdby }}
-							</div>
-							<div>
-								<h3>{{ $user->first_name }} {{ $user->last_name }}</h3> 
+							<div class="row">
+								<div class="col-lg-6 col-md-12 col-sm-12">
+									<h3>
+										Name: 
+										@if(Auth::check())
+										{{ $user->first_name }} {{ $user->last_name }}
+										@else
+										<span>Disclose later</span>
+										@endif
+									</h3> 
+								</div>
+								<div class="col-lg-6 col-md-12 col-sm-12 text-right">
+									Profile Created By: {{ $user->createdby }}
+								</div>
 							</div>
 						</div>
 						<div class="card-body">
@@ -132,8 +141,9 @@
 													</span>
 												</div>
 											@else
-												<a href="{{ route('member.peyment.index') }}" class="btn btn-sm btn-primary">
-													Please migrate your account
+												Email: 
+												<a href="mailto:{{ $user->email }}">
+													{{ $user->email }}
 												</a>
 											@endif
 										@else

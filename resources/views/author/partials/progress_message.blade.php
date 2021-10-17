@@ -16,7 +16,7 @@
     }else{ $d=0; }
     $persent = $a+$b+$c+$d;
 ?>
-@if(!$PersonalInfo || !$PersonalInfo || !$PersonalInfo)
+@if(!$PersonalInfo || !$UserProfileImage || !$Preference)
 <div class="alert alert-warning alert-dismissible pt-3 pr-4 pl-4 pb-3 fade show mt-2" role="alert">
     <button type="button" class="close text-danger pt-0 pr-1" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>

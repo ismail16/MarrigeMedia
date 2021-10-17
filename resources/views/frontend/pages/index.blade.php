@@ -39,7 +39,11 @@
 												{{ $user->u_id }}
 											</a><br>
 											Name-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
+													@if(Auth::check())
 													{{ $user->first_name }}
+													@else
+													<span>Disclose later</span>
+													@endif
 												</a>
 											<p class="mb-0 mt-0 text-dark" style="line-height: 25px; ">
 												{{ date_diff(date_create($user->birthday), date_create('now'))->y }} yrs, {{ $user->gender }}, 
@@ -51,7 +55,7 @@
 
 										<div class="mt-1">
 											<a href="{{ route('single_groom_bride',$user->id) }}" class="btn btn-sm btn-primary mr-2">Message</a>
-											<a href="{{ route('single_groom_bride',$user->id) }}" class="btn btn-sm btn-primary">More</a>
+											<a href="{{ route('single_groom_bride',$user->id) }}" class="btn btn-sm btn-primary">Details</a>
 										</div>
 									</div>
 								</div>
@@ -97,21 +101,24 @@
 													{{ $user->u_id }}
 												</a><br>
 												Name-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
+													@if(Auth::check())
 													{{ $user->first_name }}
+													@else
+													<span>Disclose later</span>
+													@endif
 												</a>
 												<p class="mb-0 mt-0" style=" line-height: 25px; ">
 													{{ date_diff(date_create($user->birthday), date_create('now'))->y }} yrs, 
 													{{ $user->gender }}, 
 													{{ $user->user_info->height }}'', 
-												    {{ $user->user_info->weight }}Kg, 
-													{{ $user->user_info->thana }}, 
+												    {{ $user->user_info->weight }}Kg,
 													{{ $user->district }}
 												</p>
 											</div>
 
 											<div class="mt-1">
+												<a href="{{ route('single_groom_bride',$user->id) }}" class="btn btn-sm btn-primary">Details</a>
 												<a href="{{ route('single_groom_bride',$user->id) }}" class="btn btn-sm btn-primary mr-2">Message</a>
-												<a href="{{ route('single_groom_bride',$user->id) }}" class="btn btn-sm btn-primary">More</a>
 											</div>
 										</div>
 									</div>

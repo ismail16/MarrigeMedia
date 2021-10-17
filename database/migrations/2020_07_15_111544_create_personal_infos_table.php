@@ -16,7 +16,7 @@ class CreatePersonalInfosTable extends Migration
         Schema::create('personal_infos', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->string('about_me_family');
+            $table->text('about_me_family');
             $table->string('education_level');
             $table->string('major_subject');
             $table->string('my_profession');

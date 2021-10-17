@@ -27,7 +27,7 @@
                         <div class="row bg-body-green">
                             <div class="col-md-12">
                                 <div class="other-area">
-                                    <textarea class="form-control-sm w-100" name="about_me_family" required></textarea>
+                                    <textarea class="form-control-sm w-100" name="about_me_family" style="height: 100px" required> I am {{ Auth::user()->first_name }} {{ Auth::user()->first_name }}, I come from a middle-class family. The most important thing in my life is religious beliefs, moral values & respect for elders. I'm an easy-going, sincere,  caring person with a strong work ethic. I'm a modern thinker and follow good values given by our ancestors. I like love traveling with friends, writing, listening to classical music & watching the latest movies. </textarea>
                                 </div>
                             </div>
                         </div>

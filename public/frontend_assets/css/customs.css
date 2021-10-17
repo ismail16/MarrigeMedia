@@ -28,4 +28,7 @@ span {
   .ftco-navbar-light{
     padding: 5px 15px 0px 15px !important;
   }
+  .navbar-collapse>.navbar-nav>.nav-item{
+    border-bottom: 1px solid;
+  }
 }

@@ -748,7 +748,9 @@ function splitHTMLtoMultiPagePDF() {
 			doc.addImage(image, 'PNG', 15, -(pdfHeight * i)+15, htmlWidth, htmlHeight);
 		}
 
-		doc.save("MarriageGate_{{ $user->first_name }} {{ $user->last_name }}_Biodata.pdf");
+		window.open(doc.output('bloburl'))
+
+
 	});
 };
 

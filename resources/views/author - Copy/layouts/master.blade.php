@@ -1,5 +1,0 @@
-@include('author.partials.header')
-@include('author.partials.navbar')
-@include('author.partials.sidebar')
-@yield('content')
-@include('author.partials.footer')
