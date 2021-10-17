@@ -24,12 +24,12 @@
 								<div class="row p-1">
 									<div class="col-md-5">
 										@if($user->user_images->first()['status'] == 1)
-											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid">
+											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
 										@else
 											@if($user->gender == 'Female')
-											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid">
+											<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid image-size">
 											@else
-											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid">
+											<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid image-size">
 											@endif
 										@endif
 									</div>
@@ -86,12 +86,12 @@
 									<div class="row p-1">
 										<div class="col-md-5">
 											@if($user->user_images->first()['status'] == 1)
-												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid">
+												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid image-size">
 											@else
 												@if($user->gender == 'Female')
-												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image">
+												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="img-fluid image-size" alt="Bride Image">
 												@else
-												<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image">
+												<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="img-fluid image-size" alt="Groom Image">
 												@endif
 											@endif
 										</div>
