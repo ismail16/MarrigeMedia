@@ -748,7 +748,8 @@ function splitHTMLtoMultiPagePDF() {
 			doc.addImage(image, 'PNG', 15, -(pdfHeight * i)+15, htmlWidth, htmlHeight);
 		}
 
-		window.open(doc.output('bloburl'))
+
+        window.open(doc.output("bloburl"), "_blank");
 
 
 	});
