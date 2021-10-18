@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Models\PersonalInfo;
-use App\Http\Traits\UserPersonalInfo;
+use App\Http\Traits\UserPersonalInfoTrait;
 
 class PersonalInfoController extends Controller
 {
-    use UserPersonalInfo;
+    use UserPersonalInfoTrait;
 
     public function index()
     {

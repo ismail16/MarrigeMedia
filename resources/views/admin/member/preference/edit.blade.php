@@ -1,4 +1,4 @@
-@extends('author.layouts.master')
+@extends('admin.layouts.master')
 @section('title','Edit Preference')
 
 @push('css')
@@ -8,10 +8,7 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                @include('author.partials.sidebar')
-            </div>
-            <div class="col-md-9 pl-0">
+            <div class="col-md-12">
             <div class="card bg-light-green mt-2 mb-2">
                 @if ($errors->any())
                 <div class="alert">
@@ -810,7 +807,6 @@
 
 @push('scripts')
 <script type="text/javascript">
-
     // ============marital_status==============
     var marital_status = new SlimSelect({
       select: '#marital_status'
@@ -900,16 +896,19 @@
     var x_l = '<?php echo json_encode(json_decode($preference->language)) ?>';
     var x_l_arr = JSON.parse(x_l);
     language.set(x_l_arr)
+    var user_id = '{{ $preference->user_id }}'
+    var preference_id = '{{ $preference->id }}'
 
-    var url = "{{URL('member/preference/'.$preference->id)}}";
+    var url = "{{URL('/admin/user-info/'.$preference->user_id.'/preference/'.$preference->id)}}";
+   
     function EditPrefference() {
-
         $.ajax({
             url: url,
             type: "PATCH",
             cache: false,
             data:{
                 _token:'{{ csrf_token() }}',
+                preference_id: preference_id,
                 minAge: $("#minAge").val(),
                 maxAge : $("#maxAge").val(),
                 religion : $("#religion").val(),
@@ -942,9 +941,7 @@
                   icon: 'success',
                   title: 'Save preference successfully'
                 })
-
-                // console.log(data)
-                window.location.href = "{{ route('member.preference.index') }}"
+                window.location.href = "{{URL('/admin/user-info/'.$preference->user_id)}}"
             },
             error: function(request,status,errorThrown) {
                 Toast.fire({

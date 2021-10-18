@@ -46,6 +46,8 @@ trait PreferenceTrait{
 
 	public function UpdatePreference($request, $id){
 
+        // return $request;
+
 		$this->validate($request, [
             'minAge' => 'required',
             'maxAge' => 'required',             
@@ -74,7 +76,7 @@ trait PreferenceTrait{
             'language' => 'required',
         ]);
    
-        $preference =  Preference::find($id);
+        $preference =  Preference::find($request->preference_id);
         $preference->minAge = $request->minAge;
         $preference->maxAge = $request->maxAge;
         $preference->religion = $request->religion;

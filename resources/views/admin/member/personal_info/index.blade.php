@@ -1,4 +1,4 @@
-@extends('author.layouts.master')
+@extends('admin.layouts.master')
 @section('title','Personal Information')
 @section('content')
 <section class="">
@@ -21,11 +21,10 @@
                 <div class="col-md-9">
                     @include('author.partials.progress_message')
                     @if($PersonalInfo)
-
                     <div class="card card mt-2 mb-2 bg-light-green">
                         <div class="card-header pb-0 pt-2">
                             <div id="verifiedItems" class="float-right">
-                                <a class="float-right btn btn-sm btn-primary" href="{{route('member.personal-info.edit', $PersonalInfo->id)}}">
+                                <a class="float-right btn btn-sm btn-primary" href="#">
                                     <i class="nav-icon fas fa-edit"></i> Edit
                                 </a>
                             </div>
@@ -525,7 +524,7 @@
                         </div>             
                     </div>
                     @else
-                       <a class="btn btn-sm mt-2 btn-primary" href="{{route('member.personal-info.create')}}">
+                       <a class="btn btn-sm mt-2 btn-primary" href="/admin/user-info/{{$user->id}}/personal-info/create">
                             <i class="nav-icon fas fa-plus"></i> Create
                         </a>
                     @endif

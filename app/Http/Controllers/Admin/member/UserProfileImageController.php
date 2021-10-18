@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\UserProfileImage;
 use App\User;
+use App\Http\Traits\UserProfileImageTrait;
 
 class UserProfileImageController extends Controller
 {
+    use UserProfileImageTrait;
     public function index($id)
     {
         $user = User::find($id);
@@ -25,34 +27,8 @@ class UserProfileImageController extends Controller
 
     public function store(Request $request)
     {
-
-        return 
-
-        $this->validate($request, [
-            'image' => 'required'
-        ]);
-
-        $user = Auth::user();
-        $UserProfileImage = new UserProfileImage;
-
-        $UserProfileImage->user_id  = $user->id;
-        $UserProfileImage->profile_image  = 0;
-        $image = $request->file('image');
-
-        if (isset($image)){
-            $slug = $user->first_name.'-'.$user->last_name.'-'.$user->id.'-'.rand(10,100);
-            $imagename = $slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            if (!file_exists('images/user_profile_image')){
-                mkdir('images/user_profile_image',0777, true);
-            }
-            $image->move('images/user_profile_image',$imagename);
-            $UserProfileImage->image  = $imagename;
-        }
-        $UserProfileImage->image_slug  = $slug;
-        $UserProfileImage->status  = $request->status;
-        $UserProfileImage->save();
-
-        return redirect()->route('admin.user-info.images.index', $user->id );
+        $this->SaveUserImage($request);
+        return redirect()->route('admin.user-info.show', $request->user_id);
     }
 
 
@@ -62,49 +38,27 @@ class UserProfileImageController extends Controller
         
     }
 
-    public function edit($id)
+    public function edit($user_id, $image_id)
     {
-       $UserProfileImage = UserProfileImage::find($id);
+
+        // return $image_id;
+       $UserProfileImage = UserProfileImage::find($image_id);
        return view('admin.member.user_image.edit', compact('UserProfileImage'));
     }
 
     public function update(Request $request, $id)
     {
-
-        $user = Auth::user();
-        $UserProfileImage = UserProfileImage::find($id);
-
-        // $UserProfileImage->profile_image  = 0;
-
-        $image = $request->file('image');
-
-        if (isset($image)){
-            $slug = $user->first_name.'-'.$user->last_name.'-'.$user->id.'-'.rand(10,100);
-            if (file_exists('images/user_profile_image/'.$UserProfileImage->image)){
-                unlink('images/user_profile_image/'.$UserProfileImage->image);
-            }
-            $imagename = $slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            if (!file_exists('images/user_profile_image')){
-                mkdir('images/user_profile_image',0777, true);
-            }
-            $image->move('images/user_profile_image',$imagename);
-            $UserProfileImage->image = $imagename;
-            $UserProfileImage->image_slug  = $slug;
-        }
-
-        $UserProfileImage->status  = $request->status;
-        $UserProfileImage->save();
-
-        return redirect()->route('member.images.index');
+        $this->UpdateUserImage($request, $request->image_id);
+        return redirect()->route('admin.user-info.images.index', $request->image_id);
     }
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $UserProfileImage = UserProfileImage::find($id);
+        $UserProfileImage = UserProfileImage::find($request->image_id);
         if (file_exists('images/user_profile_image/'.$UserProfileImage->image)){
             unlink('images/user_profile_image/'.$UserProfileImage->image);
         }
         $UserProfileImage->delete();
-        return back();
+        return redirect()->route('admin.user-info.images.index', $id);
     }
 }

@@ -1,13 +1,10 @@
-@extends('author.layouts.master')
+@extends('admin.layouts.master')
 @section('title','Personal Info Create')
 @section('content')
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                @include('author.partials.sidebar')
-            </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
             <div class="card mt-2 mb-2 bg-light-green">
                 @if ($errors->any())
                 <div class="alert">
@@ -19,14 +16,15 @@
                 <div class="card-header pb-0 pt-2">
                     <h4>Personal Info Create</h4>
                 </div>
-                <form method="post" action="{{ route('member.personal-info.store') }}">
-                    @csrf                
+                <form method="post" action="{{ route('admin.user-info.personal-info.store', $user->id ) }}">
+                    @csrf        
+                    <input type="hidden" value="{{ $user->id }}" name="user_id">     
                     <div class="card-body pt-2">
                         <h5 class="border-bottom">About Me and My Family(short) *</h5>
                         <div class="row bg-body-green">
                             <div class="col-md-12">
                                 <div class="other-area">
-                                    <textarea class="form-control-sm w-100" name="about_me_family" required></textarea>
+                                    <textarea class="form-control-sm w-100" name="about_me_family" style="height: 100px" required> I am {{ Auth::user()->first_name }} {{ Auth::user()->first_name }}, I come from a middle-class family. The most important thing in my life is religious beliefs, moral values & respect for elders. I'm an easy-going, sincere,  caring person with a strong work ethic. I'm a modern thinker and follow good values given by our ancestors. I like love traveling with friends, writing, listening to classical music & watching the latest movies. </textarea>
                                 </div>
                             </div>
                         </div>

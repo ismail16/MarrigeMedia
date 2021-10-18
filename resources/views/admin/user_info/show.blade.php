@@ -3,6 +3,19 @@
 @section('content')
     <section class="content">
         <div class="container-fluid">
+            @include('admin.partials.progress_message')
+            <div class="row">
+                @if(session()->has('message'))
+                    <div class="col-lg-12 col-xl-12 d-flex justify-content-center">
+                        <div class="alert alert-success text-center pr-3 pl-3 p-1 mb-1">
+                            {{session('message')}}
+                            <button type="button" class="close ml-4" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                @endif
+            </div>
 
             <div class="card mt-2 bg-light-green">
                 <div class="card-header pb-0 pt-2">
@@ -149,12 +162,18 @@
             <!-- IMAGE -->
             <div class="card mt-2 mb-2 bg-light-green">
                 <div class="card-header pb-0 pt-2">
+                    @if(count($UserProfileImages) == 0) 
+                        <a href="{{ route('admin.user-info.images.create', $user->id ) }}" class="btn btn-sm m-2 btn-primary float-right">Upload Images</a>
+                    @else
+                        <a href="{{ route('admin.user-info.images.index', $user->id ) }}" class="btn btn-sm m-2 btn-primary float-right">Show Images</a>
+                    @endif
                     <div>
                         <h3>Images</h3>
                     </div>
                 </div>
                     <div class="card-body">
                     <div class="row">
+                    @if(count($UserProfileImages) != 0) 
                     @foreach($UserProfileImages as $UserProfileImage)
                         <div class="col-md-3 border">
                             <img src="{{ asset('images/user_profile_image/'.$UserProfileImage->image) }}" class="img-fluid" style="height: 100px;">
@@ -165,15 +184,27 @@
                             @endif
                         </div>
                     @endforeach
+                    @else 
+                        <div class="col-md-12">
+                            <div class="card-body pt-2 bg-light-green">
+                                <div class="alert alert-warning" role="alert">
+                                    Not Upload Yet
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     </div>
                 </div>
             </div>
 
             <div class="card mt-2 bg-light-green">
                 <div class="card-header pb-0 pt-2">
-                    <div id="verifiedItems" class="float-right">
-                    <span>Verified:</span>
-                    <i class="fas fa-user-check text-success"></i>
+                    <div class="float-right">
+                        @if(!$PersonalInfo) 
+                            <a href="{{ route('admin.user-info.personal-info.create', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Set Preference</a>
+                        @else
+                            <a href="/admin/user-info/{{$PersonalInfo->user_id}}/personal-info/{{$PersonalInfo->id}}/edit" class="btn btn-sm m-2 btn-primary">Edit Personal-info</a>
+                        @endif
                     </div>
                     <div >
                         <h3>Profile Details</h3>
@@ -485,6 +516,25 @@
                                 </div>
                             </div>
                         </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-2 bg-light-green">
+                <div class="card-header pb-0 pt-2">
+                    <div class="float-right">
+                        @if(!$Preference) 
+                            <a href="{{ route('admin.user-info.preference.create', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Set Preference</a>
+                        @else
+                            <a href="/admin/user-info/{{$Preference->user_id}}/preference/{{$Preference->id}}/edit" class="btn btn-sm m-2 btn-primary">Edit Sreference</a>
+                        @endif
+                    </div>
+                    <div >
+                        <h3>Preferences</h3>
+                    </div>
+                </div>  
+                <div class="card-body p-2">
+                    <ul class="timeline timeline-left">
 
                         <li class="timeline-inverted timeline-item">
                             <div class="timeline-badge bg_primary">

@@ -1,4 +1,4 @@
-@extends('author.layouts.master')
+@extends('admin.layouts.master')
 @section('title','Set Preference')
 
 @push('css')
@@ -8,16 +8,13 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                @include('author.partials.sidebar')
-            </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
             @include('author.partials.progress_message')
             @if($preference)
             <div class="card bg-light-green mt-2 mb-2">
                 <div class="card-header pb-0 pt-2">
                     <div id="verifiedItems" class="float-right">
-                        <a class="float-right btn btn-sm btn-primary" href="{{route('member.preference.edit', $preference->id)}}">
+                        <a class="float-right btn btn-sm btn-primary" href="/admin/user-info/{{$preference->user_id}}/preference/{{$preference->id}}/edit">
                             <i class="nav-icon fas fa-edit"></i> Edit
                         </a>
                     </div>

@@ -50,7 +50,7 @@ class PreferenceController extends Controller
     {
 
         return $this->UpdatePreference($request, $id);
-        // return redirect()->route('member.preference.index')->with('message','Preference Update Successfully.');
+        return redirect()->route('member.preference.index')->with('message','Preference Update Successfully.');
     }
 
     public function destroy($id)

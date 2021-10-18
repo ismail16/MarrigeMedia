@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @include('author.partials.progress_message')
+                @include('admin.partials.progress_message')
                 <div class="row">
                     @if(session()->has('message'))
                         <div class="col-lg-12 col-xl-12 d-flex justify-content-center session_message">
@@ -37,13 +37,14 @@
                                 @else
                                     <button class="btn btn-xs bg-green-active"><i class="fa fa-check-circle"></i> Show Public</button>
                                 @endif
-                                <a href="{{route('member.images.edit', $UserProfileImage->id)}}"
+                                <a href="/admin/user-info/{{$UserProfileImage->user_id}}/images/{{$UserProfileImage->id}}/edit"
                                    class="btn btn-xs btn-success"><i class="fa fa-edit"></i></a>
-                                <form action="{{route('member.images.destroy', $UserProfileImage->id)}}" method="post"
+                                <form action="/admin/user-info/{{$UserProfileImage->user_id}}/images/{{$UserProfileImage->id}}" method="post"
                                       style="display: inline;"
                                       onsubmit="return confirm('Are you Sure? Want to delete')">
                                     @csrf
                                     @method('DELETE')
+                                    <input type="hidden" name="image_id" value="{{$UserProfileImage->id}}">
                                     <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
                                     </button>
                                 </form>
@@ -54,7 +55,7 @@
                     @endforeach
                     <div class="col-md-4 d-flex align-items-center">
                         <div class="p-5">
-                            <a href="{{ route('admin.user-info.images.create', $user->id ) }}" class="btn btn-lg btn-primary"> 
+                            <a href="/admin/user-info/{{$user->id}}/images/create" class="btn btn-lg btn-primary"> 
                             <i class="fa fa-plus"></i> Add New Image
                             </a>
                         </div>

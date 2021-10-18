@@ -31,16 +31,16 @@ class UserInfoController extends Controller
 
     public function show($id)
     {
+
         $user = User::find($id);
         $PersonalInfo = PersonalInfo::where('user_id', $id)->first();
         $Preference = Preference::where('user_id', $id)->first();
+        $UserProfileImages = UserProfileImage::where('user_id', $id)->get();
 
-        // return $Preference;
-        if ($PersonalInfo) {
-            $UserProfileImages = UserProfileImage::where('user_id', $id)->get();
-            return view('admin.user_info.show', compact('user', 'PersonalInfo', 'UserProfileImages','Preference'));
+        if ($user->status == 1 && $PersonalInfo) {
+            return view('admin.user_info.show', compact('user', 'PersonalInfo','UserProfileImages', 'Preference'));
         }else{
-            return view('admin.user_info.inactive_show', compact('user'));
+            return view('admin.user_info.inactive_show', compact('user', 'PersonalInfo','UserProfileImages', 'Preference'));
         }
     }
 
@@ -60,21 +60,18 @@ class UserInfoController extends Controller
         }
 
         $PersonalInfo = PersonalInfo::where('user_id', $id)->first();
-
-
         if ($request->user_status && $request->activation) {
             $PersonalInfo->status = 1;
             $user->activation = 1;
-        }else{
+            $PersonalInfo->save();
+        }else if($PersonalInfo){
             $PersonalInfo->status = 0;
+            $PersonalInfo->save();
+        }else{
             $user->activation = 0;
         }
-        
         $user->save();
-        $PersonalInfo->save();
-
         return redirect()->route('admin.user-info.index');
-
     }
 
     public function destroy($id)

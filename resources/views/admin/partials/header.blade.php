@@ -31,9 +31,22 @@
             top: -38px;
         }
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" id="theme-styles">
+    <script src="{{ asset('backend_assets/plugins/sweetalert2/sweetalert2.all.js') }}"></script>
+    <link href="{{ asset('backend_assets/plugins/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
+ 
     <link href="{{ asset('backend_assets/timeline.css') }}" rel="stylesheet" type="text/css" >
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/customs.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend_assets/slimselect.min.css') }}">
+
+    <script type="text/javascript">
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+        })
+    </script>
     @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">

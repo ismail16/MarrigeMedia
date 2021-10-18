@@ -4,9 +4,11 @@ use App\User;
 use App\Models\PersonalInfo;
 
 
-trait UserPersonalInfo{
+trait UserPersonalInfoTrait{
 
 	public function SaveUserPersonalInfo($request){
+
+
 		$this->validate($request, [
             'about_me_family' => 'required',
             'education_level' => 'required',
@@ -83,7 +85,7 @@ trait UserPersonalInfo{
         $PersonalInfo->status = 0;
 
         $PersonalInfo->save();
-        return redirect()->route('member.personal-info.index')->with('message','Personal Information Save Successfully.');
+        // return redirect()->route('member.personal-info.index')->with('message','Personal Information Save Successfully.');
 	}
 
 	public function UpdateUserPersonalInfo($request, $id){
@@ -123,7 +125,7 @@ trait UserPersonalInfo{
         ]);
 
         $user = User::find($request->user_id);
-        $PersonalInfo =  PersonalInfo::find($id);
+        $PersonalInfo =  PersonalInfo::where('user_id',$user->id)->first();
 
         $PersonalInfo->user_id = $user->id;
         $PersonalInfo->about_me_family = $request->about_me_family;

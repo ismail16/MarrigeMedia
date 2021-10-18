@@ -1,13 +1,10 @@
-@extends('author.layouts.master')
+@extends('admin.layouts.master')
 @section('title','Set Preference')
 @section('content')
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                @include('author.partials.sidebar')
-            </div>
-            <div class="col-md-9">
+            <div class="col-md-12">
             <div class="card mt-2">
             @if ($errors->any())
                 <div class="alert">
@@ -16,8 +13,9 @@
                     @endforeach
                 </div>
                 @endif
-            <form method="post" action="{{ route('member.preference.store') }}" class="">
-            @csrf                
+            <form method="post" action="{{ route('admin.user-info.preference.store', $user->id ) }}" class="">
+            @csrf
+            <input type="hidden" value="{{ $user->id }}" name="user_id">        
                 <div class="card-body pt-2 bg-light-green">
                     <h5 class="border-bottom font-italic font-weight-bold pt-2">Basic Information</h5>
                     <div class="row bg-off-pink">

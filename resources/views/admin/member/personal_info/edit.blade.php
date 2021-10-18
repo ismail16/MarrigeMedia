@@ -1,13 +1,10 @@
-@extends('author.layouts.master')
+@extends('admin.layouts.master')
 @section('title','Edit Personal Info')
 @section('content')
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
-                @include('author.partials.sidebar')
-            </div>
-            <div class="col-md-9 pl-0">
+            <div class="col-md-12">
         <div class="card mt-2 mb-2 bg-light-green">
             @if ($errors->any())
                 <div class="alert">
@@ -19,9 +16,10 @@
             <div class="card-header pb-0 pt-2">
                 <h4>Edit Personal Info</h4>
             </div>
-            <form method="post" action="{{ route('member.personal-info.update',$PersonalInfo->id ) }}" class="">
+            <form method="post" action="/admin/user-info/{{ $PersonalInfo->user_id }}/personal-info/{{ $PersonalInfo->id }}" class="">
             @method('PUT')
             @csrf              
+                <input type="hidden" value="{{$PersonalInfo->user_id}}" name="user_id">
                 <div class="card-body pt-2 pb-1">
                     <h5 class="border-bottom">About Me and My Family(short)*</h5>
                     <div class="row bg-body-green">

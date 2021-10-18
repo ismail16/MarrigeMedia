@@ -51,7 +51,7 @@
 <script src="{{asset('backend_assets/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('backend_assets/dist/js/demo.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script>
+<script src="{{asset('backend_assets/slimselect.min.js')}}"></script>
 @stack('scripts')
 </body>
 <!-- Mirrored from adminlte.io/themes/dev/AdminLTE/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 17 Jul 2019 04:04:43 GMT -->

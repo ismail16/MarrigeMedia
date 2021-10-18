@@ -18,6 +18,7 @@
                                 @endif
                                 <form action="{{ route('admin.user-info.images.store', $user->id ) }}" method="post" enctype="multipart/form-data" class="p-3 bg-body-green">
                                     @csrf
+                                    <input type="hidden" name="user_id" value="{{ $user->id }}">
                                     <div class="form-row">
                                         <div class="col-md-6 form-group mb-1">
                                             <label class="mb-0">Image </label>   
