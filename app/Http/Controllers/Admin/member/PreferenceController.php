@@ -27,8 +27,8 @@ class PreferenceController extends Controller
 
     public function store(Request $request)
     {
-
         return $this->SavePreference($request);
+        return redirect()->route('admin.user-info.show', $request->user_id);
         // return redirect()->route('admin.member.preference.index')->with('message','Preference Save Successfully.');
     }
 

@@ -42,6 +42,7 @@ trait PreferenceTrait{
         $preference->language = json_encode($request->language);
         $preference->status = 0;
         $preference->save();
+        // return $preference;
 	}
 
 	public function UpdatePreference($request, $id){

@@ -905,6 +905,7 @@
                   icon: 'success',
                   title: 'Save preference successfully'
                 })
+                window.location.href = "{{URL('/admin/user-info/'.$user->id)}}"
             },
             error: function(request,status,errorThrown) {
                 Toast.fire({

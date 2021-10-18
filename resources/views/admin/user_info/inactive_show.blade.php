@@ -167,7 +167,7 @@
                             <a href="{{ route('admin.user-info.images.index', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Show Images</a>
                         @endif
                         @if(!$Preference)
-                            <a href="{{ route('admin.user-info.preference.index', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Set Preference</a>
+                            <a href="{{ route('admin.user-info.preference.create', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Set Preference</a>
                         @endif
                     </div>
                 </div>
