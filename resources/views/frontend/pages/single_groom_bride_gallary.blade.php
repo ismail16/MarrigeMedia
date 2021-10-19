@@ -49,48 +49,26 @@
 
 
 <section class="gallery-block grid-gallery">
-            <div class="container">
-                <div class="heading">
-                    <h2>Gallery</h2>
-                </div>
-                <div class="row">
-@foreach($images as $image)
-
-                    <div class="col-md-6 col-lg-4 item">
-                        <a class="lightbox" href="{{ asset('images/user_profile_image/'.$image->image) }}">
-                            <img class="img-fluid image scale-on-hover" src="{{ asset('images/user_profile_image/'.$image->image) }}">
-                        </a>
-                    </div>
-
-                     @endforeach
-
-                </div>
-            </div>
-        </section>
-
-
-
-<!-- 
-<section class="bg-light pt-3 pb-3">
-	<div class="container">
-		<div class="row justify-content-center mb-5 pb-3">
-			<div class="col-md-12 heading-section ftco-animate">
-				<h2 class="mb-1">About Us </h2>
-			</div>
-
-			
-
-		</div>
-	</div>
-</section> -->
-
+  <div class="container">
+    <div class="heading">
+        <h2>Gallery</h2>
+    </div>
+    <div class="row">
+    @foreach($images as $image)
+      <div class="col-md-6 col-lg-4 item">
+          <a class="lightbox" href="{{ asset('images/user_profile_image/'.$image->image) }}">
+              <img class="img-fluid image scale-on-hover" src="{{ asset('images/user_profile_image/'.$image->image) }}">
+          </a>
+      </div>
+    @endforeach
+    </div>
+  </div>
+</section>
 @endsection
 
 @push('scripts')
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-        <script>
-            baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
-        </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+</script>
 @endpush

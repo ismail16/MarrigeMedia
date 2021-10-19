@@ -97,5 +97,4 @@
             $('#example1').DataTable();
         })
     </script>
-
 @endpush

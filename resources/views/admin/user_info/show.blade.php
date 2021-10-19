@@ -176,13 +176,38 @@
                     @if(count($UserProfileImages) != 0) 
                     @foreach($UserProfileImages as $UserProfileImage)
                         <div class="col-md-3 border">
-                            <img src="{{ asset('images/user_profile_image/'.$UserProfileImage->image) }}" class="img-fluid" style="height: 100px;">
-                            @if($UserProfileImage->status == 0 )
-                                <button class="btn btn-xs bg-red-active"><i class="fa fa-times-circle"></i> Not Show Public</button>
-                            @else
-                                <button class="btn btn-xs bg-green-active"><i class="fa fa-check-circle"></i> Show Public</button>
-                            @endif
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="{{ asset('images/user_profile_image/'.$UserProfileImage->image) }}" class="img-fluid" style="height: 100px;">
+                                </div>
+                                <div class="col-6 row d-flex align-items-center">
+                                    <div class="col-12 text-center">
+                                        @if($UserProfileImage->status == 0 )
+                                        <button class="btn btn-xs bg-red-active"><i class="fa fa-times-circle"></i> Not Show Public</button>
+                                        @else
+                                            <button class="btn btn-xs bg-green-active"><i class="fa fa-check-circle"></i> Show Public</button>
+                                        @endif
+                                    </div>
+                                    <div class="p-1 col-12 text-center">
+                                        <a href="{{ route('single_groom_bride_gallary', $UserProfileImage->user_id)}}"
+                                            class="btn btn-xs btn-success" target="_blank"><i class="fa fa-eye"></i></a>
+                                        <a href="/admin/user-info/{{$UserProfileImage->user_id}}/images/{{$UserProfileImage->id}}/edit"
+                                        class="btn btn-xs btn-success"><i class="fa fa-edit"></i></a>
+                                        <form action="/admin/user-info/{{$UserProfileImage->user_id}}/images/{{$UserProfileImage->id}}" method="post"
+                                            style="display: inline;"
+                                            onsubmit="return confirm('Are you Sure? Want to delete')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="hidden" name="image_id" value="{{$UserProfileImage->id}}">
+                                            <button class="btn btn-xs btn-danger" type="submit"><i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                           
                         </div>
+                        
                     @endforeach
                     @else 
                         <div class="col-md-12">

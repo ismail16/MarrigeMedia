@@ -41,6 +41,25 @@
                     </a>
                 </li>
 
+                <li class="nav-item has-treeview">
+                    <a href="{{route('admin.division.index')}}" class="nav-link {{Request::is('admin/division*')?'active':''}}">
+                        <i class="nav-icon fa fa-puzzle-piece"></i>
+                        <p>Division</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('admin.district.index')}}" class="nav-link {{Request::is('admin/district*')?'active':''}}">
+                        <i class="nav-icon fa fa-puzzle-piece"></i>
+                        <p>District</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('admin.thana.index')}}" class="nav-link {{Request::is('admin/thana*')?'active':''}}">
+                        <i class="nav-icon fa fa-puzzle-piece"></i>
+                        <p>Thana</p>
+                    </a>
+                </li>
+
                 
             </ul>
         </nav>

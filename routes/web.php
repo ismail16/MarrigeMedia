@@ -47,6 +47,10 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::get('email-excel-resend','EmailExcelController@resend')->name('resend');
     Route::get('email-excel-truncate','EmailExcelController@truncate')->name('truncate');
 
+    Route::resource('division', 'DivisionController');
+    Route::resource('district', 'DistrictController');
+    Route::resource('thana', 'ThanaController');
+
 
     Route::group(['as' => 'user-info.', 'prefix' => 'user-info/{id}', 'namespace' => 'member'], function () {
         Route::resource('images', 'UserProfileImageController');

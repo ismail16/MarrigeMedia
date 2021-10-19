@@ -85,7 +85,7 @@
                         <div class="col-sm-12">
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">Details you preferance(short)</label>
-                                <textarea class="form-control-sm w-100" rows="2" cols="50" name="details_you_prefer">I am looking some one who should be Practising Muslim, Loyal, Family oriented....(Specific Criteria that you want) </textarea>
+                                <textarea class="form-control-sm w-100" rows="2" cols="50" name="details_you_prefer">I am looking some one who should be Practicing Muslim, Loyal, Family oriented....(Specific Criteria that you want) </textarea>
                             </div>
                         </div>
 

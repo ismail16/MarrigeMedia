@@ -27,8 +27,8 @@ class PreferenceController extends Controller
 
     public function store(Request $request)
     {
-        return $this->SavePreference($request);
-        return redirect()->route('admin.user-info.show', $request->user_id);
+        $this->SavePreference($request);
+        return redirect()->route('admin.user-info.show', $request->user_id)->with('message','Preference Save Successfully.');
         // return redirect()->route('admin.member.preference.index')->with('message','Preference Save Successfully.');
     }
 
@@ -47,6 +47,7 @@ class PreferenceController extends Controller
     {
 
         return $this->UpdatePreference($request, $id);
+        // return redirect()->route('admin.user-info.show', $request->user_id)->with('message','Preference Update Successfully.');
         // return redirect()->route('member.preference.index')->with('message','Preference Update Successfully.');
     }
 
