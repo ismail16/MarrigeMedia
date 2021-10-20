@@ -347,7 +347,7 @@
 		<div class="row">
 			@foreach($success_stories as $success_story)
 			<div class="col-md-3 ftco-animate">
-				<a href="{{ asset('images/successStory/'.$success_story->image) }}" class="gallery image-popup img d-flex align-items-center" style="background-image: url('{{ asset('images/success_story/'.$success_story->image) }}'">
+				<a href="{{ asset('images/successStory/'.$success_story->image) }}" class="gallery image-popup img d-flex align-items-center" style="background-image: url('{{ asset('images/successStory/'.$success_story->image) }}'">
 					<div class="icon mb-4 d-flex align-items-center justify-content-center">
 						<span class="icon-instagram"></span>
 					</div>
