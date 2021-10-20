@@ -31,3 +31,14 @@
 	@stack('css')
 </head>
 <body>
+	<script type="application/ld+json">
+		{
+		  "@context" : "http://schema.org",
+		  "@type" : "WebSite",
+		  "name" : "Marriage Gate",
+		 "url" : "https://www.marriagegate.com/",
+		 "sameAs" : [
+		   "https://www.facebook.com/marriagegate"
+		   ],
+		}
+		</script>
