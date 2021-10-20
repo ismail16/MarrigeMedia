@@ -34,11 +34,18 @@
 	<script type="application/ld+json">
 		{
 		  "@context" : "http://schema.org",
-		  "@type" : "WebSite",
+		  "@type" : "Matrimony Website",
 		  "name" : "Marriage Gate",
-		 "url" : "https://www.marriagegate.com/",
+		 "url" : "https://www.marriagegate.com",
 		 "sameAs" : [
 		   "https://www.facebook.com/marriagegate"
 		   ],
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "Kallyanpur, Dhaka",
+			"addressRegion": "Dhaka",
+			"postalCode": "1216",
+			"addressCountry": "Bangladesh"
+		  }
 		}
-		</script>
+	</script>
