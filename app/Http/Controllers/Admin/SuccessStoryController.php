@@ -45,10 +45,10 @@ class SuccessStoryController extends Controller
             $slug = str_replace(' ', '-', $SuccessStory->bride_name).'-&-'.str_replace(' ', '-', $SuccessStory->groom_name).'-'.rand(10,100);
             $imagename = $slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
 
-            if (!file_exists('images/success_story')){
-                mkdir('images/success_story',0777, true);
+            if (!file_exists('images/successStory')){
+                mkdir('images/successStory',0777, true);
             }
-            $image->move('images/success_story',$imagename);
+            $image->move('images/successStory',$imagename);
             $SuccessStory->image  = $imagename;
         }
 
@@ -95,10 +95,10 @@ class SuccessStoryController extends Controller
         if (isset($image)){
             $slug = str_replace(' ', '-', $SuccessStory->bride_name).'-&-'.str_replace(' ', '-', $SuccessStory->groom_name).'-'.rand(10,100);
             $imagename = $slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-            if (!file_exists('images/success_story')){
-                mkdir('images/success_story',0777, true);
+            if (!file_exists('images/successStory')){
+                mkdir('images/successStory',0777, true);
             }
-            $image->move('images/success_story',$imagename);
+            $image->move('images/successStory',$imagename);
             $SuccessStory->image  = $imagename;
         }
 
