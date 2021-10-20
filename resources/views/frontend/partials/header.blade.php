@@ -38,7 +38,8 @@
 		  "name" : "Marriage Gate",
 		 "url" : "https://www.marriagegate.com",
 		 "sameAs" : [
-		   "https://www.facebook.com/marriagegate"
+		   "https://www.facebook.com/marriagegate",
+		   "https://www.linkedin.com/in/marriagegate/"
 		   ],
 		  "address": {
 			"@type": "PostalAddress",
