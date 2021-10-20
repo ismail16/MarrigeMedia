@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row no-gutters slider-text  align-items-end justify-content-start">
 			<div class="col-md-12 mb-5 pt-4 pb-5 ftco-animate">
-				<h2 class="text-center h3 form-label mb-0">Marriage Gate</h2>
+				<h1 class="text-center h3 form-label mb-0">Marriage Gate</h1>
 				<p class="text-center form-label mb-1">Preferred and Trusted Service for Finding a Life-Partner</p>
 				
 				<div class="row  mb-3 d-flex justify-content-center border">

@@ -144,7 +144,7 @@
 			<div class="col-md-4 text-center">
 				<div class="services ftco-animate">
 					<div class="icon d-flex justify-content-center align-items-center bg-body-green">
-						<img src="{{ 'images/icons/flaticon/065-love-1.png' }}">
+						<img src="{{ 'images/icons/flaticon/065-love-1.png' }}" alt="Best Matches">
 					</div>
 					<div class="text mt-4">
 						<h3 class="">Best Matches</h3>
@@ -155,7 +155,7 @@
 			<div class="col-md-4 text-center">
 				<div class="services ftco-animate">
 					<div class="icon d-flex justify-content-center align-items-center bg-body-green">
-						<img src="{{ 'images/icons/flaticon/053-padlock.png' }}">
+						<img src="{{ 'images/icons/flaticon/053-padlock.png' }}" alt="100% Privacy">
 					</div>
 					<div class="text mt-4">
 						<h3 class="">100% Privacy</h3>
@@ -166,7 +166,7 @@
 			<div class="col-md-4 text-center">
 				<div class="services ftco-animate">
 					<div class="icon d-flex justify-content-center align-items-center bg-body-green">
-						<img src="{{ 'images/icons/flaticon/052-shield.png' }}">
+						<img src="{{ 'images/icons/flaticon/052-shield.png' }}" alt="Verified Profiles">
 					</div>
 					<div class="text mt-4">
 						<h3 class="">Verified Profiles</h3>
