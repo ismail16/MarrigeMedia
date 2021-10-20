@@ -29,7 +29,7 @@ class PersonalInfoController extends Controller
     public function store(Request $request)
     {
         $this->SaveUserPersonalInfo($request);
-        return redirect()->route('admin.member.personal-info.index')->with('message','Personal Information Save Successfully.');
+        return redirect()->route('admin.user-info.show', $request->user_id)->with('message','Personal Information Save Successfully.');
     }
 
     public function show($id)
