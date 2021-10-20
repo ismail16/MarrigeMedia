@@ -20,8 +20,8 @@ class PagesController extends Controller
     public function index()
     {
         $users = User::where('role_id', 2)->get();
-        $grooms = User::where('role_id', 2)->where('looking_for', 'Bride')->where('activation', 1)->where('status', 1)->get();
-        $brides = User::where('role_id', 2)->where('looking_for', 'Groom')->where('activation', 1)->where('status', 1)->get();
+        $grooms = User::where('role_id', 2)->where('looking_for', 'Bride')->where('activation', 1)->where('status', 1)->orderBy('id', 'DESC')->get();
+        $brides = User::where('role_id', 2)->where('looking_for', 'Groom')->where('activation', 1)->where('status', 1)->orderBy('id', 'DESC')->get();
         $success_stories = SuccessStory::where('status', 1)->get();
         $package_prices = PackagePrice::where('status', 1)->get();
         
@@ -30,13 +30,13 @@ class PagesController extends Controller
 
     public function grooms()
     {
-        $grooms = User::where('role_id', 2)->where('looking_for', 'Bride')->where('activation', 1)->where('status', 1)->paginate(5);
+        $grooms = User::where('role_id', 2)->where('looking_for', 'Bride')->where('activation', 1)->where('status', 1)->orderBy('id', 'DESC')->paginate(5);
         return view('frontend.pages.grooms',compact('grooms'));
     } 
 
     public function brides()
     {
-        $brides = User::where('role_id', 2)->where('looking_for', 'Groom')->where('activation', 1)->where('status', 1)->paginate(5);
+        $brides = User::where('role_id', 2)->where('looking_for', 'Groom')->where('activation', 1)->where('status', 1)->orderBy('id', 'DESC')->paginate(5);
         return view('frontend.pages.brides',compact('brides'));
     } 
 
@@ -93,15 +93,11 @@ class PagesController extends Controller
                     ['role_id',2]
                 ])
                 ->whereBetween('birthday', [$minDate, $maxDate])
-                ->paginate(5);
+                ->orderBy('id', 'DESC')->paginate(5);
         $search_results->appends ( array (
                 'profession' => $profession
         ));
-
-        // return $search_results;
-
-        // $users = User::where('role_id', 2)->get();
-
+        
         return view('frontend.pages.search_result_groom_bride',compact('search_results'));
     }
 
