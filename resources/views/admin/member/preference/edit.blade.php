@@ -570,6 +570,7 @@
                         <div class="form-group mb-1">
                             <label class="mb-0 form-label">District *</label>
                             <select class="form-control-sm w-100" id="district" name="district[]" multiple>
+                                <option value="Any" {{ $preference->district=='Any'?'selected':'' }}>Any</option>
                                 <option value="Tangail" {{ $preference->district=='Tangail'?'selected':'' }}>Tangail</option>
                                 <option value="Bagerhat" {{ $preference->district=='Bagerhat'?'selected':'' }}>Bagerhat</option>
                                 <option value="Bandarban" {{ $preference->district=='Bandarban'?'selected':'' }}>Bandarban</option>

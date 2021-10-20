@@ -226,7 +226,7 @@
                 <div class="card-header pb-0 pt-2">
                     <div class="float-right">
                         @if(!$PersonalInfo) 
-                            <a href="{{ route('admin.user-info.personal-info.create', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Set Preference</a>
+                            <a href="{{ route('admin.user-info.personal-info.create', $user->id ) }}" class="btn btn-sm m-2 btn-primary">Set Personal Info</a>
                         @else
                             <a href="/admin/user-info/{{$PersonalInfo->user_id}}/personal-info/{{$PersonalInfo->id}}/edit" class="btn btn-sm m-2 btn-primary">Edit Personal-info</a>
                         @endif

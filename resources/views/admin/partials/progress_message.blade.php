@@ -5,8 +5,6 @@
     $full_url = array_merge($full_url, array()); 
     $user_id = $full_url[4];
 
-
-
     $PersonalInfo = \App\Models\PersonalInfo::where('user_id', $user_id)->first();
     $UserProfileImage = \App\Models\UserProfileImage::where('user_id', $user_id)->first();
     $Preference = \App\Models\Preference::where('user_id', $user_id)->first();
@@ -35,13 +33,13 @@
     <span class="">
         <strong>You should Set</strong><br>
         @if(!$PersonalInfo)
-            <a href="{{ route('member.personal-info.create') }}" class="btn btn-xs btn-primary"> Personal Information</a>
+        <a href="{{ route('admin.user-info.personal-info.create', $user_id ) }}" class="btn btn-sm m-2 btn-primary">Set Personal Info</a>
         @endif
         @if(!$UserProfileImage) 
-            <a href="{{ route('member.images.create') }}" class="btn btn-xs btn-primary"> Images</a>
+            <a href="{{ route('admin.user-info.images.create', $user_id ) }}" class="btn btn-sm m-2 btn-primary float-right">Upload Images</a>
         @endif
         @if(!$Preference)
-            <a href="{{ route('member.preference.create') }}" class="btn btn-xs btn-primary"> Preference</a>
+        <a href="{{ route('admin.user-info.preference.create',$user_id ) }}" class="btn btn-sm m-2 btn-primary">Set Preference</a>
         @endif
         <strong>to Make Your Profile 100%.</strong>
     </span>

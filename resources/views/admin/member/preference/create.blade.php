@@ -570,6 +570,7 @@
                             <div class="form-group mb-1">
                                 <label class="mb-0 form-label">District *</label>
                                 <select class="form-control-sm w-100 change-with-other" id="district" name="district[]" multiple required>
+                                    <option value="Any">Any</option>
                                     <option value="Tangail">Tangail</option>
                                     <option value="Bagerhat">Bagerhat</option>
                                     <option value="Bandarban">Bandarban</option>
