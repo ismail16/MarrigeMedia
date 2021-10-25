@@ -14,10 +14,22 @@ trait UserProfileImageTrait{
         $user = User::find($request->user_id);
         $UserProfileImage = new UserProfileImage;
 
-        $UserProfileImage->user_id  = $user->id;
-        $UserProfileImage->profile_image  = 0;
-        $image = $request->file('image');
+        $AllImages = UserProfileImage::where('user_id', $user->id)->get();
+        if($AllImages != "[]"){
+            foreach($AllImages as $img){
+                if($img->profile_image == 1){
+                    $UserProfileImage->profile_image  = 0;
+                    break;
+                }else{
+                    $UserProfileImage->profile_image  = 1;
+                }
+            }
+        }else{
+            $UserProfileImage->profile_image  = 1;
+        }
 
+        $UserProfileImage->user_id  = $user->id;
+        $image = $request->file('image');
         if (isset($image)){
             $slug = $user->first_name.'-'.$user->last_name.'-'.$user->id.'-'.rand(10,100);
             $imagename = $slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
@@ -29,6 +41,7 @@ trait UserProfileImageTrait{
         }
         $UserProfileImage->image_slug  = $slug;
         $UserProfileImage->status  = $request->status;
+
         $UserProfileImage->save();
 	}
 
@@ -50,6 +63,26 @@ trait UserProfileImageTrait{
             $image->move('images/user_profile_image',$imagename);
             $UserProfileImage->image = $imagename;
             $UserProfileImage->image_slug  = $slug;
+        }
+
+        if($request->profile_image == 1){
+            $allImg = UserProfileImage::where('user_id', $request->user_id)->get();
+            foreach($allImg as $img){
+                $img->profile_image = 0;
+                $img->save();
+            }
+            $UserProfileImage->profile_image = $request->profile_image;
+        }
+        if($request->profile_image == 0){
+            $allImg = UserProfileImage::where('user_id', $request->user_id)->get();
+            foreach($allImg as $img){
+                $img->profile_image = 0;
+                $img->save();
+            }
+            $img = UserProfileImage::orderBy('id', 'ASC')->where('user_id', $request->user_id)->first();
+            $img->profile_image = 1;
+            $img->save();
+            $UserProfileImage->profile_image = $request->profile_image;
         }
 
         $UserProfileImage->status  = $request->status;

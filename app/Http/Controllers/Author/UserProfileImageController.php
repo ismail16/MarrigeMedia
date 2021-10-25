@@ -14,8 +14,12 @@ class UserProfileImageController extends Controller
 
     public function index()
     {
-        $UserProfileImages = UserProfileImage::where('user_id', Auth::user()->id )->get();
-        return view('author.user_image.index', compact('UserProfileImages'));
+        $UserProfileImages = UserProfileImage::where('user_id', Auth::user()->id)->where('profile_image', 0 )->get();
+        $ProfileImage = UserProfileImage::where('user_id', Auth::user()->id )->where('profile_image', 1 )->first();
+
+        // return $ProfileImage;
+
+        return view('author.user_image.index', compact('UserProfileImages','ProfileImage'));
     }
 
     public function create()
@@ -55,6 +59,11 @@ class UserProfileImageController extends Controller
             unlink('images/user_profile_image/'.$UserProfileImage->image);
         }
         $UserProfileImage->delete();
+        $SetProfileImage = UserProfileImage::where('user_id', $UserProfileImage->user_id)->first();
+        if($UserProfileImage->profile_image == 1 && $SetProfileImage){
+            $SetProfileImage->profile_image = 1;
+            $SetProfileImage->save();
+        }
         return back();
     }
 }

@@ -12,6 +12,7 @@ use App\Models\Contact;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Preference;
+use App\Models\ImageAccess;
 
 
 class PagesController extends Controller
@@ -43,21 +44,39 @@ class PagesController extends Controller
     public function single_groom_bride($id)
     {
         $user = User::find($id);
-        $preference = Preference::where('user_id', $user->id)->first();
 
+        $preference = Preference::where('user_id', $user->id)->first();
+        $ProfileImg = UserProfileImage::where('user_id', $user->id)->where('profile_image', 1)->first();
+        $ImageAccess = ImageAccess::where('img_req_to_user', $user->id)->where('approved', 1)->first();
+        
+        // if ($ProfileImg->show_approved_ids) {
+        //     $approved_img_arr = json_decode($ProfileImg->show_approved_ids);
+        //     $approved_img = in_array(Auth::user()->id, $approved_img_arr);
+        //     if($approved_img){
+        //         $show_approved_img = UserProfileImage::where('user_id', $user->id)->where('profile_image', 1)->first();
+        //     }
+        // }else{
+        //     $show_approved_img = null;
+        // }
+
+        // return $ProfileImg;
         // $auth_user = Auth::user();
 
         // $package_price = PackagePrice::where('id', $auth_user->package_price_id)->first();
 
         // return $package_price;
 
-        return view('frontend.pages.single_groom_bride', compact('user','preference'));
+        return view('frontend.pages.single_groom_bride', compact('user','preference','ProfileImg','ImageAccess'));
     }
 
     public function single_groom_bride_gallary($id)
     {
         $user = User::find($id);
         $images = UserProfileImage::where('user_id', $id)->get();
+
+        return  $images;
+        // in_array(Auth::user()->id, $images);
+
         return view('frontend.pages.single_groom_bride_gallary', compact('user','images'));
     }
 

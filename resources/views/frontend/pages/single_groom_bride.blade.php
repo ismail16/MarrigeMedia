@@ -19,16 +19,10 @@
 					<div class="card bg-light-green">
 						<div class="card-body p-2" style="background-color: #91d2ab3b;">
 							<div class="text-center">
-								@if($user->user_images->first())                                    
-                                    @if($user->user_images->first()->status == 1)
-										<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" class="img-fluid" style=" max-height: 250px;">
-									@else
-										@if($user->gender == 'Female')
-										<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="w-75">
-										@else
-										<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="w-75">
-										@endif
-									@endif
+								@if($ProfileImg && $ProfileImg->status != 0) 
+									<img src="{{ asset('images/user_profile_image/'. $ProfileImg->image) }}" class="img-fluid" style=" max-height: 250px;">      
+                                @elseif($ImageAccess)
+                                    <img src="{{ asset('images/user_profile_image/'. $ProfileImg->image) }}" class="img-fluid" style=" max-height: 250px;">
                                 @else
                                     @if($user->gender == 'Female')
 										<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="w-75">
@@ -36,14 +30,15 @@
 										<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="w-75">
 										@endif
                                 @endif
-								
 							</div>
 						</div>
 						<div class="card-footer text-center">
 							@if($user->user_images->first() && Auth::check())                                    
                                 @if($user->user_images->first()->status == 1)
 									<a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
-								@else
+                                @elseif($ImageAccess)
+									<a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
+                                @else
 									<form action="{{ route('member.image-access.store') }}" method="post">
 		                            	@csrf
 		                        		<input type="hidden" name="img_req_from_user" value="{{ Auth::user()->id }}">
