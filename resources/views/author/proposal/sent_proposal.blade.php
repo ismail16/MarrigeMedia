@@ -34,6 +34,7 @@
                                         <tr>
                                             <th class="form-label">S.N</th>
                                             <th class="form-label">Name</th>
+                                            <th class="form-label">Profile ID</th>
                                             <th class="form-label">Image</th>
                                             <th class="form-label">Date</th>
                                             <th class="form-label">Status</th>
@@ -54,9 +55,14 @@
                                                         {{ $sent_proposal_user->first_name}} {{ $sent_proposal_user->last_name}}
                                                     </a>
                                                 </td>
+                                                <td>
+                                                    <a href="{{ route('single_groom_bride', $sent_proposal_user->id) }}" target="_blank">
+                                                        {{ $sent_proposal_user->u_id}}
+                                                    </a>
+                                                </td>
 
                                                 <td>
-                                                    @if($proposal_to_user_image)
+                                                    @if($proposal_to_user_image && $sent_proposal_user->approved == 1)
                                                         <img src="{{ asset('images/user_profile_image/'. $proposal_to_user_image->image) }}" height="65" width="100">
                                                     @else
                                                         @if($sent_proposal_user->gender == 'Female')

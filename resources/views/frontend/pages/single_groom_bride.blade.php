@@ -1,9 +1,8 @@
-
 @extends('frontend.layouts.master')
 @section('title','Profile | Groom-Bride')
 @section('content')
 <section class="pt-2">
-	<div class="container-fluid">
+	<div class="container">
 			<div class="row">
 				@if(session()->has('message'))
                 <div class="col-lg-12 col-xl-12 d-flex justify-content-center session_message">
@@ -15,67 +14,81 @@
                     </div>
                 </div>
                 @endif
-				<div class="col-md-3 mb-2">
-					<div class="card bg-light-green">
-						<div class="card-body p-2" style="background-color: #91d2ab3b;">
-							<div class="text-center">
-								@if($ProfileImg && $ProfileImg->status != 0) 
-									<img src="{{ asset('images/user_profile_image/'. $ProfileImg->image) }}" class="img-fluid" style=" max-height: 250px;">      
-                                @elseif($ImageAccess)
-                                    <img src="{{ asset('images/user_profile_image/'. $ProfileImg->image) }}" class="img-fluid" style=" max-height: 250px;">
-                                @else
-                                    @if($user->gender == 'Female')
-										<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="w-75">
-										@else
-										<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="w-75">
-										@endif
-                                @endif
-							</div>
-						</div>
-						<div class="card-footer text-center">
-							@if($user->user_images->first() && Auth::check())                                    
-                                @if($user->user_images->first()->status == 1)
-									<a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
-                                @elseif($ImageAccess)
-									<a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
-                                @else
-									<form action="{{ route('member.image-access.store') }}" method="post">
-		                            	@csrf
-		                        		<input type="hidden" name="img_req_from_user" value="{{ Auth::user()->id }}">
-		                        		<input type="hidden" name="img_req_to_user" value="{{ $user->id }}">
-		                        		<button class="btn btn-sm btn-primary cursor-pointer border-0">Request for see picture</button>
-		                            </form>
-								@endif
-                            @else
-                                <a href="#" class="text-primary cursor-pointer">Request for see picture</a>
-                            @endif
-						</div>
-					</div>                              
-				</div> 
 
-				<div class="col-md-9 pl-0 mb-2">
-					<div class="card bg-light-green">
+				<div class="col-md-12 mb-2">
+					<div class="card _bg-light-green">
 						<div class="card-header pb-0 pt-2">
 							<div class="row">
 								<div class="col-lg-6 col-md-12 col-sm-12">
-									<h3>
-										Name: 
-										@if(Auth::check())
-										{{ $user->first_name }} {{ $user->last_name }}
-										@else
-										<span>Disclose later</span>
-										@endif
-									</h3> 
+									<h5>
+										Profile ID-
+                                        <a href="{{ route('single_groom_bride',$user->id) }}">
+                                            {{$user->u_id}}
+                                        </a>
+									</h5> 
 								</div>
 								<div class="col-lg-6 col-md-12 col-sm-12 text-right">
 									Profile Created By: {{ $user->createdby }}
 								</div>
 							</div>
 						</div>
-						<div class="card-body">
-							<div class="row" style="background-color: #91d2ab3b;">
-								<div class="col-md-3">
+						<div class="card-body pb-1 pt-1">
+							<div class="row">
+                                <div class="col-md-4 bg-body-green p-2">
+                                    <div class="bg-light-green">
+                                        <div class="card-body p-2">
+                                            <div class="text-center">
+                                                @if($ProfileImg && $ProfileImg->status != 0) 
+                                                    <img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" class="img-fluid" style=" max-height: 250px;">      
+                                                @elseif($ImageAccess)
+                                                    <img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" class="img-fluid" style=" max-height: 250px;">
+                                                @else
+                                                    @if($user->gender == 'Female')
+                                                        <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="w-75">
+                                                        @else
+                                                        <img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="w-75">
+                                                        @endif
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="text-center pb-2">
+                                            @if($user->user_images->first() && Auth::check())                                    
+                                                @if($user->user_images->first()->status == 1)
+                                                    <a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
+                                                @elseif($ImageAccess)
+                                                    <a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
+                                                @else
+                                                    <form action="{{ route('member.image-access.store') }}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="img_req_from_user" value="{{ Auth::user()->id }}">
+                                                        <input type="hidden" name="img_req_to_user" value="{{ $user->id }}">
+                                                        <button class="btn btn-sm btn-primary cursor-pointer border-0">Request for see picture</button>
+                                                    </form>
+                                                @endif
+                                            @else
+                                                <a href="#" class="text-primary cursor-pointer">Request for see picture</a>
+                                            @endif
+                                        </div>
+                                    </div> 
+                                    
+                                </div>
+								<div class="col-md-4 bg-body-green p-2">
 									<p>
+                                        <span class="font-weight-bold">
+                                            Name-
+                                            @if(Auth::check())
+                                            {{ $user->first_name }} {{ $user->last_name }}
+                                            @else
+                                            <span>Disclose later</span>
+                                            @endif
+                                        </span>
+										{{-- <i class="far fa-calendar-check text-success"></i>
+										<span id="user-age" class="profile-detail-value">
+											{{ date_diff(date_create($user->birthday), date_create('now'))->y }}
+											Years
+										</span> --}}
+									</p>
+                                    <p>
 										<i class="far fa-calendar-check text-success"></i>
 										<span id="user-age" class="profile-detail-value">
 											{{ date_diff(date_create($user->birthday), date_create('now'))->y }}
@@ -85,7 +98,7 @@
 									<p>
 										<i class="fas fa-male text-success ml-1"></i>
 										<span class="profile-detail-value ng-binding ml-1">
-											{{ $user->user_info->height }} ft/inc, {{ $user->user_info->weight }}Kg
+											{{ $user->user_info->height }}", {{ $user->user_info->weight }}Kg
 										</span>
 									</p>
 									<p>
@@ -111,87 +124,87 @@
 											{{ str_replace('_', ' ', $user->profession) }}
 										</span>
 									</p>
+                                    <div class="">
+                                        <div class="mt-1">
+                                            <span class="profile-detail-value ng-binding">
+                                                <b>Contact Information</b>
+                                            </span>
+                                            <br>
+    
+                                            @if(Auth::check())
+                                                @if(Auth::user()->activation != 1 || Auth::user()->status != 1)
+                                                <div>
+                                                    <h6 class="text-danger">Your Account Not Activated!</h6>
+                                                </div>
+    
+                                                @elseif(Auth::user()->activation == 1 && Auth::user()->status == 1 && Auth::user()->package_price()->first()->title != 'Free' )
+                                                    <div>
+                                                        <span>
+                                                            <i class="fa fa-envelope text-success"></i> 
+                                                            {{ $user->email }}</span> <br>
+                                                        <span>
+                                                            <i class="fa fa-phone text-success"></i> 
+                                                            {{ $user->mobile }}
+                                                        </span>
+                                                    </div>
+                                                @else
+                                                    Email: 
+                                                    <a href="mailto:{{ $user->email }}">
+                                                        {{ $user->email }}
+                                                    </a>
+                                                @endif
+                                            @else
+                                                <a href="{{ route('login') }}" class="btn btn-sm btn-primary">
+                                                    Login Required
+                                                </a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="mt-2">
+                                        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">
+                                            <i class="icon-mail"></i>Send Message
+                                        </button>
+                                    
+                                        <!-- <a class="btn btn-sm btn-success text-white">
+                                            <i class="icon-mail"></i>Your Account Not Acivate
+                                        </a>
+                                    
+                                        <a class="btn btn-sm btn-success text-white" href="{{ route('login') }}">
+                                            <i class="icon-mail"></i>Send Message
+                                        </a> -->
+        
+                                        @if(Auth::check())
+                                        <form action="{{ route('member.sent-proposal.store') }}" method="post" style="display:inline;">
+                                            @csrf
+                                            <input type="hidden" name="sent_proposal_user" value="{{ Auth::user()->id }}">
+                                            <input type="hidden" name="receive_proposal_user" value="{{ $user->id }}">
+                                            <button class="btn btn-sm btn-primary cursor-pointer border-0">Sent Proposal</button>
+                                        </form>
+                                        @endif
+                                        <!-- <a class="btn btn-sm btn-primary text-danger" >
+                                            <i class="icon-star"></i>Add to Favorite
+                                        </a> -->
+                                    </div>
 								</div>
-								<div class="col-md-4 border-left">
-									<div class="mt-1 p-2">
-										<span class="profile-detail-value ng-binding">
-											<b>Contact Information</b>
-										</span>
-										<br>
-
-										@if(Auth::check())
-											@if(Auth::user()->activation != 1 || Auth::user()->status != 1)
-											<div>
-												<h6 class="text-danger">Your Account Not Activated!</h6>
-											</div>
-
-											@elseif(Auth::user()->activation == 1 && Auth::user()->status == 1 && Auth::user()->package_price()->first()->title != 'Free' )
-												<div>
-													<span>
-														<i class="fa fa-envelope text-success"></i> 
-														{{ $user->email }}</span> <br>
-													<span>
-														<i class="fa fa-phone text-success"></i> 
-														{{ $user->mobile }}
-													</span>
-												</div>
-											@else
-												Email: 
-												<a href="mailto:{{ $user->email }}">
-													{{ $user->email }}
-												</a>
-											@endif
-										@else
-											<a href="{{ route('login') }}" class="btn btn-sm btn-primary">
-												Login Required
-											</a>
-										@endif
-									</div>
-									<div class="mt-1 p-2">
-										<span class="profile-detail-value ng-binding">
-											<b>Account status</b>
-										</span> <br>
-										<span>
-											<i class="far fa-money-bill-alt text-success"></i>
-											{{ $user->package_price->first()->title }}
-										</span>
-									</div>
-								</div>
-								<div class="col-md-5 border-left">
+								
+								<div class="col-md-4 bg-body-green p-2">
 									<div class="profile_detail_info mt-1 p-2 border">
 										<p class="text-info"> <i class="far fa-check-circle text-success"></i> Trusted marriage site in bangladesh</p>
 										<p class="text-info"> <i class="far fa-check-circle text-success"></i> Secured &amp; Reliable</p>
 										<p class="text-info"> <i class="far fa-check-circle text-success"></i> Verified Profile</p>
 										<div class="div_line_shadow"></div>
 									</div>
+                                    <div class="mt-1 p-2">
+                                        <span class="profile-detail-value ng-binding">
+                                            <b>Account status</b>
+                                        </span> <br>
+                                        <span>
+                                            <i class="far fa-money-bill-alt text-success"></i>
+                                            {{ $user->package_price->first()->title }}
+                                        </span>
+                                    </div>
 								</div>
-							</div>
-						</div>
-						<div class="card-footer">
-							<div>
-								<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">
-									<i class="icon-mail"></i>Send Message
-								</button>
-							
-								<!-- <a class="btn btn-sm btn-success text-white">
-									<i class="icon-mail"></i>Your Account Not Acivate
-								</a>
-							
-								<a class="btn btn-sm btn-success text-white" href="{{ route('login') }}">
-									<i class="icon-mail"></i>Send Message
-								</a> -->
 
-								@if(Auth::check())
-								<form action="{{ route('member.sent-proposal.store') }}" method="post" style="display:inline;">
-	                            	@csrf
-	                        		<input type="hidden" name="sent_proposal_user" value="{{ Auth::user()->id }}">
-	                        		<input type="hidden" name="receive_proposal_user" value="{{ $user->id }}">
-	                        		<button class="btn btn-sm btn-primary cursor-pointer border-0">Sent Proposal</button>
-	                            </form>
-	                            @endif
-								<!-- <a class="btn btn-sm btn-primary text-danger" >
-									<i class="icon-star"></i>Add to Favorite
-								</a> -->
 							</div>
 						</div>
 						@if(Auth::check())
@@ -264,20 +277,24 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-3 mb-2">
+				{{-- <div class="col-md-3 mb-2 d-none d-lg-block">
 					@include('frontend.pages.search_bar_groom_bride')                        
-				</div> 
-				<div class="col-md-9 pl-0 mb-2">
-					<div class="card mt-2 bg-light-green">
+				</div>  --}}
+				<div class="col-md-12 mb-2">
+					<div class="card mt-2 _bg-light-green">
                         <div class="card-header pb-0 pt-2">
-                            <div id="verifiedItems" class="float-right">
-							<span>Verified:</span>
-							<i class="fas fa-user-check text-success"></i>
+							<div class="row">
+								<div class="col-lg-6 col-md-12 col-sm-12">
+									<h5>Profile Details</h5> 
+								</div>
+								<div class="col-lg-6 col-md-12 col-sm-12 text-right">
+									<div id="verifiedItems" class="float-right">
+                                        <span>Verified:</span>
+                                        <i class="fas fa-user-check text-success"></i>
+                                    </div>
+								</div>
 							</div>
-							<div >
-								<h3>Profile Details</h3>
-							</div>
-                        </div>  
+						</div>
                         <div class="card-body p-2">
                             <ul class="timeline timeline-left">
                                 <li class="timeline-inverted timeline-item">
@@ -286,7 +303,7 @@
                                     </div>
                                     <div class="timeline-panel bg-body-green border-0">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">ABOUT HE</h4>
+                                            <h5 class="timeline-title">ABOUT HE</h5>
                                         </div>
                                         <div class="timeline-body text-dark">
                                             <p class="border p-1 m-0 bg-light text-dark font-weight-bold">
@@ -302,7 +319,7 @@
                                     </div>
                                     <div class="timeline-panel bg-body-green border-0">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Basic Information</h4>
+                                            <h5 class="timeline-title">Basic Information</h5>
                                         </div>
                                         <div class="timeline-body">
                                         	<div class="row">
@@ -378,7 +395,7 @@
                                     </div>
                                     <div class="timeline-panel bg-body-green border-0">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Education and Profession</h4>
+                                            <h5 class="timeline-title">Education and Profession</h5>
                                         </div>
                                         <div class="timeline-body">
                                         	<div class="row">
@@ -442,7 +459,7 @@
                                     </div>
                                     <div class="timeline-panel bg-body-green border-0">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Address</h4>
+                                            <h5 class="timeline-title">Address</h5>
                                         </div>
                                         <div class="timeline-body">
                                         	<div class="row">
@@ -506,7 +523,7 @@
                                     </div>
                                     <div class="timeline-panel bg-body-green border-0">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Family Information</h4>
+                                            <h5 class="timeline-title">Family Information</h5>
                                         </div>
                                         <div class="timeline-body">
                                         	<div class="row">
@@ -591,7 +608,7 @@
                                     </div>
                                     <div class="timeline-panel bg-body-green border-0">
                                         <div class="timeline-heading">
-                                            <h4 class="timeline-title">Preferences</h4>
+                                            <h5 class="timeline-title">Preferences</h5>
                                         </div>
                                         @if($preference)
                                         <div class="timeline-body">

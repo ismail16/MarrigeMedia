@@ -34,6 +34,7 @@
                                         <tr>
                                             <th class="form-label">S.N</th>
                                             <th class="form-label">Name</th>
+                                            <th class="form-label">Profile ID</th>
                                             <th class="form-label">Image</th>
                                             <th class="form-label">Date</th>
                                             <th class="form-label">Status</th>
@@ -44,8 +45,8 @@
 
                                         @foreach($image_access_reqs as $image_access_req)
                                             <?php 
-                                            $req_users = \App\user::where('id', $image_access_req->img_req_from_user)->first();
-                                            $req_user_image = App\Models\UserProfileImage::where('id', $req_users->id)->first();
+                                            $req_users = \App\user::where('id', $image_access_req->img_req_to_user)->first();
+                                            $req_user_image = App\Models\UserProfileImage::where('user_id', $image_access_req->img_req_to_user)->first();
                                             ?>
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
@@ -56,7 +57,13 @@
                                                 </td>
 
                                                 <td>
-                                                    @if($req_user_image)
+                                                    <a href="{{ route('single_groom_bride', $req_users->id) }}" target="_blank">
+                                                        {{ $req_users->u_id}}
+                                                    </a>
+                                                </td>
+
+                                                <td>
+                                                    @if($req_user_image && $image_access_req->approved == 1)
                                                         <img src="{{ asset('images/user_profile_image/'. $req_user_image->image) }}" height="65" width="100">
                                                     @else
                                                         @if($req_users->gender == 'Female')

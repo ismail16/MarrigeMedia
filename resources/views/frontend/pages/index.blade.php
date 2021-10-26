@@ -23,7 +23,17 @@
 							<div class="media-image border">
 								<div class="row p-1">
 									<div class="col-md-5">
-										@if($user->user_images->first()['status'] == 1)
+										@php
+											if(Auth::check()){
+												$ImageAccess = \App\Models\ImageAccess::where('img_req_from_user', Auth::user()->id)->where('img_req_to_user', $user->id)->where('approved', 1)->first();
+											}else{
+												$ImageAccess = null;
+											}
+										@endphp
+										
+										@if($user->user_images->first()['status'] == 1 && $user->user_images->first()['profile_image'] == 1)
+											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
+										@elseif($ImageAccess)
 											<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
 										@else
 											@if($user->gender == 'Female')
@@ -38,15 +48,8 @@
 											Profile ID-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
 												{{ $user->u_id }}
 											</a><br>
-											{{-- Name-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
-													@if(Auth::check())
-													{{ $user->first_name }}
-													@else
-													<span>Disclose later</span>
-													@endif
-												</a> --}}
 											<p class="mb-0 mt-0 text-dark" style="line-height: 25px; ">
-												{{ $user->profession }} <br>
+												{{ str_replace('_', ' ', $user->profession) }} <br>
 												{{ $user->gender }}, 
 												{{ date_diff(date_create($user->birthday), date_create('now'))->y }} yrs, 
 												{{ $user->user_info->height }}'', 
@@ -87,13 +90,23 @@
 								<div class="media-image border">
 									<div class="row p-1">
 										<div class="col-md-5">
-											@if($user->user_images->first()['status'] == 1)
+											@php
+												if(Auth::check()){
+													$ImageAccess = \App\Models\ImageAccess::where('img_req_from_user', Auth::user()->id)->where('img_req_to_user', $user->id)->where('approved', 1)->first();
+												}else{
+													$ImageAccess = null;
+												}
+											@endphp
+
+											@if($user->user_images->first()['status'] == 1 && $user->user_images->first()['profile_image'] == 1)
+												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid image-size">
+											@elseif($ImageAccess)
 												<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Bride Image" class="img-fluid image-size">
 											@else
 												@if($user->gender == 'Female')
-												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="img-fluid image-size" alt="Bride Image">
+												<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid image-size">
 												@else
-												<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="img-fluid image-size" alt="Groom Image">
+												<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid image-size">
 												@endif
 											@endif
 										</div>

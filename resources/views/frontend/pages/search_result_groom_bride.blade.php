@@ -1,4 +1,3 @@
-
 @extends('frontend.layouts.master')
 @section('title','Search Results')
 @section('content')
@@ -16,13 +15,23 @@
 				<div class="col-md-4">
 					<div class="row border m-1">
 						<div class="col-md-5 p-1">
-							@if($user->user_images->first()['status'] == 1)
-								<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Image" class="img-fluid image-size">
+							@php
+								if(Auth::check()){
+									$ImageAccess = \App\Models\ImageAccess::where('img_req_from_user', Auth::user()->id)->where('img_req_to_user', $user->id)->where('approved', 1)->first();
+								}else{
+									$ImageAccess = null;
+								}
+							@endphp
+							
+							@if($user->user_images->first()['status'] == 1 && $user->user_images->first()['profile_image'] == 1)
+								<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
+							@elseif($ImageAccess)
+								<img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" alt="Groom Image" class="img-fluid image-size">
 							@else
 								@if($user->gender == 'Female')
-								<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="img-fluid image-size">
+								<img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid image-size">
 								@else
-								<img src="{{ asset('images/icons/flaticon/businessman.png') }}" class="img-fluid image-size">
+								<img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid image-size">
 								@endif
 							@endif
 						</div>
@@ -31,13 +40,12 @@
 								ID-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
 									{{ $user->u_id }}
 								</a><br>
-								Name-<a href="{{ route('single_groom_bride',$user->id) }}" class="as3_name">
-									{{ $user->first_name }}
-								</a>
-								<p class="mb-0 mt-0" style=" line-height: 25px; ">
-									{{ date_diff(date_create($user->birthday), date_create('now'))->y }} yrs, {{ $user->gender }}, 
+								<p class="mb-0 mt-0 text-dark" style=" line-height: 25px; ">
+									{{ str_replace('_', ' ', $user->profession) }} <br>
+									{{ $user->gender }}, 
+									{{ date_diff(date_create($user->birthday), date_create('now'))->y }} yrs, 
 									{{ $user->user_info->height }}'', 
-									{{ $user->user_info->weight }}Kg, 
+									{{ $user->user_info->weight }}Kg,
 									{{ $user->district }}
 								</p>
 							</div>
