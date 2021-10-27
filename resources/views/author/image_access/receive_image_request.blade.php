@@ -56,7 +56,7 @@
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('single_groom_bride', $req_users->id) }}" target="_blank">
+                                                    <a href="{{ route('single_groom_bride', $receive_user->id) }}" target="_blank">
                                                         {{ $receive_user->u_id}}
                                                     </a>
                                                 </td>
