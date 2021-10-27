@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Preference;
 use App\Models\ImageAccess;
+use App\Models\Proposal;
 
 
 class PagesController extends Controller
@@ -49,12 +50,22 @@ class PagesController extends Controller
         }else{
             $ImageAccess = null;
         }
+        if(Auth::check()){
+            $receive_pro = Proposal::where('receive_proposal_user', Auth::user()->id)->where('sent_proposal_user', $user->id)->where('approved', 1)->first();
+        }else{
+            $receive_pro = null;
+        }
+        // if(Auth::check()){
+        //     $receive_message = ImageAccess::where('img_req_from_user', Auth::user()->id)->where('img_req_to_user', $user->id)->where('approved', 1)->first();
+        // }else{
+        //     $receive_message = null;
+        // }
 
         $preference = Preference::where('user_id', $user->id)->first();
         $ProfileImg = UserProfileImage::where('user_id', $user->id)->where('profile_image', 1)->first();
 
         // return $ImageAccess;
-        return view('frontend.pages.single_groom_bride', compact('user','preference','ProfileImg','ImageAccess'));
+        return view('frontend.pages.single_groom_bride', compact('user','preference','ProfileImg','ImageAccess', 'receive_pro'));
     }
 
     public function single_groom_bride_gallary($id)

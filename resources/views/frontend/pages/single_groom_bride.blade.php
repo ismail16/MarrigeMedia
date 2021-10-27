@@ -42,6 +42,8 @@
                                                     <img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" class="img-fluid" style=" max-height: 250px;">      
                                                 @elseif($ImageAccess)
                                                     <img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" class="img-fluid" style=" max-height: 250px;">
+                                                @elseif($receive_pro)
+                                                    <img src="{{ asset('images/user_profile_image/'. $user->user_images->first()->image) }}" class="img-fluid" style=" max-height: 250px;">
                                                 @else
                                                     @if($user->gender == 'Female')
                                                         <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" class="w-75">
