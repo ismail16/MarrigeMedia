@@ -46,7 +46,7 @@
                                         @foreach($receive_image_requests as $receive_image_request)
                                             <?php 
                                             $receive_user = \App\user::where('id', $receive_image_request->img_req_from_user)->first();
-                                            $req_user_image = App\Models\UserProfileImage::where('id', $receive_user->id)->first();
+                                            $req_user_image = App\Models\UserProfileImage::where('user_id', $receive_user->id)->first();
                                             ?>
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>

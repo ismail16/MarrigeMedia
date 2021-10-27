@@ -16,7 +16,17 @@ class ImageReqReceiveController extends Controller
         $user = Auth::user();
         $receive_image_requests = ImageAccess::where('img_req_to_user', Auth::user()->id)->get();
 
-        // return $receive_image_requests;
+        return $receive_image_requests;
+        // if(Auth::check()){
+        //     $ImageAccess = ImageAccess::where('img_req_from_user', Auth::user()->id)->where('img_req_to_user', $user->id)->where('approved', 1)->first();
+        // }else{
+        //     $ImageAccess = null;
+        // }
+        // if(Auth::check()){
+        //     $receive_pro = Proposal::where('receive_proposal_user', Auth::user()->id)->where('sent_proposal_user', $user->id)->first();
+        // }else{
+        //     $receive_pro = null;
+        // }
         return view('author.image_access.receive_image_request', compact('receive_image_requests'));
     }
 
