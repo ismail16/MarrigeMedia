@@ -34,6 +34,7 @@
                                         <tr>
                                             <th class="form-label">S.N</th>
                                             <th class="form-label">Name</th>
+                                            <th class="form-label">Profile ID</th>
                                             <th class="form-label">Image</th>
                                             <th class="form-label">Status</th>
                                             <th class="form-label">Date</th>
@@ -52,6 +53,11 @@
                                                 <td>
                                                     <a href="{{ route('single_groom_bride', $receive_user->id) }}" target="_blank">
                                                         {{ $receive_user->first_name}} {{ $receive_user->last_name}}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('single_groom_bride', $req_users->id) }}" target="_blank">
+                                                        {{ $receive_user->u_id}}
                                                     </a>
                                                 </td>
                                                 <td>
