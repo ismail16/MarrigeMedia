@@ -51,7 +51,7 @@ class PagesController extends Controller
             $ImageAccess = null;
         }
         if(Auth::check()){
-            $receive_pro = Proposal::where('receive_proposal_user', Auth::user()->id)->where('sent_proposal_user', $user->id)->where('approved', 1)->first();
+            $receive_pro = Proposal::where('receive_proposal_user', Auth::user()->id)->where('sent_proposal_user', $user->id)->first();
         }else{
             $receive_pro = null;
         }

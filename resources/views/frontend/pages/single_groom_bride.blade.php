@@ -59,6 +59,8 @@
                                                     <a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
                                                 @elseif($ImageAccess)
                                                     <a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
+                                                @elseif($receive_pro)
+                                                    <a href="{{ route('single_groom_bride_gallary', $user->id)}} " class="text-primary cursor-pointer">View Photo Album</a>
                                                 @else
                                                     <form action="{{ route('member.image-access.store') }}" method="post">
                                                         @csrf
