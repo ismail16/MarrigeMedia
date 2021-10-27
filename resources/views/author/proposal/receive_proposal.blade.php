@@ -34,6 +34,7 @@
                                         <tr>
                                             <th class="form-label">S.N</th>
                                             <th class="form-label">Name</th>
+                                            <th class="form-label">Profile ID</th>
                                             <th class="form-label">Image</th>
                                             <th class="form-label">Status</th>
                                             <th class="form-label">Date</th>
@@ -45,13 +46,18 @@
                                         @foreach($receive_proposals as $receive_proposal)
                                             <?php 
                                             $receive_pro_user = \App\user::where('id', $receive_proposal->sent_proposal_user)->first();
-                                            $receive_pro_user_image = App\Models\UserProfileImage::where('id', $receive_pro_user->id)->first();
+                                            $receive_pro_user_image = App\Models\UserProfileImage::where('user_id', $receive_pro_user->id)->first();
                                             ?>
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
                                                 <td>
                                                     <a href="{{ route('single_groom_bride', $receive_pro_user->id) }}" target="_blank">
                                                         {{ $receive_pro_user->first_name}} {{ $receive_pro_user->last_name}}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('single_groom_bride', $receive_pro_user->id) }}" target="_blank">
+                                                        {{ $receive_pro_user->u_id}}
                                                     </a>
                                                 </td>
                                                 <td>
