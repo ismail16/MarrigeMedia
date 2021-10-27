@@ -45,7 +45,7 @@
 
                                         @foreach($proposals as $proposal)
                                             <?php 
-                                            $sent_proposal_user = \App\user::where('id', $proposal->sent_proposal_user)->first();
+                                            $sent_proposal_user = \App\user::where('id', $proposal->receive_proposal_user)->first();
                                             $proposal_to_user_image = App\Models\UserProfileImage::where('id', $sent_proposal_user->id)->first();
                                             ?>
                                             <tr>

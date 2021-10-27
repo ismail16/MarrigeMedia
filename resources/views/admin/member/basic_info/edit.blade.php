@@ -87,12 +87,12 @@
                                             <option value="Defense" {{ $user->profession == 'Defense'?'selected':''}}>Defense (Officer)</option>
                                             <option value="Defense" {{ $user->profession == 'Defense'?'selected':''}}>Defense (Soldier)</option>
                                             <option value="Designer" {{ $user->profession == 'Designer'?'selected':''}}>Designer</option>
-                                            <option value="Engineer_Software" {{ $user->profession == 'Engineer_Software'?'selected':''}}>Software Engineer</option>
-                                            <option value="Engineer_Mechanical" {{ $user->profession == 'Engineer_Mechanical'?'selected':''}}>Engineer (Mechanical)</option>
-                                            <option value="Engineer_Textail" {{ $user->profession == 'Engineer_Textail'?'selected':''}}>Engineer (Textail)</option>
-                                            <option value="Engineer_Project" {{ $user->profession == 'Engineer_Project'?'selected':''}}>Engineer (Project)</option>
-                                            <option value="Engineer_Civil" {{ $user->profession == 'Engineer_Civil'?'selected':''}}>Engineer (Civil)</option>
-                                            <option value="Engineer_others" {{ $user->profession == 'Engineer_others'?'selected':''}}>Engineer (Others)</option>
+                                            <option value="Software_Engineer" {{ $user->profession == 'Software_Engineer'?'selected':''}}>Software Engineer</option>
+                                            <option value="Mechanical_Engineer" {{ $user->profession == 'Mechanical_Engineer'?'selected':''}}>Engineer (Mechanical)</option>
+                                            <option value="Textail_Engineer" {{ $user->profession == 'Textail_Engineer'?'selected':''}}>Engineer (Textail)</option>
+                                            <option value="Project_Engineer" {{ $user->profession == 'Project_Engineer'?'selected':''}}>Engineer (Project)</option>
+                                            <option value="Civil_Engineer" {{ $user->profession == 'Civil_Engineer'?'selected':''}}>Engineer (Civil)</option>
+                                            <option value="Engineer" {{ $user->profession == 'Engineer'?'selected':''}}>Engineer (Others)</option>
                                             <option value="Event_Manager" {{ $user->profession == 'Event_Manager'?'selected':''}}>Event Manager</option>
                                             <option value="Executive" {{ $user->profession == 'Executive'?'selected':''}}>Executive</option>
                                             <option value="Economist" {{ $user->profession == 'Economist'?'selected':''}}>Economist</option>

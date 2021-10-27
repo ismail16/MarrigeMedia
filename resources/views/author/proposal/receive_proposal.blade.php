@@ -44,7 +44,7 @@
 
                                         @foreach($receive_proposals as $receive_proposal)
                                             <?php 
-                                            $receive_pro_user = \App\user::where('id', $receive_proposal->receive_proposal_user)->first();
+                                            $receive_pro_user = \App\user::where('id', $receive_proposal->sent_proposal_user)->first();
                                             $receive_pro_user_image = App\Models\UserProfileImage::where('id', $receive_pro_user->id)->first();
                                             ?>
                                             <tr>
