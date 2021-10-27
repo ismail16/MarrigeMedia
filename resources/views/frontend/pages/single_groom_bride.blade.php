@@ -66,11 +66,13 @@
                                                         @csrf
                                                         <input type="hidden" name="img_req_from_user" value="{{ Auth::user()->id }}">
                                                         <input type="hidden" name="img_req_to_user" value="{{ $user->id }}">
-                                                        <button class="btn btn-sm btn-primary cursor-pointer border-0">Request for see picture</button>
+                                                        <button class="btn-link text-primary cursor-pointer">Request for see picture</button>
                                                     </form>
                                                 @endif
                                             @else
-                                                <a href="#" class="text-primary cursor-pointer">Request for see picture</a>
+                                                <a href="{{ route('login') }}" class="btn btn-sm btn-primary">
+                                                    Login Required
+                                                </a>
                                             @endif
                                         </div>
                                     </div> 

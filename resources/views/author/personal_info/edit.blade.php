@@ -775,7 +775,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="form-group ">
-                                <label class="form-label mb-0" for="diat_status">Diat Status *</label>
+                                <label class="form-label mb-0" for="diat_status">Diet Status *</label>
                                 <select class="form-control-sm w-100" name="diat_status">
                                     <option value="Not_to_say" {{ $PersonalInfo->diat_status=='Not_to_say'?'selected':'' }}>Not to say</option>
                                     <option value="Vag" {{ $PersonalInfo->diat_status=='Vag'?'selected':'' }}>Vag</option>

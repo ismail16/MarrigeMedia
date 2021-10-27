@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <label class="mb-0 form-label">Meretial status *</label>
+                        <label class="mb-0 form-label">Marital status *</label>
                         <select id="marital_status" name="marital_status[]"  class="form-control-sm w-100" multiple>
                             <option value="Never_Married">Never Married</option>
                             <option value="Legally_Separated">Legally Separated</option>
@@ -415,7 +415,7 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group mb-1">
-                            <label class="mb-0 form-label">My Profession *</label>
+                            <label class="mb-0 form-label">Profession *</label>
                             <select class="form-control-sm w-100" id="profession" name="profession[]" multiple>
                                 <option value="Any" selected>Any</option>
                                 <option value="Engineer">Engineer</option>

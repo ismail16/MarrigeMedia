@@ -777,7 +777,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group ">
-                                    <label class="form-label" for="diat_status">Diat Status *</label>
+                                    <label class="form-label" for="diat_status">Diet Status *</label>
                                     <select class="form-control-sm w-100" name="diat_status" required>
                                         <option value="Not_to_say" selected>Not to say</option>
                                         <option value="Vag">Vag</option>
