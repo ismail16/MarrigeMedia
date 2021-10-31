@@ -2,16 +2,19 @@
 @section('title','Sign Up')
 
 @section('content')
+@php
+    include(app_path().'/data/temp_data.php');
+@endphp
 <section class="hero-wrap" style="background-image: url('{{ asset('images/reg_bg.jpg')}}');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">
            
             <div class="col-md-9 ftco-animate ml-1 mr-1 mb-3 mt-3">
-                 @if ($errors->any())
+                @if ($errors->any())
                     <div class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                <span class="badge badge-danger">{{ $error }}</span>
-                            @endforeach
+                        @foreach ($errors->all() as $error)
+                            <span class="badge badge-danger">{{ $error }}</span>
+                        @endforeach
                     </div>
                 @endif
                 <div class="bg-light-green pl-3 pr-3 pb-3">
@@ -63,8 +66,13 @@
                                 Profession<span class="text-danger">* </span>
                             </label>
                             <select id="profession" name="profession" class="form-control-sm w-100">
-                                <option value="">Select Profession</option>
-                                <option value="Acting_professional">Acting professional</option>
+
+                                @foreach ($professions as $profession)
+                                 <option value="{{ $profession['slug'] }}">{{ $profession['name'] }}</option>
+                                    
+                                @endforeach
+                        
+                                {{-- <option value="Acting_professional">Acting professional</option>
                                 <option value="Accountant">Accountant</option>
                                 <option value="Administration_professional">Administration professional</option>
                                 <option value="Advertising_professional">Advertising professional</option>
@@ -156,17 +164,16 @@
                                 <option value="Veterinary_Doctor">Veterinary Doctor</option>
                                 <option value="Working_Abroad">Working Abroad</option>
                                 <option value="Writer">Writer</option>
-                                <option value="Zoologist">Zoologist</option>                                
+                                <option value="Zoologist">Zoologist</option>                                 --}}
                             </select>
                             <span class="invalid-feedback d-block" id="profession_err"></span>
                         </div>
 
                         <div class="form-group mb-1 col-md-4">
                             <label class="mb-0 form-label font-weight-bold">
-                                Meretial status<span class="text-danger">* </span>
+                                Marital status<span class="text-danger">* </span>
                             </label>
                             <select id="marital_status" name="marital_status"  class="form-control-sm w-100">
-                                <option value="">Select Marital Status</option>
                                 <option value="Never_Married">Never Married</option>
                                 <option value="Legally_Separated">Legally Separated</option>
                                 <option value="Divorced">Divorced</option>
@@ -199,7 +206,13 @@
                             <label class="mb-0 form-label font-weight-bold">
                                 City / District<span class="text-danger">* </span>
                             </label>
-                            <input type="text" name="district" id="district"  class="form-control-sm w-100" placeholder=" ">
+                            <select name="district" id="district" class="form-control-sm w-100">
+                                <option value="Dhaka">Dhaka</option>
+                                @foreach (\App\Models\District::orderBy('name', "asc")->get() as $district)
+                                    <option value="{{ $district->name }}">{{ $district->name }}</option>
+                                @endforeach
+                            </select>
+                            {{-- <input type="text" name="district" id="district"  class="form-control-sm w-100" placeholder=" "> --}}
                             <span class="invalid-feedback d-block" id="district_err"></span>
                         </div>
 
