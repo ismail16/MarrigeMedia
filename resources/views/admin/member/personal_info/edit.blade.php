@@ -1,6 +1,7 @@
 @extends('admin.layouts.master')
 @section('title','Edit Personal Info')
 @section('content')
+@php include(app_path().'/data/temp_data.php'); @endphp
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -177,107 +178,9 @@
                             <div class="form-group ">
                                 <label class="form-label mb-0" for="my_profession">My Profession *</label>
                                 <select class="form-control-sm w-100" name="my_profession">
-                                    <option value="Engineer" {{ $PersonalInfo->my_profession=='Engineer'?'selected':'' }}>Engineer</option>
-                                    <option value="Banker" {{ $PersonalInfo->my_profession=='Banker'?'selected':'' }}>Banker</option>
-                                    <option value="Doctor" {{ $PersonalInfo->my_profession=='Doctor'?'selected':'' }}>Doctor</option>
-                                    <option value="Dentist" {{ $PersonalInfo->my_profession=='Dentist'?'selected':'' }}>Dentist</option>
-                                    <option value="Nurse" {{ $PersonalInfo->my_profession=='Nurse'?'selected':'' }}>Nurse</option>
-                                    <option value="Others" {{ $PersonalInfo->my_profession=='Others'?'selected':'' }}>Others</option>
-                                    <option value="government_service" {{ $PersonalInfo->my_profession=='government_service'?'selected':'' }}>government service</option>
-                                    <option value="Customer_Support_Professional" {{ $PersonalInfo->my_profession=='Customer_Support_Professional'?'selected':'' }}>Customer Support Professional</option>
-                                    <option value="Defense_Employee" {{ $PersonalInfo->my_profession=='Defense_Employee'?'selected':'' }}>Defense Employee</option>
-                                    <option value="Designer" {{ $PersonalInfo->my_profession=='Designer'?'selected':'' }}>Designer</option>
-                                    <option value="Engineer_(Mechanical)" {{ $PersonalInfo->my_profession=='Engineer_(Mechanical)'?'selected':'' }}>Engineer (Mechanical)</option>
-                                    <option value="Engineer_(Textail)" {{ $PersonalInfo->my_profession=='Engineer_(Textail)'?'selected':'' }}>Engineer (Textail)</option>
-                                    <option value="Engineer_(Project)" {{ $PersonalInfo->my_profession=='Engineer_(Project)'?'selected':'' }}>Engineer (Project)</option>
-                                    <option value="Civil_Engineer_(Diploma)" {{ $PersonalInfo->my_profession=='Civil_Engineer_(Diploma)'?'selected':'' }}>Civil Engineer (Diploma)</option>
-                                    <option value="Civil_Engineer_(Bsc)" {{ $PersonalInfo->my_profession=='Civil_Engineer_(Bsc)'?'selected':'' }}>Civil Engineer (Bsc)</option>
-                                    <option value="Event_Manager" {{ $PersonalInfo->my_profession=='Event_Manager'?'selected':'' }}>Event Manager</option>
-                                    <option value="Executive" {{ $PersonalInfo->my_profession=='Executive'?'selected':'' }}>Executive</option>
-                                    <option value="Fashion_Designer" {{ $PersonalInfo->my_profession=='Fashion_Designer'?'selected':'' }}>Fashion Designer</option>
-                                    <option value="Finance_Professional" {{ $PersonalInfo->my_profession=='Finance_Professional'?'selected':'' }}>Finance Professional</option>
-                                    <option value="Health_Care_Professional" {{ $PersonalInfo->my_profession=='Health_Care_Professional'?'selected':'' }}>Health Care Professional</option>
-                                    <option value="Home_Maker" {{ $PersonalInfo->my_profession=='Engineer'?'selected':'' }}>Home Maker</option>
-                                    <option value="Hotel_Restaurant_Professional" {{ $PersonalInfo->my_profession=='Hotel_Restaurant_Professional'?'selected':'' }}>Hotel &amp; Restaurant Professional</option>
-                                    <option value="Human_Resources_Professional" {{ $PersonalInfo->my_profession=='Human_Resources_Professional'?'selected':'' }}>Human Resources Professional</option>
-                                    <option value="IT/Telecom_Profession" {{ $PersonalInfo->my_profession=='IT/Telecom_Profession'?'selected':'' }}>IT / Telecom Profession</option>
-                                    <option value="Interior_Designer" {{ $PersonalInfo->my_profession=='Interior_Designer'?'selected':'' }}>Interior Designer</option>
-                                    <option value="Investment_Professional" {{ $PersonalInfo->my_profession=='Investment_Professional'?'selected':'' }}>Investment Professional</option>
-                                    <option value="Journalist" {{ $PersonalInfo->my_profession=='Journalist'?'selected':'' }}>Journalist</option>
-                                    <option value="Lawyer" {{ $PersonalInfo->my_profession=='Lawyer'?'selected':'' }}>Lawyer</option>
-                                    <option value="Lecturer" {{ $PersonalInfo->my_profession=='Lecturer'?'selected':'' }}>Lecturer</option>
-                                    <option value="Legal_Professional" {{ $PersonalInfo->my_profession=='Legal_Professional'?'selected':'' }}>Legal Professional</option>
-                                    <option value="Manager" {{ $PersonalInfo->my_profession=='Manager'?'selected':'' }}>Manager</option>
-                                    <option value="Marketing_Professional" {{ $PersonalInfo->my_profession=='Marketing_Professional'?'selected':'' }}>Marketing Professional</option>
-                                    <option value="Media_Professional" {{ $PersonalInfo->my_profession=='Media_Professional'?'selected':'' }}>Media Professional</option>
-                                    <option value="Medical_Professional" {{ $PersonalInfo->my_profession=='Medical_Professional'?'selected':'' }}>Medical Professional</option>
-                                    <option value="Merchandiser" {{ $PersonalInfo->my_profession=='Merchandiser'?'selected':'' }}>Merchandiser</option>
-                                    <option value="Merchant_Naval_Officer" {{ $PersonalInfo->my_profession=='Merchant_Naval_Officer'?'selected':'' }}>Merchant Naval Officer</option>
-                                    <option value="Not_Working" {{ $PersonalInfo->my_profession=='Not_Working'?'selected':'' }}>Not Working</option>
-                                    <option value="Occupational_Therapist" {{ $PersonalInfo->my_profession=='Occupational_Therapist'?'selected':'' }}>Occupational Therapist</option>
-                                    <option value="Pharmacist" {{ $PersonalInfo->my_profession=='Pharmacist'?'selected':'' }}>Pharmacist</option>
-                                    <option value="Physician_Assistant" {{ $PersonalInfo->my_profession=='Physician_Assistant'?'selected':'' }}>Physician Assistant</option>
-                                    <option value="Private_Service" {{ $PersonalInfo->my_profession=='Private_Service'?'selected':'' }}>Private Service</option>
-                                    <option value="Production_Professional" {{ $PersonalInfo->my_profession=='Production_Professional'?'selected':'' }}>Production Professional</option>
-                                    <option value="Professor" {{ $PersonalInfo->my_profession=='Professor'?'selected':'' }}>Professor</option>
-                                    <option value="Public_Relations_Professional" {{ $PersonalInfo->my_profession=='Public_Relations_Professional'?'selected':'' }}>Public Relations Professional</option>
-                                    <option value="Real_Estate_Professional" {{ $PersonalInfo->my_profession=='Real_Estate_Professional'?'selected':'' }}>Real Estate Professional</option>
-                                    <option value="Research_Scholar" {{ $PersonalInfo->my_profession=='Research_Scholar'?'selected':'' }}>Research Scholar</option>
-                                    <option value="Retail_Professional" {{ $PersonalInfo->my_profession=='Retail_Professional'?'selected':'' }}>Retail Professional</option>
-                                    <option value="Retired_Person" {{ $PersonalInfo->my_profession=='Retired_Person'?'selected':'' }}>Retired Person</option>
-                                    <option value="Sales_Professional" {{ $PersonalInfo->my_profession=='Sales_Professional'?'selected':'' }}>Sales Professional</option>
-                                    <option value="Student" {{ $PersonalInfo->my_profession=='Student'?'selected':'' }}>Student</option>
-                                    <option value="Technician" {{ $PersonalInfo->my_profession=='Technician'?'selected':'' }}>Technician</option>
-                                    <option value="Training_Professional" {{ $PersonalInfo->my_profession=='Training_Professional'?'selected':'' }}>Training Professional</option>
-                                    <option value="Veterinary_Doctor" {{ $PersonalInfo->my_profession=='Veterinary_Doctor'?'selected':'' }}>Veterinary Doctor</option>
-                                    <option value="Working_Abroad" {{ $PersonalInfo->my_profession=='Working_Abroad'?'selected':'' }}>Working Abroad</option>
-                                    <option value="Writer" {{ $PersonalInfo->my_profession=='Writer'?'selected':'' }}>Writer</option>
-                                    <option value="Business" {{ $PersonalInfo->my_profession=='Business'?'selected':'' }}>Business</option>
-                                    <option value="Teacher" {{ $PersonalInfo->my_profession=='Teacher'?'selected':'' }}>Teacher</option>
-                                    <option value="Not_working" {{ $PersonalInfo->my_profession=='Not_working'?'selected':'' }}>Not working</option>
-                                    <option value="Clerical_official" {{ $PersonalInfo->my_profession=='Clerical_official'?'selected':'' }}>Clerical official</option>
-                                    <option value="Commercial_pilot" {{ $PersonalInfo->my_profession=='Commercial_pilot'?'selected':'' }}>Commercial pilot</option>
-                                    <option value="Company_secretary" {{ $PersonalInfo->my_profession=='Company_secretary'?'selected':'' }}>Company secretary</option>
-                                    <option value="Computer_professional" {{ $PersonalInfo->my_profession=='Computer_professional'?'selected':'' }}>Computer professional</option>
-                                    <option value="Contractor" {{ $PersonalInfo->my_profession=='Contractor'?'selected':'' }}>Contractor</option>
-                                    <option value="Cost_accountant" {{ $PersonalInfo->my_profession=='Cost_accountant'?'selected':'' }}>Cost accountant</option>
-                                    <option value="Creative_person" {{ $PersonalInfo->my_profession=='Creative_person'?'selected':'' }}>Creative person</option>
-                                    <option value="Economist" {{ $PersonalInfo->my_profession=='Economist'?'selected':'' }}>Economist</option>
-                                    <option value="Entertainment_professional" {{ $PersonalInfo->my_profession=='Entertainment_professional'?'selected':'' }}>Entertainment professional</option>
-                                    <option value="Medical_Transcriptionist" {{ $PersonalInfo->my_profession=='Medical_Transcriptionist'?'selected':'' }}>Medical Transcriptionist</option>
-                                    <option value="Optician" {{ $PersonalInfo->my_profession=='Optician'?'selected':'' }}>Optician</option>
-                                    <option value="Physicist" {{ $PersonalInfo->my_profession=='Physicist'?'selected':'' }}>Physicist</option>
-                                    <option value="Pilot" {{ $PersonalInfo->my_profession=='Pilot'?'selected':'' }}>Pilot</option>
-                                    <option value="Accountant" {{ $PersonalInfo->my_profession=='Accountant'?'selected':'' }}>Accountant</option>
-                                    <option value="Acting_professional" {{ $PersonalInfo->my_profession=='Acting_professional'?'selected':'' }}>Acting professional</option>
-                                    <option value="Actor" {{ $PersonalInfo->my_profession=='Actor'?'selected':'' }}>Actor</option>
-                                    <option value="Administration_professional" {{ $PersonalInfo->my_profession=='Administration_professional'?'selected':'' }}>Administration professional</option>
-                                    <option value="Advertising_professional" {{ $PersonalInfo->my_profession=='Advertising_professional'?'selected':'' }}>Advertising professional</option>
-                                    <option value="Air_Hostess" {{ $PersonalInfo->my_profession=='Air_Hostess'?'selected':'' }}>Air Hostess</option>
-                                    <option value="Airline" {{ $PersonalInfo->my_profession=='Airline'?'selected':'' }}>Airline</option>
-                                    <option value="Architect" {{ $PersonalInfo->my_profession=='Architect'?'selected':'' }}>Architect</option>
-                                    <option value="Artisan" {{ $PersonalInfo->my_profession=='Artisan'?'selected':'' }}>Artisan</option>
-                                    <option value="Audiologist" {{ $PersonalInfo->my_profession=='Audiologist'?'selected':'' }}>Audiologist</option>
-                                    <option value="Beautician" {{ $PersonalInfo->my_profession=='Beautician'?'selected':'' }}>Beautician</option>
-                                    <option value="Biologist/Botanist" {{ $PersonalInfo->my_profession=='Biologist/Botanist'?'selected':'' }}>Biologist\Botanist</option>
-                                    <option value="Business_Person" {{ $PersonalInfo->my_profession=='Business_Person'?'selected':'' }}>Business Person</option>
-                                    <option value="Chartered_Accountant" {{ $PersonalInfo->my_profession=='Chartered_Accountant'?'selected':'' }}>Chartered Accountant</option>
-                                    <option value="Factory_Worker" {{ $PersonalInfo->my_profession=='Factory_Worker'?'selected':'' }}>Factory Worker</option>
-                                    <option value="Farmer" {{ $PersonalInfo->my_profession=='Farmer'?'selected':'' }}>Farmer</option>
-                                    <option value="Flight_Attendant" {{ $PersonalInfo->my_profession=='Flight_Attendant'?'selected':'' }}>Flight Attendant</option>
-                                    <option value="Government_Employee" {{ $PersonalInfo->my_profession=='Government_Employee'?'selected':'' }}>Government Employee</option>
-                                    <option value="Investment_professional" {{ $PersonalInfo->my_profession=='Investment_professional'?'selected':'' }}>Investment professional</option>
-                                    <option value="Physiotherapist" {{ $PersonalInfo->my_profession=='Physiotherapist'?'selected':'' }}>Physiotherapist</option>
-                                    <option value="Politician" {{ $PersonalInfo->my_profession=='Politician'?'selected':'' }}>Politician</option>
-                                    <option value="Scientist" {{ $PersonalInfo->my_profession=='Scientist'?'selected':'' }}>Scientist</option>
-                                    <option value="Software_Consuitant" {{ $PersonalInfo->my_profession=='Software_Consuitant'?'selected':'' }}>Software Consuitant</option>
-                                    <option value="Sports_Man" {{ $PersonalInfo->my_profession=='Sports_Man'?'selected':'' }}>Sports Man</option>
-                                    <option value="Self_employed_person" {{ $PersonalInfo->my_profession=='Self_employed_person'?'selected':'' }}>Self-employed person</option>
-                                    <option value="Social_Worker" {{ $PersonalInfo->my_profession=='Social_Worker'?'selected':'' }}>Social Worker</option>
-                                    <option value="Software_Engineer" {{ $PersonalInfo->my_profession=='Software_Engineer'?'selected':'' }}>Software Engineer</option>
-                                    <option value="Transportation_professional" {{ $PersonalInfo->my_profession=='Transportation_professional'?'selected':'' }}>Transportation professional</option>
-                                    <option value="Voiunteer" {{ $PersonalInfo->my_profession=='Voiunteer'?'selected':'' }}>Voiunteer</option>
-                                    <option value="Zoologist" {{ $PersonalInfo->my_profession=='Zoologist'?'selected':'' }}>Zoologist</option>
+                                    @foreach ($professions as $profession)
+                                        <option value="{{ $profession['slug'] }}" {{ $PersonalInfo->my_profession ==  $profession['slug'] ?'selected':''}}>{{ $profession['name'] }}</option>
+                                    @endforeach 
                                 </select>
                             </div>
                         </div>

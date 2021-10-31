@@ -2,9 +2,7 @@
 @section('title','Sign Up')
 
 @section('content')
-@php
-    include(app_path().'/data/temp_data.php');
-@endphp
+@php include(app_path().'/data/temp_data.php'); @endphp
 <section class="hero-wrap" style="background-image: url('{{ asset('images/reg_bg.jpg')}}');">
     <div class="container">
         <div class="row no-gutters slider-text align-items-end justify-content-center">

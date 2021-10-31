@@ -1,6 +1,7 @@
 @extends('author.layouts.master')
 @section('title','Personal Info Create')
 @section('content')
+@php include(app_path().'/data/temp_data.php'); @endphp
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -180,107 +181,9 @@
                                 <div class="form-group ">
                                     <label class="form-label" for="my_profession">My Profession *</label>
                                     <select class="form-control-sm w-100" name="my_profession" required>
-                                        <option value="Student">Student</option>
-                                        <option value="Engineer">Engineer</option>
-                                        <option value="Banker">Banker</option>
-                                        <option value="Doctor">Doctor</option>
-                                        <option value="Dentist">Dentist</option>
-                                        <option value="Nurse">Nurse</option>
-                                        <option value="Others">Others</option>
-                                        <option value="government_service">government service</option>
-                                        <option value="Customer_Support_Professional">Customer Support Professional</option>
-                                        <option value="Defense_Employee">Defense Employee</option>
-                                        <option value="Designer">Designer</option>
-                                        <option value="Engineer_(Mechanical)">Engineer (Mechanical)</option>
-                                        <option value="Engineer_(Textail)">Engineer (Textail)</option>
-                                        <option value="Engineer_(Project)">Engineer (Project)</option>
-                                        <option value="Civil_Engineer_(Diploma)">Civil Engineer (Diploma)</option>
-                                        <option value="Civil_Engineer_(Bsc)">Civil Engineer (Bsc)</option>
-                                        <option value="Event_Manager">Event Manager</option>
-                                        <option value="Executive">Executive</option>
-                                        <option value="Fashion_Designer">Fashion Designer</option>
-                                        <option value="Finance_Professional">Finance Professional</option>
-                                        <option value="Health_Care_Professional">Health Care Professional</option>
-                                        <option value="Home_Maker">Home Maker</option>
-                                        <option value="Hotel_Restaurant_Professional">Hotel &amp; Restaurant Professional</option>
-                                        <option value="Human Resources Professional">Human Resources Professional</option>
-                                        <option value="IT/Telecom_Profession">IT / Telecom Profession</option>
-                                        <option value="Interior_Designer">Interior Designer</option>
-                                        <option value="Investment_Professional">Investment Professional</option>
-                                        <option value="Journalist">Journalist</option>
-                                        <option value="Lawyer">Lawyer</option>
-                                        <option value="Lecturer">Lecturer</option>
-                                        <option value="Legal_Professional">Legal Professional</option>
-                                        <option value="Manager">Manager</option>
-                                        <option value="Marketing_Professional">Marketing Professional</option>
-                                        <option value="Media_Professional">Media Professional</option>
-                                        <option value="Medical_Professional">Medical Professional</option>
-                                        <option value="Merchandiser">Merchandiser</option>
-                                        <option value="Merchant_Naval_Officer">Merchant Naval Officer</option>
-                                        <option value="Not_Working">Not Working</option>
-                                        <option value="Occupational_Therapist">Occupational Therapist</option>
-                                        <option value="Pharmacist">Pharmacist</option>
-                                        <option value="Physician_Assistant">Physician Assistant</option>
-                                        <option value="Private_Service">Private Service</option>
-                                        <option value="Production_Professional">Production Professional</option>
-                                        <option value="Professor">Professor</option>
-                                        <option value="Public_Relations_Professional">Public Relations Professional</option>
-                                        <option value="Real_Estate_Professional">Real Estate Professional</option>
-                                        <option value="Research_Scholar">Research Scholar</option>
-                                        <option value="Retail_Professional">Retail Professional</option>
-                                        <option value="Retired_Person">Retired Person</option>
-                                        <option value="Sales_Professional">Sales Professional</option>
-                                        <option value="Technician">Technician</option>
-                                        <option value="Training_Professional">Training Professional</option>
-                                        <option value="Veterinary Doctor">Veterinary Doctor</option>
-                                        <option value="Working_Abroad">Working Abroad</option>
-                                        <option value="Writer">Writer</option>
-                                        <option value="Business">Business</option>
-                                        <option value="Teacher">Teacher</option>
-                                        <option value="Not_working">Not working</option>
-                                        <option value="Clerical_official">Clerical official</option>
-                                        <option value="Commercial_pilot">Commercial pilot</option>
-                                        <option value="Company_secretary">Company secretary</option>
-                                        <option value="Computer_professional">Computer professional</option>
-                                        <option value="Contractor">Contractor</option>
-                                        <option value="Cost_accountant">Cost accountant</option>
-                                        <option value="Creative_person">Creative person</option>
-                                        <option value="Economist">Economist</option>
-                                        <option value="Entertainment_professional">Entertainment professional</option>
-                                        <option value="Medical_Transcriptionist">Medical Transcriptionist</option>
-                                        <option value="Optician">Optician</option>
-                                        <option value="Physicist">Physicist</option>
-                                        <option value="Pilot">Pilot</option>
-                                        <option value="Accountant">Accountant</option>
-                                        <option value="Acting_professional">Acting professional</option>
-                                        <option value="Actor">Actor</option>
-                                        <option value="Administration_professional">Administration professional</option>
-                                        <option value="Advertising_professional">Advertising professional</option>
-                                        <option value="Air_Hostess">Air Hostess</option>
-                                        <option value="Airline">Airline</option>
-                                        <option value="Architect">Architect</option>
-                                        <option value="Artisan">Artisan</option>
-                                        <option value="Audiologist">Audiologist</option>
-                                        <option value="Beautician">Beautician</option>
-                                        <option value="Biologist\Botanist">Biologist\Botanist</option>
-                                        <option value="Business_Person">Business Person</option>
-                                        <option value="Chartered_Accountant">Chartered Accountant</option>
-                                        <option value="Factory_Worker">Factory Worker</option>
-                                        <option value="Farmer">Farmer</option>
-                                        <option value="Flight_Attendant">Flight Attendant</option>
-                                        <option value="Government_Employee">Government Employee</option>
-                                        <option value="Investment_professional">Investment professional</option>
-                                        <option value="Physiotherapist">Physiotherapist</option>
-                                        <option value="Politician">Politician</option>
-                                        <option value="Scientist">Scientist</option>
-                                        <option value="Software_Consuitant">Software Consuitant</option>
-                                        <option value="Sports_Man">Sports Man</option>
-                                        <option value="Self_employed_person">Self-employed person</option>
-                                        <option value="Social_Worker">Social Worker</option>
-                                        <option value="Software_Engineer">Software Engineer</option>
-                                        <option value="Transportation_professional">Transportation professional</option>
-                                        <option value="Voiunteer">Voiunteer</option>
-                                        <option value="Zoologist">Zoologist</option>
+                                        @foreach ($professions as $profession)
+                                            <option value="{{ $profession['slug'] }}">{{ $profession['name'] }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
