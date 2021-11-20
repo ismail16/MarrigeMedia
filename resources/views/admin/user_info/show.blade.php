@@ -20,8 +20,11 @@
             <div class="card mt-2 bg-light-green">
                 <div class="card-header pb-0 pt-2">
                     <div id="verifiedItems" class="float-right">
-                    <span>Verified:</span>
-                    <i class="fas fa-user-check text-success"></i>
+                        <a href="{{route('admin.marriage_info', $user->id)}}">
+                            <i class="fas fa-edit text-success"></i>Info
+                        </a>
+                        <span>Verified:</span>
+                        <i class="fas fa-user-check text-success"></i>
                     </div>
                     <div >
                         <h3>Basic Information</h3>

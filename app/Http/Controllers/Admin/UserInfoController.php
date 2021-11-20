@@ -24,6 +24,24 @@ class UserInfoController extends Controller
         //
     }
 
+    public function marriage_info($id)
+    {
+        $user = User::find($id);
+        return view('admin.marriage_info.index', compact('user'));
+    }
+
+    public function marriage_info_update(Request $request, $id)
+    {
+        $user = User::find($id);
+        if ($request->user_status) {
+            $user->status = $request->user_status;
+        }
+
+        return $user;
+        $user->save();
+        return redirect()->route('admin.user-info.index');
+    }
+
     public function store(Request $request)
     {
         //

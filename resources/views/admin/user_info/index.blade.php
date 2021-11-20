@@ -44,8 +44,16 @@
                                             <tr>
                                                 <td>{{$loop->index+1}}</td>
                                                 <td>{{$user->first_name}}</td>
-                                                <td>
+                                                <td class="text-center">
+                                                @if($user->user_images->first())
                                                    <img src="{{ asset('images/user_profile_image/'.$user->user_images->first()['image']) }}" class="img-fluid" style="width: 50px;">
+                                                @else
+                                                    @if($user->gender == 'Female')
+                                                    <img src="{{ asset('images/icons/flaticon/arab-woman.png') }}" alt="Bride Image" class="img-fluid w-25">
+                                                    @else
+                                                    <img src="{{ asset('images/icons/flaticon/businessman.png') }}" alt="Groom Image" class="img-fluid w-25">
+                                                    @endif
+                                                @endif
                                                 </td>
                                                 <td>{{$user->mobile}}</td>
                                                 <td>{{$user->email}}</td>

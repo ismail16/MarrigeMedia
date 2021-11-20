@@ -38,6 +38,8 @@ Route::get('member-registration-verification-done/{token}/{id}', 'Auth\RegisterC
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::resource('user-info', 'UserInfoController');
+    Route::get('marriage-info/{user_id}', 'UserInfoController@marriage_info')->name('marriage_info');
+    Route::post('marriage-info/{user_id}', 'UserInfoController@marriage_info_update')->name('marriage_info_update');
     Route::resource('success-story', 'SuccessStoryController');
     Route::resource('package-price', 'PackagePriceController');
     Route::resource('message', 'ContactController');
@@ -46,6 +48,8 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'namespace' => 'Admin', 'mi
     Route::post('email-excel-send','EmailExcelController@send')->name('send');
     Route::get('email-excel-resend','EmailExcelController@resend')->name('resend');
     Route::get('email-excel-truncate','EmailExcelController@truncate')->name('truncate');
+    // Route::resource('marriage-info', 'MarriageInfoController');
+
 
     Route::resource('division', 'DivisionController');
     Route::resource('district', 'DistrictController');
